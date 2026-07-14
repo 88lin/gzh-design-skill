@@ -6,11 +6,11 @@
 
 **把 Markdown 一键排成可直接粘贴进微信公众号编辑器的精致 HTML**
 
-6 套精选主题 + 主题生成器 · 代码块/图片/GIF · 自动章节编号与关键词标记 · 双关卡质量校验
+7 套精选主题 + 主题生成器 · 代码块/图片/GIF · 自动章节编号与关键词标记 · 双关卡质量校验
 
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blue)](https://claude.ai/code)
-[![Themes](https://img.shields.io/badge/themes-6%20+%20generator-059669)](references/theme-index.md)
+[![Themes](https://img.shields.io/badge/themes-7%20+%20generator-1D4ED8)](references/theme-index.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Agents](https://img.shields.io/badge/Claude%20Code%20·%20Codex%20·%20Cursor-supported-8b5cf6.svg)](#-快速开始)
 
@@ -24,7 +24,7 @@
 
 ## ✨ 核心特性
 
-- **6 套精选主题**：摸鱼绿（默认）· 红白 · 石墨极简 · 留白禅意 · 摸鱼票据 · 橄榄手记 —— 每套都是自成体系的厚组件库（设计变量 + 数十个精细组件 + 视觉层级表 + 文章类型配方表）。
+- **7 套精选主题**：摸鱼绿（默认）· 科技钴蓝 · 红白 · 石墨极简 · 留白禅意 · 摸鱼票据 · 橄榄手记 —— 每套都是自成体系的厚组件库（设计变量 + 数十个精细组件 + 视觉层级表 + 文章类型配方表）。
 - **主题生成器**：不满足现成主题？用一句话描述或一张参考图，生成一套全新组件库并保存本地复用（见 `references/theme-generator.md`）。
 - **内容全兼容**：代码块（深/浅色，等宽不折行）、图片、GIF（带动图角标）、行内代码、引用、列表、产品徽章、Markdown 超链接（自动转上标脚注 + 文末「参考资料」列表）。
 - **智能排版**：章节自动编号（末章 ∞ / ///）、每段主动标 1–3 个关键词下划线、从正文提炼引言卡与目录、作者签名去重合并。
@@ -35,7 +35,7 @@
 
 ## 👀 效果预览
 
-6 套主题各排同一篇长文（真实长图，含配图、引言卡、编号章节、金句、名词旁注等完整组件）：
+7 套主题各排同一篇长文（真实长图与交互预览，含配图、引言卡、编号章节、金句、名词旁注等完整组件）：
 
 <table>
 <tr>
@@ -52,9 +52,12 @@
 <td width="33%" align="center"><img src="https://github.com/isjiamu/gzh-design-skill/releases/download/assets-v1/lf-zen-whitespace.png?v=1" width="250"><br><sub><b>留白禅意风</b></sub></td>
 <td width="33%" align="center"><img src="https://github.com/isjiamu/gzh-design-skill/releases/download/assets-v1/lf-moyu-ticket.png?v=1" width="250"><br><sub><b>摸鱼票据风</b></sub></td>
 </tr>
+<tr>
+<td colspan="3" align="center"><a href="docs/gallery/tech-cobalt.html"><b>打开完整交互预览</b></a><br><sub><b>科技钴蓝</b></sub></td>
+</tr>
 </table>
 
-> 📚 **6 套完整长图 → [docs/all-themes.md](docs/all-themes.md)**　｜　克隆后浏览器打开 `docs/gallery/index.html` 可看可交互的完整 HTML。
+> 📚 **7 套主题预览 → [docs/all-themes.md](docs/all-themes.md)**　｜　克隆后浏览器打开 `docs/gallery/index.html` 可看可交互的完整 HTML。
 
 ## ✅ 适合 / ❌ 不适合
 
@@ -67,21 +70,22 @@
 | 你的内容 | 推荐怎么排 |
 |---|---|
 | 观点 / 深度长文 | 红白 或 石墨极简；关键词下划线 + 金句引用 + 居中金句 |
-| 产品测评 / 工具盘点 | 摸鱼绿 或 摸鱼票据；step/tool-label + 卡片，按配方表走 |
-| 教程 / 操作指南 | 摸鱼绿；step-label + 代码块 + 编号列表 |
+| 产品测评 / 工具盘点 | 摸鱼绿、科技钴蓝或摸鱼票据；step/tool-label + 卡片，按配方表走 |
+| 教程 / 操作指南 | 通用教程用摸鱼绿，AI/开发/技术工作流用科技钴蓝；step-label + 代码块 + 编号列表 |
 | 数据复盘 / 年度报告 | 摸鱼绿 或 橄榄手记；数据卡 + 表格 |
 | 禅意 / 极简随笔 | 留白禅意；大留白 + 居中衬线引用 |
 | 内刊 / 深度评测 / 案例复盘 | 橄榄手记；编者按 + 分节 + 暗色摘要框 |
 | Word / PDF 稿转公众号 | 先自动格式归一化 → 再按题材选主题 |
 | 想要现成之外的风格 | 主题生成器：一句话或参考图现造一套 |
 
-## 🎨 6 套精选主题
+## 🎨 7 套精选主题
 
 覆盖绝大多数公众号题材，每套都打磨到「拿来即用」：
 
 | 主题 | 适合 |
 |---|---|
 | **摸鱼绿**（默认） | 教程、测评、清单、工具盘点（卡片丰富、信息密度高） |
+| **科技钴蓝** | AI 工具、开发教程、产品说明、工作流指南（冷静清晰、黄蓝对比） |
 | **红白色系** | 深度分析、观点、力量感话题（经典编辑风） |
 | **石墨极简风** | 设计、科技评论、专业观点、高端品牌 |
 | **留白禅意风** | 禅意、极简生活、深度随笔（呼吸感最强） |
@@ -164,8 +168,8 @@ python3 scripts/validate_gzh_html.py out.html  # 产物关：扫最终 HTML 合�
 gzh-design/
 ├── SKILL.md                    # 排版工作流主文档（Agent 入口）
 ├── references/
-│   ├── theme-index.md          # 6 套主题索引（主色/适用/下划线，单一来源）
-│   ├── theme-*.md              # 6 套主题组件库（theme-moyu-green.md 等）
+│   ├── theme-index.md          # 7 套主题索引（主色/适用/下划线，单一来源）
+│   ├── theme-*.md              # 7 套主题组件库（theme-moyu-green.md 等）
 │   ├── theme-generator.md      # 主题生成器（按描述/参考图生成新主题）
 │   ├── common-components.md    # 跨主题通用增量组件（代码块/图片/小标签）
 │   ├── format-normalize.md     # 格式归一化（docx/pdf/纯文本 → Markdown）
@@ -189,11 +193,11 @@ gzh-design/
 - **克制用色** — 主色只在锚点出现（全文 ≤5 处），大面积白底 + 灰阶，彩色只做点缀。
 - **灰阶承重** — 约 90% 的文字交给一套中性灰阶，色彩不承担正文阅读，避免花哨。
 
-## 🧠 方法论：不止 6 套，自己造主题
+## 🧠 方法论：不止 7 套，自己造主题
 
 ### 主题生成：一句话 / 一张参考图，现造一套新主题
 
-内置 6 套不够用时不必等更新——让 AI 现造一套。背后是 [`references/theme-generator.md`](references/theme-generator.md) 定义的第二条工作流：
+内置 7 套不够用时不必等更新——让 AI 现造一套。背后是 [`references/theme-generator.md`](references/theme-generator.md) 定义的第二条工作流：
 
 1. **收集偏好**（一次问全，不逐条追问）：主题描述必填（或给参考图），名称 / 主色 / 背景 / 正文色 / 强调色 / 装饰色 / 字体 / 圆角 / 阴影 / 适用场景可留空自动补全。
 2. **生成区块库**：AI 产出 45~75 个区块的完整 HTML 组件库，存到 `assets/theme-previews/{id}.html`，浏览器整页一次浏览确认风格（不逐块问）。
@@ -262,6 +266,7 @@ A：跑 `scripts/validate_gzh_html.py`，报 ERROR 就回到装配步骤修；�
 | 主色 | 主题 | 适用 |
 |---|---|---|
 | ![](https://placehold.co/12/059669/059669.png) `#059669` | 摸鱼绿（默认） | 教程、测评、清单、工具盘点 |
+| ![](https://placehold.co/12/1D4ED8/1D4ED8.png) `#1D4ED8` | 科技钴蓝 | AI 工具、开发教程、产品说明、工作流指南 |
 | ![](https://placehold.co/12/DC2626/DC2626.png) `#DC2626` | 红白色系 | 深度分析、观点、力量感话题 |
 | ![](https://placehold.co/12/52525B/52525B.png) `#52525B` | 石墨极简风 | 设计、科技评论、专业观点、高端品牌 |
 | ![](https://placehold.co/12/4A5D52/4A5D52.png) `#4A5D52` | 留白禅意风 | 禅意、极简生活、深度随笔 |
