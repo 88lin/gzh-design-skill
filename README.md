@@ -334,40 +334,6 @@ A：跑 `scripts/validate_gzh_html.py`，报 ERROR 就回到装配步骤修；�
 > 每套主题的英文标识、组件库文件、下划线 CSS 见 [`references/theme-index.md`](references/theme-index.md)。
 > 需要别的风格？让 AI 用 [主题生成器](#-faq) 现生成一套。
 
-## ⭐ Star History
-
-如果这个项目帮到了你，点个 Star 支持一下～
-
-<a href="https://www.star-history.com/?repos=88lin%2Fgzh-design-skill&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=88lin/gzh-skill-kit&type=date&theme=dark&legend=top-left&sealed_token=OSZCPLO_3NeTUKAtXcnNT6T3HuZwlFsH1HDGh6BcU0G2bdOm-5snTE01rzgYkwgNkF0pvraNI226pwK4jt9zYc4YuJ196yA1fcRRZKmfVQDMWqtE87dHqXn1E4v2q1mCWNFHzXAGJrCMEHx_0wwNmIVOg5nOaNCtRUYS2C_E1IlITdmy_yv7vpyVxqti" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=88lin/gzh-skill-kit&type=date&legend=top-left&sealed_token=OSZCPLO_3NeTUKAtXcnNT6T3HuZwlFsH1HDGh6BcU0G2bdOm-5snTE01rzgYkwgNkF0pvraNI226pwK4jt9zYc4YuJ196yA1fcRRZKmfVQDMWqtE87dHqXn1E4v2q1mCWNFHzXAGJrCMEHx_0wwNmIVOg5nOaNCtRUYS2C_E1IlITdmy_yv7vpyVxqti" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=88lin/gzh-skill-kit&type=date&legend=top-left&sealed_token=OSZCPLO_3NeTUKAtXcnNT6T3HuZwlFsH1HDGh6BcU0G2bdOm-5snTE01rzgYkwgNkF0pvraNI226pwK4jt9zYc4YuJ196yA1fcRRZKmfVQDMWqtE87dHqXn1E4v2q1mCWNFHzXAGJrCMEHx_0wwNmIVOg5nOaNCtRUYS2C_E1IlITdmy_yv7vpyVxqti" />
- </picture>
-</a>
-
 ## 🤝 贡献
 
 欢迎新主题、修复与文档改进，请先读 [CONTRIBUTING.md](CONTRIBUTING.md)。
-
-## 📄 License
-
-本项目采用 **GNU AGPL-3.0** 协议，要点：
-
-2. **衍生品必须开源** — 任何修改版本、Fork、二次分发，必须以 AGPL-3.0（或兼容协议）公开发布，提供完整源代码
-3. **网络服务也要开源** — 即使只是把修改版本部署成 SaaS / Web 服务给别人用而不分发代码，也要公开源代码（这是 AGPL 区别于 GPL 的核心）
-4. **不允许闭源、专有化、仅付费分发**
-
-完整条款见 [LICENSE](LICENSE)。
-
-## 🙏 致谢
-
-- 质量工程（可验证循环）由 skill-optimizer 审计驱动打磨。
-
----
-
-<div align="center">
-
-<sub>关注我们的公众号，获取更多 AI 干货与排版实践 👆</sub>
-
-</div>
