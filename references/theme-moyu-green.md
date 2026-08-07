@@ -795,7 +795,7 @@
 ```html
 <section style="background:radial-gradient(circle at center,#F9FAFB 0%,#FFFFFF 100%);border:1px solid #E5E7EB;border-radius:16px;padding:32px 20px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.03);margin:0 0 24px;">
   <p style="font-size:13px;font-weight:bold;color:#111827;margin-bottom:20px;line-height:1.6;">
-    <span leaf="">既然看到这里了，如果觉得有用，随手点个赞、在看、转发三连吧。</span>
+    <span leaf="">既然看到这里了，如果觉得有用，随手点个赞、推荐、转发三连吧。</span>
   </p>
   <section style="display:flex;justify-content:center;gap:24px;margin-bottom:16px;">
     <section style="text-align:center;cursor:pointer;color:#4B5563;">
@@ -806,9 +806,9 @@
     </section>
     <section style="text-align:center;cursor:pointer;color:#4B5563;">
       <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#fff;border-radius:12px;box-shadow:0 2px 4px rgba(0,0,0,0.05);border:1px solid #F3F4F6;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"></circle><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
       </section>
-      <span style="font-size:10px;font-weight:600;"><span leaf="">在看</span></span>
+      <span style="font-size:10px;font-weight:600;"><span leaf="">推荐</span></span>
     </section>
     <section style="text-align:center;cursor:pointer;color:#059669;">
       <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#ECFDF5;border-radius:12px;box-shadow:0 2px 4px rgba(5,150,105,0.15);border:1px solid #A7F3D0;">

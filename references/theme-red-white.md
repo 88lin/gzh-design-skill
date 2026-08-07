@@ -478,11 +478,11 @@
 
 ## 组件 14 图片容器
 
+> 图片直接放容器里，**不要再套一层 `<section style="overflow:hidden">`**——公众号编辑器会剥离嵌套 section 的样式（overflow/border-radius），导致图片跑出边框外（issue：图片在框外面）。圆角裁剪靠容器 `padding` 让图片不贴角实现。
+
 ```html
-<section style="background:#FFF;border-radius:12px;padding:6px;border:1px solid #E5E7EB;box-shadow:0 4px 12px -2px rgba(0,0,0,0.08);margin-bottom:10px;">
-  <section style="margin:0;border-radius:8px;overflow:hidden;">
-    <span leaf=""><img src="{{图片URL}}" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
-  </section>
+<section style="background:#FFF;border-radius:12px;padding:6px;border:1px solid #E5E7EB;box-shadow:0 4px 12px -2px rgba(0,0,0,0.08);margin-bottom:10px;text-align:center;">
+  <span leaf=""><img src="{{图片URL}}" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
 </section>
 ```
 
@@ -528,7 +528,7 @@
   </p>
   <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:justify;">
     <span leaf="">如果你觉得今天这篇有收获，欢迎</span>
-    <strong style="color:#DC2626;"><span leaf="">点赞、在看、转发</span></strong>
+    <strong style="color:#DC2626;"><span leaf="">点赞、推荐、转发</span></strong>
     <span leaf="">三连，我们下篇见。</span>
   </p>
 </section>
