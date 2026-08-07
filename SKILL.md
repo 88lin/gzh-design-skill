@@ -1,6 +1,6 @@
 ---
 name: gzh-design
-description: 微信公众号文章排版引擎，将 Markdown 转换为可直接粘贴到公众号编辑器的 HTML。主题风格从 references/theme-index.md 注册的自定义主题库中选取，自动章节编号、关键词下划线标记、引言卡片、目录导航、代码块、图片/GIF、作者签名。支持 Markdown / Word(.docx) / PDF / 纯文本输入（非 Markdown 先自动归一化），也支持"一键自动排版"（自动推断结构+选主题），还支持根据用户描述/参考图生成自定义主题组件库并保存本地复用，支持"先标注再排版"的两阶段模式（产出可检查、可修正、可重渲染的标注版 Markdown）。触发场景：(1) 用户提到"公众号排版""公众号文章""微信排版""gzh"，(2) 用户想把文章（md/docx/pdf/纯文本）转成公众号 HTML，(3) 用户说"自动排版""一键排版"公众号内容，(4) 用户想为公众号排版"生成新主题/自定义风格/按这张图做一套组件库"，(5) 用户说"先标注""两步排版""标注后再排"进入两阶段模式。不用于生成普通网页/落地页/PPT（用前端或 PPT 类 skill）。
+description: 微信公众号文章排版引擎，将 Markdown 转换为可直接粘贴到公众号编辑器的 HTML。主题风格从 references/theme-index.md 注册的自定义主题库中选取，自动章节编号、关键词下划线标记、引言卡片、目录导航、代码块、图片/GIF、作者签名。支持 Markdown / Word(.docx) / PDF / 纯文本输入（非 Markdown 先自动归一化），也支持"一键自动排版"（自动推断结构+选主题），还支持根据用户描述/参考图生成自定义主题组件库并保存本地复用，支持"先标注再排版"的两阶段模式（产出可检查、可修正、可重渲染的标注版 Markdown），并可选用微信 API 把排版产物直传公众号草稿箱（scripts/wechat_draft.py）。触发场景：(1) 用户提到"公众号排版""公众号文章""微信排版""gzh"，(2) 用户想把文章（md/docx/pdf/纯文本）转成公众号 HTML，(3) 用户说"自动排版""一键排版"公众号内容，(4) 用户想为公众号排版"生成新主题/自定义风格/按这张图做一套组件库"，(5) 用户说"先标注""两步排版""标注后再排"进入两阶段模式，(6) 用户说"上传草稿箱""API 发布""自动发布"把排版结果直传公众号草稿箱。不用于生成普通网页/落地页/PPT（用前端或 PPT 类 skill）。
 ---
 
 # 公众号文章排版 Skill
@@ -98,7 +98,37 @@ description: 微信公众号文章排版引擎，将 Markdown 转换为可直接
    <SKILL_ROOT>/scripts/wrap_preview.py <上面的干净正文.html>
    ```
    产出 `{...}_预览.html`——浏览器打开后右上角有「复制到公众号」按钮，点一下即把渲染后的富文本复制到剪贴板（等价 Ctrl+A/Ctrl+C），再到公众号编辑器 Ctrl/⌘+V 粘贴。按钮和脚本只在预览外壳里、**不在被复制的 section 内**，所以粘到公众号的仍是干净合规正文。
-3. 告知用户：**打开 `{...}_预览.html` → 点右上角「复制」→ 公众号编辑器粘贴**；并给出干净正文文件路径作为兜底。附校验脚本结论（已通过 / 剩余 warning）。
+3. **交付路线（二选一）**：
+   - **方向一 · 手动粘贴（默认）**——告知用户：**打开 `{...}_预览.html` → 点右上角「复制」→ 公众号编辑器粘贴**；并给出干净正文文件路径作为兜底。附校验脚本结论（已通过 / 剩余 warning）。
+   - **方向二 · API 上传草稿（可选）**——用户明确说"上传草稿箱 / API 发布 / 自动发布"时，按下方「API 上传草稿」小节执行。
+
+#### API 上传草稿（可选交付方式）
+
+用户说要"上传草稿箱 / API 发布 / 自动发布"（且已配好公众号 appid/secret）→ 用 `<SKILL_ROOT>/scripts/wechat_draft.py` 把第 5 步校验通过的 HTML 直接推入草稿箱。
+
+**前提：必须先压缩 HTML**——微信手机公众号助手会把源码里标签之间的换行/缩进误读成文字空白并转成 `&nbsp;`，导致排版错乱；手动复制粘贴不受此影响（浏览器渲染时已折叠空白）。`upload_and_cleanup()` 内部已自动压缩。
+
+**方式 A（推荐）**：
+
+```python
+import sys; sys.path.insert(0, '<SKILL_ROOT>/scripts')
+from wechat_draft import upload_and_cleanup
+media_id, nbsp = upload_and_cleanup(
+    cover_path='封面.jpg',        # 必填，草稿 API 不接受空封面；脚本自动压到 ≤64KB，建议 900×383（2.35:1）
+    title='文章标题', digest='摘要',
+    html_content=open('<校验通过的干净正文.html>').read()
+)
+# 返回 nbsp > 0 时：from wechat_draft import cleanup_draft_nbsp, get_token
+# cleanup_draft_nbsp(get_token(), media_id)
+```
+
+**方式 B（手动）**：先 `<SKILL_ROOT>/scripts/minify_gzh_html.py <正文.html>` 压缩，再用压缩产物调 `create_draft`。
+
+**凭据配置**：`~/.wechat_config.json` 存 `{"WECHAT_APP_ID": "...", "WECHAT_APP_SECRET": "..."}`；可用环境变量 `WECHAT_CONFIG_FILE` / `WECHAT_TOKEN_FILE` / `WECHAT_COVER_PATH` 覆盖默认路径。access_token 缓存在本地文件，过期前自动刷新。
+
+**上传后验证（强制）**：`draft/get` 取回草稿，确认 `title` 无乱码、`content` 中 `&nbsp;` 计数为 0。解析响应必须用 `json.loads(r.content.decode('utf-8'))`，不要用 `r.json()`（部分微信接口按 ISO-8859-1 返回，`r.json()` 会造成双重解码乱码）。
+
+两条路线不要混用：方向一的预览/兜底用未压缩的原始 HTML；方向二上传压缩后产物。
 
 ## 两阶段排版模式（`--annotate`）
 
@@ -220,6 +250,7 @@ description: 微信公众号文章排版引擎，将 Markdown 转换为可直接
 - **代码块要紧凑、忌大空白**：用通用库 1a/1b 的"每行一个 `<p style=\"margin:0\">`"写法，**绝不用 `white-space:pre`**——它会把 HTML 源码里 span 前的缩进和行间换行原样渲染成大左缩进 + 空行；缩进只用全角空格 `　`，行距靠 `line-height:1.6`。
 - **待补素材居中**：`【插入…】`、待录屏 / GIF / 视频 / 成果图等占位，用通用库 **2c 居中素材占位板块**（浅底柔虚线框 + 居中图标与说明），不要用左对齐的提示块。
 - **外链勿留 `<a>`**：正文 Markdown 超链接 `[text](url)` 一律转通用库 4a 上标角标 + 4b 文末参考资料列表（URL 纯文本展示），**不要输出可点击的 `<a href>`**——公众号正文外链不可点击，留 `<a>` 只会被过滤成裸 URL。编号与文末列表必须一一对应，重复 URL 复用同一编号。
+- **API 上传产生 `&nbsp;` 注入**：通过 `draft/add` 接口上传的草稿，在手机公众号助手中打开时，源码里标签之间的换行/缩进会被误读成空白并转成 `&nbsp;`，撑乱排版；手动复制粘贴不受影响。上传前先跑 `scripts/minify_gzh_html.py` 压缩（`scripts/wechat_draft.py` 的 `upload_and_cleanup()` 内部已自动压缩并回查 nbsp 计数），见第 6 步「方向二」。
 
 ## 自定义主题生成（第二条工作流）
 
