@@ -60,6 +60,20 @@ def lint_file(path):
         if FOURSIDE_DASHED.search(html) and not CENTERED.search(html):
             add("WARN", "四周虚线框 border:…dashed（正文强调请用左竖条；"
                         "仅居中的素材占位块可用 dashed）")
+        # 移动端守护：内容容器固定像素宽(≥150px)且未配 max-width —— 手机端易被压缩/溢出
+        for sm in re.finditer(r'style\s*=\s*"([^"]*)"', html, re.I):
+            style = sm.group(1)
+            has_maxw = re.search(r'max-width\s*:', style, re.I)
+            for decl in style.split(';'):
+                prop, _, val = decl.partition(':')
+                if prop.strip().lower() != 'width':
+                    continue
+                m = re.match(r'\s*(\d+)\s*px', val)
+                if m and int(m.group(1)) >= 150 and not has_maxw:
+                    add("WARN", f"固定宽度 width:{m.group(1)}px（≥150px）未配 "
+                                "max-width——手机端会被压缩或溢出，改用 "
+                                "max-width / 百分比 / flex:1")
+                    break
     return name, found
 
 
