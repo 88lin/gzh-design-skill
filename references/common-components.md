@@ -63,11 +63,11 @@
 
 ### 2a. 标准图片（带说明）
 
+> 图片直接放容器里，**不要再套一层 `<section style="overflow:hidden">`**——公众号编辑器会剥离嵌套 section 的 overflow/border-radius，导致图片跑出边框外。圆角裁剪靠容器 `padding` 让图片不贴角实现。
+
 ```html
-<section style="background:#FFF;border-radius:12px;padding:6px;border:1px solid #E5E7EB;box-shadow:0 4px 12px -2px rgba(0,0,0,0.08);margin-bottom:8px;">
-  <section style="margin:0;border-radius:8px;overflow:hidden;">
-    <span leaf=""><img src="图片URL" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
-  </section>
+<section style="background:#FFF;border-radius:12px;padding:6px;border:1px solid #E5E7EB;box-shadow:0 4px 12px -2px rgba(0,0,0,0.08);margin-bottom:8px;text-align:center;">
+  <span leaf=""><img src="图片URL" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
 </section>
 <p style="font-size:12px;color:#9CA3AF;text-align:center;margin:0 0 24px;">
   <span leaf="">— 图片说明文字</span>
@@ -81,10 +81,8 @@
 ### 2b. GIF 动图（同图片，加"GIF 动图"角标）
 
 ```html
-<section style="background:#FFF;border-radius:12px;padding:6px;border:1px solid #E5E7EB;box-shadow:0 4px 12px -2px rgba(0,0,0,0.08);margin-bottom:8px;">
-  <section style="margin:0;border-radius:8px;overflow:hidden;">
-    <span leaf=""><img src="动图URL.gif" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
-  </section>
+<section style="background:#FFF;border-radius:12px;padding:6px;border:1px solid #E5E7EB;box-shadow:0 4px 12px -2px rgba(0,0,0,0.08);margin-bottom:8px;text-align:center;">
+  <span leaf=""><img src="动图URL.gif" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
 </section>
 <p style="text-align:center;margin:0 0 24px;">
   <span style="display:inline-block;background:#FEE2E2;color:#991B1B;font-size:11px;font-weight:700;padding:1px 8px;border-radius:4px;margin-right:6px;"><span leaf="">GIF 动图</span></span>
