@@ -15,7 +15,7 @@
 任何改动组件库或 SKILL 后，按这个双关卡闭环自检，两关全绿才提 PR：
 
 ```bash
-# 源头关：扫所有组件库的 HTML 块，查大空白 / 正文虚线框 / 平台禁用项
+# 源头关：扫所有组件库的 HTML 块，查大空白 / 正文虚线框 / 平台禁用项 / 移动端死宽（≥150px 固定宽未配 max-width）
 python3 scripts/component_lint.py .
 
 # 产物关：用改动后的 skill 排版 assets/sample-article.md，再校验产物

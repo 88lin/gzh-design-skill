@@ -46,6 +46,7 @@
 - [ ] 代码块紧凑：每行一个 `<p style="margin:0">`，无 `white-space:pre`，无大段空白
 - [ ] `【插入…】` 类待补占位用 2c 居中板块，不是左对齐提示块
 - [ ] 骨架按所选主题库的"完整文章模板骨架"装配，不套用其它主题骨架
+- [ ] 移动端适配：内容容器无死宽（`width:NNNpx` ≥150px 未配 max-width）；多列 flex 用 `flex:1` 或 `flex-wrap:wrap`+百分比；行内标签带 `margin-bottom`；长 URL 有 `word-break:break-all`；不依赖 `@media`
 - [ ] 生成后跑 scripts/validate_gzh_html.py，ERROR 与半角 WARNING 清零
 
 ## 自定义主题生成行为

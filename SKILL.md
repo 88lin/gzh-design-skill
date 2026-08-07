@@ -230,6 +230,18 @@ media_id, nbsp = upload_and_cleanup(
 - **必须**：样式全部内联 `style`；所有文字节点用 `<span leaf="">文字</span>` 包裹（否则粘贴后样式丢失）。
 - **可用**：`display:flex`（有限）、`linear-gradient`、`border-radius`、`box-shadow`、`<section>/<p>/<span>/<strong>/<img>/<h3>`。
 
+## 移动端适配（多端一致，不靠 @media）
+
+公众号禁用 `@media`，无法写媒体查询断点，但电脑端（阅读器约 677px 宽）和手机端（约 350–400px 宽）都要排版正常。办法是**全程用"流式/弹性"写法，让布局随宽度自然收缩，而不是为某个宽度写死**：
+
+- **容器宽度只用 `max-width` + 百分比，不写死内容 `width:NNNpx`**：全局容器 `max-width:677px;margin:0 auto` 在手机上自动收窄；卡片/引用块等用 `margin` 留边白，不给具体 px 宽。唯一例外是小图标/头像这类**本就要固定尺寸**的装饰（`width:40px;height:40px` 等，`component_lint.py` 只对 ≥150px 报警）。
+- **多列 flex 必须能换行或等分**：并排卡片用 `flex:1`（弹性等分，自动变窄）或 `flex-wrap:wrap` + 百分比 `flex-basis`（窄屏自动换到下一行）；**不要**写固定 px 宽的并排块。表格类内容优先转卡片/列表。
+- **行内标签/徽章留底部空隙**：`display:inline-block` 的标签、徽章加 `margin-bottom`（如 4–6px），窄屏换行后才不会贴着上一行文字。
+- **图片一律 `max-width:100%;height:auto`**（见 Gotchas），不放固定宽。
+- **长英文/URL 防溢出**：可能超长的纯文本（URL、代码行）所在元素加 `word-break:break-all`。
+
+> 这些规则的确定性兜底在 `component_lint.py`（固定宽 ≥150px 未配 max-width 报 WARN）；`@media`/`float`/`grid`/定位 等则由 `validate_gzh_html.py` 强制拦截。
+
 ## Gotchas（真实排版踩过的坑）
 
 - **漏 `<span leaf>` 包裹**是最常见致命错——粘贴到公众号后样式整片丢失。靠第 5 步校验脚本兜底，别跳过。
