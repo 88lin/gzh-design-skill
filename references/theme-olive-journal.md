@@ -698,7 +698,7 @@
 
 ## 组件 28 结尾行动区 ending-actions（本主题的签名/CTA 区）
 
-**用途**：文章结尾，点赞·在看·收藏三连区，浅底图标块。
+**用途**：文章结尾，点赞·推荐·收藏三连区，浅底图标块。
 
 **签名文案适配**：SKILL.md 的作者签名（"我是 {{作者名}}…"两段，默认占位、由用户替换）以正文段落（组件 10）形式放在本组件**之前**；本组件内部 `{{文末互动引导}}` 直接使用 SKILL.md 固定的第二段（"如果你觉得今天这篇有收获…三连，我们下篇见"）。
 
@@ -717,9 +717,9 @@
       </section>
       <section style="text-align:center;color:#4d4f46;">
         <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#eeefe9;border-radius:6px;border:1px solid #bfc1b7;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
         </section>
-        <span style="font-size:11px;font-weight:600;"><span leaf="">在看</span></span>
+        <span style="font-size:11px;font-weight:600;"><span leaf="">推荐</span></span>
       </section>
       <section style="text-align:center;color:#23251d;">
         <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#d4c9b8;border-radius:6px;border:1px solid #b17816;">

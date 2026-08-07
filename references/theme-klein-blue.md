@@ -645,8 +645,8 @@
 ```html
 <section style="margin:0 10px 28px;padding:26px 20px;background:#002FA7;border-radius:6px;text-align:center;box-sizing:border-box;">
   <p style="margin:0 0 8px;font-size:18px;line-height:1.5;color:#FFFFFF;font-weight:600;"><span leaf="">互动引导占位：感谢读到这里</span></p>
-  <p style="margin:0 0 18px;font-size:13px;line-height:1.75;color:#E8ECFF;"><span leaf="">如果这段内容带来启发，可以用点赞、在看或转发完成一次轻量回应。</span></p>
-  <p style="margin:0;"><span style="display:inline-block;margin:0 4px;padding:6px 13px;background:#FFFFFF;color:#002FA7;border-radius:999px;font-size:11px;font-weight:700;"><span leaf="">点赞</span></span><span style="display:inline-block;margin:0 4px;padding:6px 13px;background:#E8ECFF;color:#002FA7;border-radius:999px;font-size:11px;font-weight:700;"><span leaf="">在看</span></span><span style="display:inline-block;margin:0 4px;padding:6px 13px;border:1px solid #FFFFFF;color:#FFFFFF;border-radius:999px;font-size:11px;font-weight:700;"><span leaf="">转发</span></span></p>
+  <p style="margin:0 0 18px;font-size:13px;line-height:1.75;color:#E8ECFF;"><span leaf="">如果这段内容带来启发，可以用点赞、推荐或转发完成一次轻量回应。</span></p>
+  <p style="margin:0;"><span style="display:inline-block;margin:0 4px;padding:6px 13px;background:#FFFFFF;color:#002FA7;border-radius:999px;font-size:11px;font-weight:700;"><span leaf="">点赞</span></span><span style="display:inline-block;margin:0 4px;padding:6px 13px;background:#E8ECFF;color:#002FA7;border-radius:999px;font-size:11px;font-weight:700;"><span leaf="">推荐</span></span><span style="display:inline-block;margin:0 4px;padding:6px 13px;border:1px solid #FFFFFF;color:#FFFFFF;border-radius:999px;font-size:11px;font-weight:700;"><span leaf="">转发</span></span></p>
 </section>
 ```
 
