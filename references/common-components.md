@@ -30,7 +30,7 @@
 </section>
 ```
 
-要点（**关键，避免大段空白**）：① 顶栏三色圆点 + 语言名（无语言可删该 span）；② **每行代码用一个 `<p style="margin:0;...">`，不要用 `white-space:pre`**——否则 HTML 源码里 span 前的缩进和行间换行会被原样渲染成大左缩进 + 空行；③ 需要缩进时在 span 文字里用全角空格 `　`（不要靠源码空格）；④ 行距只靠 `line-height:1.6` 控制，padding 用 `11px 14px`，保持紧凑；⑤ 长行会自动换行，不溢出。
+要点（**关键，避免大段空白**）：① 顶栏三色圆点 + 语言名（无语言可删该 span）；② **每行代码用一个 `<p style="margin:0;...">`，不要用 `white-space:pre`**——否则 HTML 源码里 span 前的缩进和行间换行会被原样渲染成大左缩进 + 空行；③ 需要缩进时在 span 文字里用全角空格 `　`（不要靠源码空格）；④ 行距只靠 `line-height:1.6` 控制，padding 用 `11px 14px`，保持紧凑；⑤ 长行会自动换行，不溢出；⑥ **默认按 1x 小节给代码做语法高亮**（语言未知时保持单色）。
 
 ### 1b. 浅色代码块（适配浅色温和主题，如玫瑰粉/天蓝/焦糖棕）
 
@@ -46,6 +46,47 @@
 ```
 
 （左竖条 `#DC2626` 换成当前主题主色；多行同 1a：每行一个 `<p style="margin:0">`，不用 `white-space:pre`，缩进用全角空格 `　`。）
+
+### 1x. 语法高亮（token 着色，默认开启，适用 1a/1b）
+
+代码块默认按编辑器风格（One Dark / GitHub Light 取向）给代码做语法高亮，解决"代码一片单色难读"的问题（issue：代码无默认高亮效果）。
+
+**开关规则**：
+
+- 顶栏语言**可识别**（python/js/ts/bash/shell/json/yaml/sql/go/rust 等）→ 必须按下面 token 分类着色
+- 语言**不可识别** / 纯文本 / prompt 类内容 → 保持单色，不强行猜
+- 主题换色时只换"左竖条/浅底"等主题色，**token 调色板两套主题通用，不随主题主色变**
+
+**写法**：保持"每行一个 `<p style="margin:0">`"结构不变，只在行内把 token 按类别包上着色 span——沿用本库"外层 span 设色、内层 `<span leaf>` 装文字"的约定；未着色的 token 仍用普通 `<span leaf>`（或与行默认色相同，不必再包）：
+
+```html
+<p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span style="color:#C678DD;"><span leaf="">def</span></span><span leaf=""> make_skill(</span><span style="color:#61AFEF;"><span leaf="">name</span></span><span leaf="">):</span></p>
+<p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span leaf="">　　</span><span style="color:#C678DD;"><span leaf="">return</span></span><span leaf=""> </span><span style="color:#98C379;"><span leaf="">f"已生成 {name}"</span></span><span style="color:#7F8489;"><span leaf="">　# 高亮示例</span></span></p>
+```
+
+**铁律**：着色 span 只包裹、不改写——不改代码文字、不增删空格，缩进仍用全角空格写在 leaf 文字里；代码内半角符号原样保留（校验脚本对等宽字体区已豁免半角检查）。
+
+**1a 深色底（`#1E293B`）调色板**：
+
+| token 类别 | 颜色 | 例 |
+|---|---|---|
+| 关键字 | `#C678DD` | def / class / return / if / for / import / const / let / function / async / echo |
+| 字符串 | `#98C379` | `"..."` / `'...'` / 模板串 |
+| 注释 | `#7F8489` | `# ...` / `// ...` / `/* */` |
+| 数字 / 布尔 / None | `#D19A66` | 42 / 3.14 / true / None |
+| 函数名 / 类型名 | `#61AFEF` | print( / Image.open( / 类名 |
+| 其余（标识符/标点） | `#E2E8F0` | 行默认色，无需单独包 |
+
+**1b 浅色底（`#F6F8FA`）调色板**：
+
+| token 类别 | 颜色 |
+|---|---|
+| 关键字 | `#CF222E` |
+| 字符串 | `#0A3069` |
+| 注释 | `#6E7781` |
+| 数字 / 布尔 | `#0550AE` |
+| 函数名 / 类型名 | `#8250DF` |
+| 其余 | `#24292F`（行默认色） |
 
 ### 1c. 行内代码（正文中的 `code` 短片段）
 
@@ -63,11 +104,11 @@
 
 ### 2a. 标准图片（带说明）
 
+> 图片直接放容器里，**不要再套一层 `<section style="overflow:hidden">`**——公众号编辑器会剥离嵌套 section 的 overflow/border-radius，导致图片跑出边框外。圆角裁剪靠容器 `padding` 让图片不贴角实现。
+
 ```html
-<section style="background:#FFF;border-radius:12px;padding:6px;border:1px solid #E5E7EB;box-shadow:0 4px 12px -2px rgba(0,0,0,0.08);margin-bottom:8px;">
-  <section style="margin:0;border-radius:8px;overflow:hidden;">
-    <span leaf=""><img src="图片URL" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
-  </section>
+<section style="background:#FFF;border-radius:12px;padding:6px;border:1px solid #E5E7EB;box-shadow:0 4px 12px -2px rgba(0,0,0,0.08);margin-bottom:8px;text-align:center;">
+  <span leaf=""><img src="图片URL" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
 </section>
 <p style="font-size:12px;color:#9CA3AF;text-align:center;margin:0 0 24px;">
   <span leaf="">— 图片说明文字</span>
@@ -81,10 +122,8 @@
 ### 2b. GIF 动图（同图片，加"GIF 动图"角标）
 
 ```html
-<section style="background:#FFF;border-radius:12px;padding:6px;border:1px solid #E5E7EB;box-shadow:0 4px 12px -2px rgba(0,0,0,0.08);margin-bottom:8px;">
-  <section style="margin:0;border-radius:8px;overflow:hidden;">
-    <span leaf=""><img src="动图URL.gif" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
-  </section>
+<section style="background:#FFF;border-radius:12px;padding:6px;border:1px solid #E5E7EB;box-shadow:0 4px 12px -2px rgba(0,0,0,0.08);margin-bottom:8px;text-align:center;">
+  <span leaf=""><img src="动图URL.gif" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
 </section>
 <p style="text-align:center;margin:0 0 24px;">
   <span style="display:inline-block;background:#FEE2E2;color:#991B1B;font-size:11px;font-weight:700;padding:1px 8px;border-radius:4px;margin-right:6px;"><span leaf="">GIF 动图</span></span>
