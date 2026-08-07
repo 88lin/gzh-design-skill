@@ -1,8 +1,8 @@
-# 全部 7 套主题效果预览 · All 7 Themes
+# 全部 8 套主题效果预览 · All 8 Themes
 
-同一篇长文（《做了些爆款 Skills 以后，我对 Skills 的看法》），用 7 套精选主题各排一遍（含配图、引言卡、编号章节、金句、名词旁注等完整组件）。
+同一篇长文（《做了些爆款 Skills 以后，我对 Skills 的看法》），用 8 套精选主题排版，其中 7 套有真实长图/交互预览（含配图、引言卡、编号章节、金句、名词旁注等完整组件）；克莱因蓝的预览待补。
 
-> The same long-form article laid out in all 7 curated themes. Back to [README](../README.md).
+> The same long-form article laid out in all 8 curated themes (7 previews below; Klein Blue preview pending). Back to [README](../README.md).
 
 <table>
 <tr>
@@ -17,7 +17,7 @@
 </tr>
 <tr>
 <td align="center"><a href="gallery/tech-cobalt.html"><b>打开完整交互预览</b></a><br><sub><b>科技钴蓝 Tech Cobalt</b></sub></td>
-<td></td>
+<td align="center"><sub><b>克莱因蓝 Klein Blue<br>（预览待补）</b></sub></td>
 <td></td>
 </tr>
 </table>

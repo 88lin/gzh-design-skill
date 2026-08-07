@@ -933,4 +933,5 @@
 | 亮点提示 | 组件 10b cobalt-tip / 10d cobalt-info | |
 | `![](图片)` | 组件 12a image | 原图代码保留 |
 | 视频 | 组件 12b video-card | 原视频代码保留 |
+| `[text](url)` 超链接 | 通用库 4a 上标角标 + 4b 参考资料列表 | 正文 `text` + `[n]`（套本主题钴蓝主色 `#1D4ED8`），文末 footer-cta 前生成对应参考资料列表 |
 | 文末 | 组件 13a footer-cta（+ 13b brand-card） | 签名段落放 footer-cta 前 |
