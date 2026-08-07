@@ -336,7 +336,7 @@
 
 ## 组件 13 结尾互动区 footer-cta（本主题的签名/CTA 区）
 
-**用途**：文章结尾，票据风的"点赞·在看·星标"三连区，撕票虚线收尾。SVG 图标微信支持，原样保留。
+**用途**：文章结尾，票据风的"点赞·推荐·星标"三连区，撕票虚线收尾。SVG 图标微信支持，原样保留。
 
 **签名文案适配**：SKILL.md 的作者签名（"我是 {{作者名}}…"两段，默认占位、由用户替换）以正文段落（组件 5）形式放在本组件**之前**；本组件内部 `{{互动文案}}` 直接使用 SKILL.md 固定的第二段（"如果你觉得今天这篇有收获…三连，我们下篇见"），不要重复堆叠两句"三连"。
 
@@ -357,9 +357,9 @@
       </section>
       <section style="text-align:center;color:#555;">
         <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#fff;border:1px solid #1a1a1a;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"></circle><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
         </section>
-        <span style="font-size:10px;font-weight:600;"><span leaf="">在看</span></span>
+        <span style="font-size:10px;font-weight:600;"><span leaf="">推荐</span></span>
       </section>
       <section style="text-align:center;color:#059669;">
         <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#F0FDF4;border:2px solid #059669;">
