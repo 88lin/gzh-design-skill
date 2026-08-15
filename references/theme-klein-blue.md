@@ -32,7 +32,7 @@
 强调阴影：       0 8px 24px rgba(0,47,167,0.16)
 ```
 
-中文字体栈：`'HarmonyOS Sans SC','HarmonyOS Sans','PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif`
+中文字体栈：`-apple-system,BlinkMacSystemFont,'PingFang SC','HarmonyOS Sans SC','Microsoft YaHei',sans-serif`
 
 英文与编号：`Georgia,'Times New Roman',serif`
 
@@ -41,7 +41,7 @@
 ## 组件 1 全局容器
 
 ```html
-<section style="max-width:677px;margin:0 auto;background:#FFFFFF;color:#111111;font-family:'HarmonyOS Sans SC','HarmonyOS Sans','PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif;line-height:1.75;letter-spacing:0.3px;overflow-x:hidden;">
+<section style="max-width:677px;margin:0 auto;background:#FFFFFF;color:#111111;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','HarmonyOS Sans SC','Microsoft YaHei',sans-serif;line-height:1.75;letter-spacing:0.3px;overflow-x:hidden;">
   <!-- 所有文章组件放在这里 -->
 </section>
 ```
@@ -72,7 +72,7 @@
 <section style="margin:0 10px 36px;padding:34px 22px;background:linear-gradient(135deg,#002FA7 0%,#0648D8 52%,#001E78 100%);border-radius:6px;box-shadow:0 8px 24px rgba(0,47,167,0.16);box-sizing:border-box;">
   <p style="margin:0 0 26px;font-family:Georgia,'Times New Roman',serif;font-size:10px;color:#E8ECFF;letter-spacing:2px;"><span leaf="">BLUE MANIFESTO</span></p>
   <p style="margin:0 0 18px;font-size:24px;line-height:1.4;font-weight:600;color:#FFFFFF;"><span leaf="">宣言标题占位：让颜色成为观点，而不是装饰</span></p>
-  <p style="margin:0;font-size:15px;line-height:1.9;color:#FFFFFF;"><span leaf="">宣言说明占位：这里展示一段具有判断力的开场文字，以纯蓝色块建立全文最强视觉锚点。</span></p>
+  <p style="margin:0;font-size:16px;line-height:1.9;color:#FFFFFF;"><span leaf="">宣言说明占位：这里展示一段具有判断力的开场文字，以纯蓝色块建立全文最强视觉锚点。</span></p>
 </section>
 ```
 
@@ -87,7 +87,7 @@
   <p style="margin:0 0 12px;font-family:Georgia,'Times New Roman',serif;font-size:24px;line-height:1;color:#002FA7;"><span leaf="">01</span></p>
   <span style="display:block;width:72px;height:1px;margin:0 0 22px;background:#B8C8F5;font-size:0;line-height:0;"><span leaf=""><br></span></span>
   <p style="margin:0 0 14px;font-size:20px;line-height:1.45;font-weight:600;color:#002FA7;"><span leaf="">专题标题占位：一个结构问题的展开方式</span></p>
-  <p style="margin:0 0 16px;font-size:14px;line-height:1.8;color:#434650;"><span leaf="">封面说明占位：用简短文字说明本篇的核心问题、观察尺度与阅读价值。</span></p>
+  <p style="margin:0 0 16px;font-size:15px;line-height:1.8;color:#434650;"><span leaf="">封面说明占位：用简短文字说明本篇的核心问题、观察尺度与阅读价值。</span></p>
   <p style="margin:0;font-size:11px;line-height:1.9;color:#7D86A5;"><span leaf="">深度占位　理性占位　自由占位　纯粹占位</span></p>
 </section>
 ```
@@ -99,7 +99,7 @@
 ```html
 <section style="margin:0 10px 32px;padding:20px 18px;background:#F3F6FF;border-top:1px solid #002FA7;border-bottom:1px solid #D8E1F6;box-sizing:border-box;">
   <p style="margin:0 0 10px;font-family:Georgia,'Times New Roman',serif;font-size:10px;color:#002FA7;letter-spacing:2px;"><span leaf="">LEAD · 专题摘要</span></p>
-  <p style="margin:0;font-size:16px;line-height:1.85;font-weight:600;color:#111111;"><span leaf="">一句话导读占位：本篇将从结构、方法与边界三个层面展开，并保留足够留白供读者形成自己的判断。</span></p>
+  <p style="margin:0;font-size:17px;line-height:1.85;font-weight:600;color:#111111;"><span leaf="">一句话导读占位：本篇将从结构、方法与边界三个层面展开，并保留足够留白供读者形成自己的判断。</span></p>
 </section>
 ```
 
@@ -114,15 +114,15 @@
   <p style="margin:0 0 16px;font-size:11px;color:#7D86A5;letter-spacing:2px;"><span leaf="">本文看点 · CONTENTS</span></p>
   <section style="margin:0 0 14px;padding:0 0 14px;border-bottom:1px solid #E8ECFF;display:flex;align-items:baseline;">
     <span style="width:34px;margin-right:10px;font-family:Georgia,'Times New Roman',serif;font-size:18px;color:#002FA7;"><span leaf="">01</span></span>
-    <span style="font-size:14px;line-height:1.6;font-weight:600;color:#111111;"><span leaf="">核心看点占位：问题如何被看见</span></span>
+    <span style="font-size:15px;line-height:1.6;font-weight:600;color:#111111;"><span leaf="">核心看点占位：问题如何被看见</span></span>
   </section>
   <section style="margin:0 0 14px;padding:0 0 14px;border-bottom:1px solid #E8ECFF;display:flex;align-items:baseline;">
     <span style="width:34px;margin-right:10px;font-family:Georgia,'Times New Roman',serif;font-size:18px;color:#002FA7;"><span leaf="">02</span></span>
-    <span style="font-size:14px;line-height:1.6;font-weight:600;color:#111111;"><span leaf="">核心看点占位：结构如何被建立</span></span>
+    <span style="font-size:15px;line-height:1.6;font-weight:600;color:#111111;"><span leaf="">核心看点占位：结构如何被建立</span></span>
   </section>
   <section style="margin:0;display:flex;align-items:baseline;">
     <span style="width:34px;margin-right:10px;font-family:Georgia,'Times New Roman',serif;font-size:18px;color:#002FA7;"><span leaf="">03</span></span>
-    <span style="font-size:14px;line-height:1.6;font-weight:600;color:#111111;"><span leaf="">核心看点占位：结论如何被复用</span></span>
+    <span style="font-size:15px;line-height:1.6;font-weight:600;color:#111111;"><span leaf="">核心看点占位：结论如何被复用</span></span>
   </section>
 </section>
 ```
@@ -159,7 +159,7 @@
 ```html
 <section style="margin:28px 10px 14px;padding:0;display:flex;align-items:center;box-sizing:border-box;">
   <span style="width:8px;height:8px;margin-right:10px;background:#002FA7;border-radius:50%;font-size:0;line-height:0;"><span leaf=""><br></span></span>
-  <span style="font-size:15px;line-height:1.55;font-weight:700;color:#002FA7;"><span leaf="">小节标题占位</span></span>
+  <span style="font-size:16px;line-height:1.55;font-weight:700;color:#002FA7;"><span leaf="">小节标题占位</span></span>
   <span style="flex:1;height:1px;margin-left:12px;background:#B8C8F5;font-size:0;line-height:0;"><span leaf=""><br></span></span>
 </section>
 ```
@@ -171,13 +171,13 @@
 基础段落：
 
 ```html
-<p style="margin:0 10px 20px;font-size:16px;line-height:1.75;color:#434650;text-align:justify;letter-spacing:0.3px;"><span leaf="">正文内容占位：这里展示标准段落的字号、行距与留白关系。文字保持克制，不依赖色块，以稳定阅读为第一优先级。</span></p>
+<p style="margin:0 10px 20px;font-size:17px;line-height:1.75;color:#434650;text-align:justify;letter-spacing:0.3px;"><span leaf="">正文内容占位：这里展示标准段落的字号、行距与留白关系。文字保持克制，不依赖色块，以稳定阅读为第一优先级。</span></p>
 ```
 
 关键词下划线段落：
 
 ```html
-<p style="margin:0 10px 20px;font-size:16px;line-height:1.75;color:#434650;text-align:justify;"><span leaf="">正文内容占位：阅读过程中需要突出的是</span><span style="border-bottom:2px solid #002FA7;color:#111111;font-weight:600;"><span leaf="">关键短语占位</span></span><span leaf="">，而不是让整段文字都变成蓝色。</span></p>
+<p style="margin:0 10px 20px;font-size:17px;line-height:1.75;color:#434650;text-align:justify;"><span leaf="">正文内容占位：阅读过程中需要突出的是</span><span style="border-bottom:2px solid #002FA7;color:#111111;font-weight:600;"><span leaf="">关键短语占位</span></span><span leaf="">，而不是让整段文字都变成蓝色。</span></p>
 ```
 
 ---
@@ -205,7 +205,7 @@
 行内代码：
 
 ```html
-<code style="padding:2px 6px;background:#F3F6FF;color:#002FA7;border-radius:4px;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:14px;"><span leaf="">inline_code</span></code>
+<code style="padding:2px 6px;background:#F3F6FF;color:#002FA7;border-radius:4px;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:15px;"><span leaf="">inline_code</span></code>
 ```
 
 ---
@@ -219,7 +219,7 @@
 ```html
 <section style="margin:8px 10px 28px;padding:22px 20px;background:linear-gradient(135deg,#002FA7 0%,#001E78 100%);border-radius:6px;box-shadow:0 8px 24px rgba(0,47,167,0.16);box-sizing:border-box;">
   <p style="margin:0 0 12px;font-family:Georgia,'Times New Roman',serif;font-size:24px;line-height:1;color:#E8ECFF;"><span leaf="">“</span></p>
-  <p style="margin:0 0 16px;font-size:16px;line-height:1.9;color:#FFFFFF;font-weight:600;"><span leaf="">引用内容占位：真正值得被看见的，不只是答案，还有答案背后的判断方式。</span></p>
+  <p style="margin:0 0 16px;font-size:17px;line-height:1.9;color:#FFFFFF;font-weight:600;"><span leaf="">引用内容占位：真正值得被看见的，不只是答案，还有答案背后的判断方式。</span></p>
   <p style="margin:0;text-align:right;font-size:11px;color:#E8ECFF;letter-spacing:1px;"><span leaf="">—— 作者或来源占位</span></p>
 </section>
 ```
@@ -229,7 +229,7 @@
 ```html
 <section style="margin:0 10px 28px;padding:14px 0 14px 20px;border-left:3px solid #002FA7;box-sizing:border-box;">
   <p style="margin:0 0 9px;font-size:10px;color:#7D86A5;letter-spacing:2px;"><span leaf="">REFERENCE · 引用占位</span></p>
-  <p style="margin:0;font-size:15px;line-height:1.9;color:#434650;text-align:justify;"><span leaf="">长引用内容占位：这里适合承载相对完整的背景说明、原始观点或材料摘录，以蓝色竖线建立层级，而不使用大面积色块。</span></p>
+  <p style="margin:0;font-size:16px;line-height:1.9;color:#434650;text-align:justify;"><span leaf="">长引用内容占位：这里适合承载相对完整的背景说明、原始观点或材料摘录，以蓝色竖线建立层级，而不使用大面积色块。</span></p>
 </section>
 ```
 
@@ -238,7 +238,7 @@
 ```html
 <section style="margin:32px 10px;padding:22px 18px;border-top:1px solid #D8E1F6;border-bottom:1px solid #D8E1F6;text-align:center;box-sizing:border-box;">
   <p style="margin:0 0 12px;font-size:10px;color:#002FA7;letter-spacing:2px;"><span leaf="">✦ THOUGHT ✦</span></p>
-  <p style="margin:0;font-size:16px;line-height:1.9;font-weight:600;color:#002FA7;"><span leaf="">过渡金句占位：让一段思考在章节之间停留片刻。</span></p>
+  <p style="margin:0;font-size:17px;line-height:1.9;font-weight:600;color:#002FA7;"><span leaf="">过渡金句占位：让一段思考在章节之间停留片刻。</span></p>
 </section>
 ```
 
@@ -251,7 +251,7 @@
 ```html
 <section style="margin:0 10px 24px;padding:18px 20px;background:#F3F6FF;border:1px solid #D8E1F6;border-radius:6px;box-sizing:border-box;">
   <p style="margin:0 0 7px;font-size:11px;color:#002FA7;font-weight:700;letter-spacing:1px;"><span leaf="">◇ 信息说明</span></p>
-  <p style="margin:0;font-size:14px;line-height:1.8;color:#434650;"><span leaf="">信息内容占位：用于补充读者理解当前段落所需的背景、定义或上下文。</span></p>
+  <p style="margin:0;font-size:15px;line-height:1.8;color:#434650;"><span leaf="">信息内容占位：用于补充读者理解当前段落所需的背景、定义或上下文。</span></p>
 </section>
 ```
 
@@ -260,7 +260,7 @@
 ```html
 <section style="margin:0 10px 24px;padding:16px 0 16px 18px;border-left:4px solid #002FA7;border-top:1px solid #E8ECFF;border-bottom:1px solid #E8ECFF;box-sizing:border-box;">
   <p style="margin:0 0 6px;font-size:11px;color:#002FA7;font-weight:700;letter-spacing:1px;"><span leaf="">✦ 重点提示</span></p>
-  <p style="margin:0;font-size:14px;line-height:1.8;color:#111111;font-weight:600;"><span leaf="">重点内容占位：这里放置需要立即被读者注意的一条原则或结论。</span></p>
+  <p style="margin:0;font-size:15px;line-height:1.8;color:#111111;font-weight:600;"><span leaf="">重点内容占位：这里放置需要立即被读者注意的一条原则或结论。</span></p>
 </section>
 ```
 
@@ -269,7 +269,7 @@
 ```html
 <section style="margin:0 10px 24px;padding:18px 20px;background:#FFFFFF;border:1px solid #002FA7;border-radius:6px;box-sizing:border-box;">
   <p style="margin:0 0 8px;font-size:11px;color:#002FA7;font-weight:700;letter-spacing:1px;"><span leaf="">△ 风险提醒</span></p>
-  <p style="margin:0;font-size:14px;line-height:1.8;color:#434650;"><span leaf="">风险内容占位：指出一种容易误判的情况，并说明需要额外检查的边界。</span></p>
+  <p style="margin:0;font-size:15px;line-height:1.8;color:#434650;"><span leaf="">风险内容占位：指出一种容易误判的情况，并说明需要额外检查的边界。</span></p>
 </section>
 ```
 
@@ -278,7 +278,7 @@
 ```html
 <section style="margin:0 10px 24px;padding:18px 20px;background:#E8ECFF;border-top:2px solid #002FA7;border-radius:0 0 6px 6px;box-sizing:border-box;">
   <p style="margin:0 0 8px;font-size:11px;color:#002FA7;font-weight:700;letter-spacing:1px;"><span leaf="">○ 完成确认</span></p>
-  <p style="margin:0;font-size:14px;line-height:1.8;color:#111111;"><span leaf="">确认内容占位：用于总结已经达成的阶段结果、验证条件或交付状态。</span></p>
+  <p style="margin:0;font-size:15px;line-height:1.8;color:#111111;"><span leaf="">确认内容占位：用于总结已经达成的阶段结果、验证条件或交付状态。</span></p>
 </section>
 ```
 
@@ -300,7 +300,7 @@
 
 ```html
 <section style="margin:0 10px 28px;padding:18px 0;border-top:1px solid #002FA7;border-bottom:1px solid #D8E1F6;text-align:center;box-sizing:border-box;">
-  <p style="margin:0 0 12px;font-size:15px;line-height:1.7;font-weight:600;color:#111111;"><span leaf="">轻量引导占位：如果这部分与你有关，可以继续查看结构说明。</span></p>
+  <p style="margin:0 0 12px;font-size:16px;line-height:1.7;font-weight:600;color:#111111;"><span leaf="">轻量引导占位：如果这部分与你有关，可以继续查看结构说明。</span></p>
   <span style="display:inline-block;padding:5px 14px;border:1px solid #B8C8F5;border-radius:999px;font-size:12px;color:#002FA7;font-weight:600;"><span leaf="">查看延伸内容</span></span>
 </section>
 ```
@@ -313,9 +313,9 @@
 <section style="margin:0 10px 24px;padding:20px;background:#FFFFFF;border:1px solid #D8E1F6;border-radius:8px;box-shadow:0 6px 18px rgba(0,47,167,0.08);box-sizing:border-box;">
   <section style="display:flex;align-items:flex-start;margin:0 0 12px;">
     <span style="display:inline-block;flex:none;white-space:nowrap;margin:1px 10px 0 0;padding:3px 10px;background:#002FA7;color:#FFFFFF;border-radius:999px;font-family:Georgia,'Times New Roman',serif;font-size:11px;"><span leaf="">STEP 01</span></span>
-    <span style="font-size:15px;line-height:1.6;font-weight:700;color:#002FA7;"><span leaf="">步骤标题占位</span></span>
+    <span style="font-size:16px;line-height:1.6;font-weight:700;color:#002FA7;"><span leaf="">步骤标题占位</span></span>
   </section>
-  <p style="margin:0;font-size:14px;line-height:1.8;color:#434650;text-align:justify;"><span leaf="">步骤说明占位：描述这一阶段需要完成的动作、判断条件和预期结果。</span></p>
+  <p style="margin:0;font-size:15px;line-height:1.8;color:#434650;text-align:justify;"><span leaf="">步骤说明占位：描述这一阶段需要完成的动作、判断条件和预期结果。</span></p>
 </section>
 ```
 
@@ -326,9 +326,9 @@
 ```html
 <section style="margin:0 10px 30px;padding:22px 20px;background:#F3F6FF;border-top:1px solid #002FA7;border-bottom:1px solid #D8E1F6;box-sizing:border-box;">
   <p style="margin:0 0 16px;font-size:11px;color:#002FA7;letter-spacing:2px;font-weight:700;"><span leaf="">PROCESS · 流程总览</span></p>
-  <section style="margin:0 0 14px;padding:0 0 14px;border-bottom:1px solid #D8E1F6;display:flex;align-items:flex-start;"><span style="width:26px;margin-right:12px;font-family:Georgia,'Times New Roman',serif;font-size:18px;color:#002FA7;"><span leaf="">01</span></span><p style="flex:1;margin:0;font-size:14px;line-height:1.7;color:#434650;"><strong style="color:#111111;"><span leaf="">流程节点占位</span></strong><span leaf="">　先确认问题边界与输入条件。</span></p></section>
-  <section style="margin:0 0 14px;padding:0 0 14px;border-bottom:1px solid #D8E1F6;display:flex;align-items:flex-start;"><span style="width:26px;margin-right:12px;font-family:Georgia,'Times New Roman',serif;font-size:18px;color:#002FA7;"><span leaf="">02</span></span><p style="flex:1;margin:0;font-size:14px;line-height:1.7;color:#434650;"><strong style="color:#111111;"><span leaf="">流程节点占位</span></strong><span leaf="">　再组织材料并形成结构草案。</span></p></section>
-  <section style="margin:0;display:flex;align-items:flex-start;"><span style="width:26px;margin-right:12px;font-family:Georgia,'Times New Roman',serif;font-size:18px;color:#002FA7;"><span leaf="">03</span></span><p style="flex:1;margin:0;font-size:14px;line-height:1.7;color:#434650;"><strong style="color:#111111;"><span leaf="">流程节点占位</span></strong><span leaf="">　最后检查结果并记录复用方式。</span></p></section>
+  <section style="margin:0 0 14px;padding:0 0 14px;border-bottom:1px solid #D8E1F6;display:flex;align-items:flex-start;"><span style="width:26px;margin-right:12px;font-family:Georgia,'Times New Roman',serif;font-size:18px;color:#002FA7;"><span leaf="">01</span></span><p style="flex:1;margin:0;font-size:15px;line-height:1.7;color:#434650;"><strong style="color:#111111;"><span leaf="">流程节点占位</span></strong><span leaf="">　先确认问题边界与输入条件。</span></p></section>
+  <section style="margin:0 0 14px;padding:0 0 14px;border-bottom:1px solid #D8E1F6;display:flex;align-items:flex-start;"><span style="width:26px;margin-right:12px;font-family:Georgia,'Times New Roman',serif;font-size:18px;color:#002FA7;"><span leaf="">02</span></span><p style="flex:1;margin:0;font-size:15px;line-height:1.7;color:#434650;"><strong style="color:#111111;"><span leaf="">流程节点占位</span></strong><span leaf="">　再组织材料并形成结构草案。</span></p></section>
+  <section style="margin:0;display:flex;align-items:flex-start;"><span style="width:26px;margin-right:12px;font-family:Georgia,'Times New Roman',serif;font-size:18px;color:#002FA7;"><span leaf="">03</span></span><p style="flex:1;margin:0;font-size:15px;line-height:1.7;color:#434650;"><strong style="color:#111111;"><span leaf="">流程节点占位</span></strong><span leaf="">　最后检查结果并记录复用方式。</span></p></section>
 </section>
 ```
 
@@ -341,15 +341,15 @@
   <p style="margin:0 0 18px;font-size:11px;color:#002FA7;letter-spacing:2px;font-weight:700;"><span leaf="">TIMELINE · 阶段脉络</span></p>
   <section style="display:flex;margin:0 0 18px;">
     <section style="width:16px;margin-right:12px;text-align:center;"><span style="display:inline-block;width:8px;height:8px;background:#002FA7;border-radius:50%;font-size:0;line-height:0;"><span leaf=""><br></span></span><span style="display:block;width:1px;height:42px;margin:3px auto 0;background:#B8C8F5;font-size:0;line-height:0;"><span leaf=""><br></span></span></section>
-    <section style="flex:1;"><p style="margin:0 0 3px;font-size:10px;color:#002FA7;letter-spacing:1px;"><span leaf="">阶段一占位</span></p><p style="margin:0 0 4px;font-size:14px;color:#111111;font-weight:700;"><span leaf="">时间线标题占位</span></p><p style="margin:0;font-size:12px;line-height:1.65;color:#7D86A5;"><span leaf="">阶段说明占位：记录起点与初始判断。</span></p></section>
+    <section style="flex:1;"><p style="margin:0 0 3px;font-size:10px;color:#002FA7;letter-spacing:1px;"><span leaf="">阶段一占位</span></p><p style="margin:0 0 4px;font-size:15px;color:#111111;font-weight:700;"><span leaf="">时间线标题占位</span></p><p style="margin:0;font-size:12px;line-height:1.65;color:#7D86A5;"><span leaf="">阶段说明占位：记录起点与初始判断。</span></p></section>
   </section>
   <section style="display:flex;margin:0 0 18px;">
     <section style="width:16px;margin-right:12px;text-align:center;"><span style="display:inline-block;width:8px;height:8px;background:#002FA7;border-radius:50%;font-size:0;line-height:0;"><span leaf=""><br></span></span><span style="display:block;width:1px;height:42px;margin:3px auto 0;background:#B8C8F5;font-size:0;line-height:0;"><span leaf=""><br></span></span></section>
-    <section style="flex:1;"><p style="margin:0 0 3px;font-size:10px;color:#002FA7;letter-spacing:1px;"><span leaf="">阶段二占位</span></p><p style="margin:0 0 4px;font-size:14px;color:#111111;font-weight:700;"><span leaf="">时间线标题占位</span></p><p style="margin:0;font-size:12px;line-height:1.65;color:#7D86A5;"><span leaf="">阶段说明占位：记录调整与关键转折。</span></p></section>
+    <section style="flex:1;"><p style="margin:0 0 3px;font-size:10px;color:#002FA7;letter-spacing:1px;"><span leaf="">阶段二占位</span></p><p style="margin:0 0 4px;font-size:15px;color:#111111;font-weight:700;"><span leaf="">时间线标题占位</span></p><p style="margin:0;font-size:12px;line-height:1.65;color:#7D86A5;"><span leaf="">阶段说明占位：记录调整与关键转折。</span></p></section>
   </section>
   <section style="display:flex;">
     <section style="width:16px;margin-right:12px;text-align:center;"><span style="display:inline-block;width:8px;height:8px;background:#002FA7;border-radius:50%;font-size:0;line-height:0;"><span leaf=""><br></span></span></section>
-    <section style="flex:1;"><p style="margin:0 0 3px;font-size:10px;color:#002FA7;letter-spacing:1px;"><span leaf="">阶段三占位</span></p><p style="margin:0 0 4px;font-size:14px;color:#111111;font-weight:700;"><span leaf="">时间线标题占位</span></p><p style="margin:0;font-size:12px;line-height:1.65;color:#7D86A5;"><span leaf="">阶段说明占位：记录结论与后续方向。</span></p></section>
+    <section style="flex:1;"><p style="margin:0 0 3px;font-size:10px;color:#002FA7;letter-spacing:1px;"><span leaf="">阶段三占位</span></p><p style="margin:0 0 4px;font-size:15px;color:#111111;font-weight:700;"><span leaf="">时间线标题占位</span></p><p style="margin:0;font-size:12px;line-height:1.65;color:#7D86A5;"><span leaf="">阶段说明占位：记录结论与后续方向。</span></p></section>
   </section>
 </section>
 ```
@@ -376,7 +376,7 @@
 ```html
 <section style="margin:0 10px 28px;padding:32px 20px;background:#F3F6FF;border:1px dashed #B8C8F5;border-radius:8px;text-align:center;box-sizing:border-box;">
   <p style="margin:0 0 10px;font-family:Georgia,'Times New Roman',serif;font-size:22px;color:#002FA7;"><span leaf="">◇</span></p>
-  <p style="margin:0 0 6px;font-size:14px;color:#002FA7;font-weight:700;"><span leaf="">图片素材待补</span></p>
+  <p style="margin:0 0 6px;font-size:15px;color:#002FA7;font-weight:700;"><span leaf="">图片素材待补</span></p>
   <p style="margin:0;font-size:12px;line-height:1.65;color:#7D86A5;"><span leaf="">占位说明：此处插入与段落语义匹配的艺术图片或结构示意图。</span></p>
 </section>
 ```
@@ -396,7 +396,7 @@
 ```html
 <section style="margin:0 10px 30px;padding:38px 20px;background:linear-gradient(135deg,#002FA7,#001E78);border-radius:6px;text-align:center;box-sizing:border-box;">
   <p style="margin:0 0 12px;font-size:24px;color:#FFFFFF;line-height:1;"><span leaf="">▷</span></p>
-  <p style="margin:0 0 7px;font-size:15px;color:#FFFFFF;font-weight:700;"><span leaf="">视频内容占位</span></p>
+  <p style="margin:0 0 7px;font-size:16px;color:#FFFFFF;font-weight:700;"><span leaf="">视频内容占位</span></p>
   <p style="margin:0;font-size:12px;line-height:1.65;color:#E8ECFF;"><span leaf="">静态说明占位：此处用于提示后续补充视频封面或演示片段。</span></p>
 </section>
 ```
@@ -477,9 +477,9 @@
 
 ```html
 <section style="margin:0 10px 28px;padding:20px;background:#F3F6FF;border-left:3px solid #002FA7;box-sizing:border-box;">
-  <section style="display:flex;align-items:flex-start;margin:0 0 12px;"><span style="width:7px;height:7px;margin:7px 11px 0 0;background:#002FA7;border-radius:50%;font-size:0;line-height:0;"><span leaf=""><br></span></span><p style="flex:1;margin:0;font-size:14px;line-height:1.75;color:#434650;"><span leaf="">无序要点占位：用于并列展示第一条结构说明。</span></p></section>
-  <section style="display:flex;align-items:flex-start;margin:0 0 12px;"><span style="width:7px;height:7px;margin:7px 11px 0 0;background:#002FA7;border-radius:50%;font-size:0;line-height:0;"><span leaf=""><br></span></span><p style="flex:1;margin:0;font-size:14px;line-height:1.75;color:#434650;"><span leaf="">无序要点占位：用于并列展示第二条结构说明。</span></p></section>
-  <section style="display:flex;align-items:flex-start;"><span style="width:7px;height:7px;margin:7px 11px 0 0;background:#002FA7;border-radius:50%;font-size:0;line-height:0;"><span leaf=""><br></span></span><p style="flex:1;margin:0;font-size:14px;line-height:1.75;color:#434650;"><span leaf="">无序要点占位：用于并列展示第三条结构说明。</span></p></section>
+  <section style="display:flex;align-items:flex-start;margin:0 0 12px;"><span style="width:7px;height:7px;margin:7px 11px 0 0;background:#002FA7;border-radius:50%;font-size:0;line-height:0;"><span leaf=""><br></span></span><p style="flex:1;margin:0;font-size:15px;line-height:1.75;color:#434650;"><span leaf="">无序要点占位：用于并列展示第一条结构说明。</span></p></section>
+  <section style="display:flex;align-items:flex-start;margin:0 0 12px;"><span style="width:7px;height:7px;margin:7px 11px 0 0;background:#002FA7;border-radius:50%;font-size:0;line-height:0;"><span leaf=""><br></span></span><p style="flex:1;margin:0;font-size:15px;line-height:1.75;color:#434650;"><span leaf="">无序要点占位：用于并列展示第二条结构说明。</span></p></section>
+  <section style="display:flex;align-items:flex-start;"><span style="width:7px;height:7px;margin:7px 11px 0 0;background:#002FA7;border-radius:50%;font-size:0;line-height:0;"><span leaf=""><br></span></span><p style="flex:1;margin:0;font-size:15px;line-height:1.75;color:#434650;"><span leaf="">无序要点占位：用于并列展示第三条结构说明。</span></p></section>
 </section>
 ```
 
@@ -487,9 +487,9 @@
 
 ```html
 <section style="margin:0 10px 28px;padding:0;box-sizing:border-box;">
-  <section style="display:flex;align-items:flex-start;margin:0 0 14px;padding:0 0 14px;border-bottom:1px solid #E8ECFF;"><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;margin:1px 12px 0 0;background:#002FA7;color:#FFFFFF;border-radius:50%;font-family:Georgia,'Times New Roman',serif;font-size:12px;"><span leaf="">1</span></span><p style="flex:1;margin:0;font-size:14px;line-height:1.75;color:#434650;"><span leaf="">编号内容占位：先明确问题和输入条件。</span></p></section>
-  <section style="display:flex;align-items:flex-start;margin:0 0 14px;padding:0 0 14px;border-bottom:1px solid #E8ECFF;"><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;margin:1px 12px 0 0;background:#FFFFFF;color:#002FA7;border:1px solid #002FA7;border-radius:50%;font-family:Georgia,'Times New Roman',serif;font-size:12px;"><span leaf="">2</span></span><p style="flex:1;margin:0;font-size:14px;line-height:1.75;color:#434650;"><span leaf="">编号内容占位：再组织材料和结构顺序。</span></p></section>
-  <section style="display:flex;align-items:flex-start;"><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;margin:1px 12px 0 0;background:#FFFFFF;color:#002FA7;border:1px solid #002FA7;border-radius:50%;font-family:Georgia,'Times New Roman',serif;font-size:12px;"><span leaf="">3</span></span><p style="flex:1;margin:0;font-size:14px;line-height:1.75;color:#434650;"><span leaf="">编号内容占位：最后检查结果和复用方式。</span></p></section>
+  <section style="display:flex;align-items:flex-start;margin:0 0 14px;padding:0 0 14px;border-bottom:1px solid #E8ECFF;"><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;margin:1px 12px 0 0;background:#002FA7;color:#FFFFFF;border-radius:50%;font-family:Georgia,'Times New Roman',serif;font-size:12px;"><span leaf="">1</span></span><p style="flex:1;margin:0;font-size:15px;line-height:1.75;color:#434650;"><span leaf="">编号内容占位：先明确问题和输入条件。</span></p></section>
+  <section style="display:flex;align-items:flex-start;margin:0 0 14px;padding:0 0 14px;border-bottom:1px solid #E8ECFF;"><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;margin:1px 12px 0 0;background:#FFFFFF;color:#002FA7;border:1px solid #002FA7;border-radius:50%;font-family:Georgia,'Times New Roman',serif;font-size:12px;"><span leaf="">2</span></span><p style="flex:1;margin:0;font-size:15px;line-height:1.75;color:#434650;"><span leaf="">编号内容占位：再组织材料和结构顺序。</span></p></section>
+  <section style="display:flex;align-items:flex-start;"><span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;margin:1px 12px 0 0;background:#FFFFFF;color:#002FA7;border:1px solid #002FA7;border-radius:50%;font-family:Georgia,'Times New Roman',serif;font-size:12px;"><span leaf="">3</span></span><p style="flex:1;margin:0;font-size:15px;line-height:1.75;color:#434650;"><span leaf="">编号内容占位：最后检查结果和复用方式。</span></p></section>
 </section>
 ```
 
@@ -498,9 +498,9 @@
 ```html
 <section style="margin:0 10px 30px;padding:20px;background:#FFFFFF;border:1px solid #D8E1F6;border-radius:6px;box-sizing:border-box;">
   <p style="margin:0 0 14px;font-size:11px;color:#002FA7;letter-spacing:2px;font-weight:700;"><span leaf="">CHECKLIST · 检查清单</span></p>
-  <p style="margin:0 0 10px;font-size:14px;line-height:1.7;color:#434650;"><span style="display:inline-block;width:18px;margin-right:8px;color:#002FA7;font-weight:700;"><span leaf="">✓</span></span><span leaf="">已完成事项占位：结构层级检查</span></p>
-  <p style="margin:0 0 10px;font-size:14px;line-height:1.7;color:#434650;"><span style="display:inline-block;width:18px;margin-right:8px;color:#002FA7;font-weight:700;"><span leaf="">✓</span></span><span leaf="">已完成事项占位：重点信息检查</span></p>
-  <p style="margin:0;font-size:14px;line-height:1.7;color:#7D86A5;"><span style="display:inline-block;width:18px;margin-right:8px;color:#B8C8F5;font-weight:700;"><span leaf="">○</span></span><span leaf="">待完成事项占位：素材与说明补充</span></p>
+  <p style="margin:0 0 10px;font-size:15px;line-height:1.7;color:#434650;"><span style="display:inline-block;width:18px;margin-right:8px;color:#002FA7;font-weight:700;"><span leaf="">✓</span></span><span leaf="">已完成事项占位：结构层级检查</span></p>
+  <p style="margin:0 0 10px;font-size:15px;line-height:1.7;color:#434650;"><span style="display:inline-block;width:18px;margin-right:8px;color:#002FA7;font-weight:700;"><span leaf="">✓</span></span><span leaf="">已完成事项占位：重点信息检查</span></p>
+  <p style="margin:0;font-size:15px;line-height:1.7;color:#7D86A5;"><span style="display:inline-block;width:18px;margin-right:8px;color:#B8C8F5;font-weight:700;"><span leaf="">○</span></span><span leaf="">待完成事项占位：素材与说明补充</span></p>
 </section>
 ```
 
@@ -527,7 +527,7 @@
 <section style="margin:0 10px 30px;background:#FFFFFF;border:1px solid #D8E1F6;border-radius:8px;overflow:hidden;box-shadow:0 6px 18px rgba(0,47,167,0.08);box-sizing:border-box;">
   <span leaf=""><img src="{{推荐图URL}}" alt="{{推荐图说明}}" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
   <section style="padding:18px 20px;">
-    <section style="display:flex;align-items:center;margin:0 0 7px;"><span style="flex:1;font-size:15px;color:#002FA7;font-weight:700;"><span leaf="">卡片标题示例占位</span></span><span style="font-size:15px;color:#002FA7;"><span leaf="">✦</span></span></section>
+    <section style="display:flex;align-items:center;margin:0 0 7px;"><span style="flex:1;font-size:16px;color:#002FA7;font-weight:700;"><span leaf="">卡片标题示例占位</span></span><span style="font-size:16px;color:#002FA7;"><span leaf="">✦</span></span></section>
     <p style="margin:0 0 12px;font-size:13px;line-height:1.75;color:#434650;"><span leaf="">卡片说明占位：用于推荐相关内容、案例或进一步阅读材料。</span></p>
     <p style="margin:0;font-size:12px;color:#002FA7;font-weight:700;"><span leaf="">→ 阅读引导占位</span></p>
   </section>
@@ -542,7 +542,7 @@
 <section style="margin:0 10px 30px;padding:24px 20px;background:#FFFFFF;border-top:3px solid #002FA7;border-right:1px solid #D8E1F6;border-bottom:1px solid #D8E1F6;border-left:1px solid #D8E1F6;box-sizing:border-box;">
   <p style="margin:0 0 10px;font-size:10px;color:#7D86A5;letter-spacing:2px;"><span leaf="">SUMMARY · 摘要占位</span></p>
   <p style="margin:0 0 10px;font-size:18px;line-height:1.5;color:#002FA7;font-weight:600;"><span leaf="">摘要标题占位：把复杂内容压缩成一条清晰判断</span></p>
-  <p style="margin:0;font-size:14px;line-height:1.8;color:#434650;text-align:justify;"><span leaf="">摘要说明占位：这里汇总本节最重要的逻辑、证据与边界，方便读者快速回看。</span></p>
+  <p style="margin:0;font-size:15px;line-height:1.8;color:#434650;text-align:justify;"><span leaf="">摘要说明占位：这里汇总本节最重要的逻辑、证据与边界，方便读者快速回看。</span></p>
 </section>
 ```
 
@@ -553,8 +553,8 @@
 ```html
 <section style="margin:0 10px 30px;padding:20px 18px;background:#F3F6FF;border-top:1px solid #002FA7;box-sizing:border-box;">
   <p style="margin:0 0 16px;font-size:11px;color:#002FA7;letter-spacing:2px;font-weight:700;"><span leaf="">FAQ · 常见问答</span></p>
-  <section style="margin:0 0 16px;padding:0 0 16px;border-bottom:1px solid #D8E1F6;"><p style="margin:0 0 7px;font-size:14px;line-height:1.7;color:#111111;font-weight:700;"><span leaf="">Q　问题标题占位：这里适合回答什么？</span></p><p style="margin:0;font-size:13px;line-height:1.75;color:#434650;"><span leaf="">A　回答内容占位：用简洁段落说明判断条件、适用范围与必要限制。</span></p></section>
-  <section style="margin:0;"><p style="margin:0 0 7px;font-size:14px;line-height:1.7;color:#111111;font-weight:700;"><span leaf="">Q　问题标题占位：需要注意哪些边界？</span></p><p style="margin:0;font-size:13px;line-height:1.75;color:#434650;"><span leaf="">A　回答内容占位：补充容易忽略的前提与检查方式。</span></p></section>
+  <section style="margin:0 0 16px;padding:0 0 16px;border-bottom:1px solid #D8E1F6;"><p style="margin:0 0 7px;font-size:15px;line-height:1.7;color:#111111;font-weight:700;"><span leaf="">Q　问题标题占位：这里适合回答什么？</span></p><p style="margin:0;font-size:13px;line-height:1.75;color:#434650;"><span leaf="">A　回答内容占位：用简洁段落说明判断条件、适用范围与必要限制。</span></p></section>
+  <section style="margin:0;"><p style="margin:0 0 7px;font-size:15px;line-height:1.7;color:#111111;font-weight:700;"><span leaf="">Q　问题标题占位：需要注意哪些边界？</span></p><p style="margin:0;font-size:13px;line-height:1.75;color:#434650;"><span leaf="">A　回答内容占位：补充容易忽略的前提与检查方式。</span></p></section>
 </section>
 ```
 
@@ -566,7 +566,7 @@
 <section style="margin:0 10px 30px;padding:22px 20px;background:#FFFFFF;border:1px solid #D8E1F6;border-radius:8px;box-shadow:0 6px 18px rgba(0,47,167,0.08);box-sizing:border-box;">
   <section style="display:flex;align-items:center;margin:0 0 14px;">
     <span style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;margin-right:13px;background:#002FA7;color:#FFFFFF;border-radius:50%;font-family:Georgia,'Times New Roman',serif;font-size:18px;"><span leaf="">A</span></span>
-    <section style="flex:1;"><p style="margin:0 0 3px;font-size:15px;color:#111111;font-weight:700;"><span leaf="">作者名称占位</span></p><p style="margin:0;font-size:10px;color:#7D86A5;letter-spacing:1px;"><span leaf="">AUTHOR · 身份说明占位</span></p></section>
+    <section style="flex:1;"><p style="margin:0 0 3px;font-size:16px;color:#111111;font-weight:700;"><span leaf="">作者名称占位</span></p><p style="margin:0;font-size:10px;color:#7D86A5;letter-spacing:1px;"><span leaf="">AUTHOR · 身份说明占位</span></p></section>
   </section>
   <p style="margin:0;font-size:13px;line-height:1.75;color:#434650;text-align:justify;"><span leaf="">作者简介占位：用一段克制说明介绍长期关注的内容方向与写作视角。</span></p>
 </section>
@@ -590,7 +590,7 @@
 
 ```html
 <section style="margin:0 10px 28px;padding:24px 20px;background:#002FA7;border-radius:6px;text-align:center;box-sizing:border-box;">
-  <p style="margin:0 0 8px;font-size:17px;line-height:1.5;color:#FFFFFF;font-weight:600;"><span leaf="">扩展材料标题占位</span></p>
+  <p style="margin:0 0 8px;font-size:18px;line-height:1.5;color:#FFFFFF;font-weight:600;"><span leaf="">扩展材料标题占位</span></p>
   <p style="margin:0 0 17px;font-size:12px;line-height:1.7;color:#E8ECFF;"><span leaf="">材料说明占位：用于说明可获得的静态补充文档或阅读清单。</span></p>
   <span style="display:inline-block;padding:7px 16px;background:#FFFFFF;color:#002FA7;border-radius:999px;font-size:12px;font-weight:700;"><span leaf="">获取方式占位 ↓</span></span>
 </section>
@@ -601,8 +601,8 @@
 ```html
 <section style="margin:0 10px 30px;padding:0;box-sizing:border-box;">
   <p style="margin:0 0 14px;font-size:11px;color:#002FA7;letter-spacing:2px;font-weight:700;"><span leaf="">FURTHER READING · 延伸阅读</span></p>
-  <section style="margin:0 0 12px;padding:14px 16px;background:#FFFFFF;border:1px solid #D8E1F6;border-left:3px solid #002FA7;"><p style="margin:0 0 4px;font-size:14px;color:#111111;font-weight:700;"><span leaf="">延伸条目标题占位</span></p><p style="margin:0;font-size:12px;line-height:1.65;color:#7D86A5;"><span leaf="">条目说明占位：补充与正文相关的阅读方向。</span></p></section>
-  <section style="margin:0;padding:14px 16px;background:#FFFFFF;border:1px solid #D8E1F6;border-left:3px solid #B8C8F5;"><p style="margin:0 0 4px;font-size:14px;color:#111111;font-weight:700;"><span leaf="">延伸条目标题占位</span></p><p style="margin:0;font-size:12px;line-height:1.65;color:#7D86A5;"><span leaf="">条目说明占位：提供另一种理解问题的视角。</span></p></section>
+  <section style="margin:0 0 12px;padding:14px 16px;background:#FFFFFF;border:1px solid #D8E1F6;border-left:3px solid #002FA7;"><p style="margin:0 0 4px;font-size:15px;color:#111111;font-weight:700;"><span leaf="">延伸条目标题占位</span></p><p style="margin:0;font-size:12px;line-height:1.65;color:#7D86A5;"><span leaf="">条目说明占位：补充与正文相关的阅读方向。</span></p></section>
+  <section style="margin:0;padding:14px 16px;background:#FFFFFF;border:1px solid #D8E1F6;border-left:3px solid #B8C8F5;"><p style="margin:0 0 4px;font-size:15px;color:#111111;font-weight:700;"><span leaf="">延伸条目标题占位</span></p><p style="margin:0;font-size:12px;line-height:1.65;color:#7D86A5;"><span leaf="">条目说明占位：提供另一种理解问题的视角。</span></p></section>
 </section>
 ```
 
@@ -636,7 +636,7 @@
 <section style="margin:42px 10px 28px;padding:26px 20px;background:#F3F6FF;border-top:1px solid #002FA7;border-bottom:1px solid #D8E1F6;box-sizing:border-box;">
   <p style="margin:0 0 10px;font-size:10px;color:#002FA7;letter-spacing:2px;"><span leaf="">FINAL NOTE · 结尾总结</span></p>
   <p style="margin:0 0 12px;font-size:20px;line-height:1.5;color:#002FA7;font-weight:600;"><span leaf="">总结标题占位：把结论交还给读者</span></p>
-  <p style="margin:0;font-size:14px;line-height:1.85;color:#434650;text-align:justify;"><span leaf="">总结内容占位：回收全文的核心问题，说明仍然开放的边界，并给出一个可继续思考的方向。</span></p>
+  <p style="margin:0;font-size:15px;line-height:1.85;color:#434650;text-align:justify;"><span leaf="">总结内容占位：回收全文的核心问题，说明仍然开放的边界，并给出一个可继续思考的方向。</span></p>
 </section>
 ```
 
@@ -645,8 +645,8 @@
 ```html
 <section style="margin:0 10px 28px;padding:26px 20px;background:#002FA7;border-radius:6px;text-align:center;box-sizing:border-box;">
   <p style="margin:0 0 8px;font-size:18px;line-height:1.5;color:#FFFFFF;font-weight:600;"><span leaf="">互动引导占位：感谢读到这里</span></p>
-  <p style="margin:0 0 18px;font-size:13px;line-height:1.75;color:#E8ECFF;"><span leaf="">如果这段内容带来启发，可以用点赞、推荐或转发完成一次轻量回应。</span></p>
-  <p style="margin:0;"><span style="display:inline-block;margin:0 4px;padding:6px 13px;background:#FFFFFF;color:#002FA7;border-radius:999px;font-size:11px;font-weight:700;"><span leaf="">点赞</span></span><span style="display:inline-block;margin:0 4px;padding:6px 13px;background:#E8ECFF;color:#002FA7;border-radius:999px;font-size:11px;font-weight:700;"><span leaf="">推荐</span></span><span style="display:inline-block;margin:0 4px;padding:6px 13px;border:1px solid #FFFFFF;color:#FFFFFF;border-radius:999px;font-size:11px;font-weight:700;"><span leaf="">转发</span></span></p>
+  <p style="margin:0 0 18px;font-size:13px;line-height:1.75;color:#E8ECFF;"><span leaf="">如果这段内容带来启发，可以用点赞、转发或推荐完成一次轻量回应。</span></p>
+  <p style="margin:0;"><span style="display:inline-block;margin:0 4px;padding:6px 13px;background:#FFFFFF;color:#002FA7;border-radius:999px;font-size:11px;font-weight:700;"><span leaf="">点赞</span></span><span style="display:inline-block;margin:0 4px;padding:6px 13px;border:1px solid #FFFFFF;color:#FFFFFF;border-radius:999px;font-size:11px;font-weight:700;"><span leaf="">转发</span></span><span style="display:inline-block;margin:0 4px;padding:6px 13px;background:#E8ECFF;color:#002FA7;border-radius:999px;font-size:11px;font-weight:700;"><span leaf="">推荐</span></span></p>
 </section>
 ```
 
@@ -665,7 +665,7 @@ END 几何收束：
 ## 完整文章模板骨架
 
 ```html
-<section style="max-width:677px;margin:0 auto;background:#FFFFFF;color:#111111;font-family:'HarmonyOS Sans SC','HarmonyOS Sans','PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif;line-height:1.75;letter-spacing:0.3px;overflow-x:hidden;">
+<section style="max-width:677px;margin:0 auto;background:#FFFFFF;color:#111111;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','HarmonyOS Sans SC','Microsoft YaHei',sans-serif;line-height:1.75;letter-spacing:0.3px;overflow-x:hidden;">
 
   <!-- 1. 展册刊头：组件 2 -->
 
