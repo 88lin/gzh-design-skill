@@ -79,13 +79,13 @@
   <section style="display:flex;">
     <section style="flex:1;padding:24px 20px;border-right:2px dashed #A7F3D0;">
       <section style="font-size:24px;font-weight:900;color:#1a1a1a;letter-spacing:0.5px;margin-bottom:4px;text-shadow:0.5px 0 0 #1a1a1a;"><span leaf="">{{大标题}}</span></section>
-      <section style="font-size:14px;color:#666;letter-spacing:1px;margin-bottom:20px;"><span leaf="">{{副标题}}</span></section>
+      <section style="font-size:15px;color:#666;letter-spacing:1px;margin-bottom:20px;"><span leaf="">{{副标题}}</span></section>
       <section style="border-top:1px dashed #A7F3D0;margin-bottom:16px;"><span leaf=""><br></span></section>
       <section style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
         <!-- 有作者头像图时插入 <img> 到下面这个圆框里；无头像时整块删除该 section -->
         <section style="width:48px;height:48px;border-radius:50%;overflow:hidden;border:2px solid #059669;flex-shrink:0;"><span leaf=""><br></span></section>
         <section>
-          <section style="font-size:15px;color:#1a1a1a;font-weight:700;"><span leaf="">{{作者名}}</span></section>
+          <section style="font-size:16px;color:#1a1a1a;font-weight:700;"><span leaf="">{{作者名}}</span></section>
           <section style="font-size:12px;color:#888;"><span leaf="">{{作者身份}}</span></section>
         </section>
       </section>
@@ -106,7 +106,7 @@
       <section style="writing-mode:vertical-rl;font-size:9px;color:#888;letter-spacing:2px;"><span leaf="">{{竖排文字}}</span></section>
       <section style="text-align:center;">
         <section style="font-size:7px;color:#999;letter-spacing:1px;"><span leaf="">GRADE</span></section>
-        <section style="font-size:14px;font-weight:900;color:#059669;"><span leaf="">{{等级}}</span></section>
+        <section style="font-size:15px;font-weight:900;color:#059669;"><span leaf="">{{等级}}</span></section>
       </section>
     </section>
   </section>
@@ -155,7 +155,7 @@
 <section style="margin-bottom:32px;padding:0 20px;">
   <section style="display:flex;align-items:center;gap:8px;margin-bottom:16px;">
     <section style="width:4px;height:16px;background:#059669;"><span leaf=""><br></span></section>
-    <section style="font-size:15px;font-weight:700;color:#1a1a1a;"><span leaf="">{{小节标题}}</span></section>
+    <section style="font-size:16px;font-weight:700;color:#1a1a1a;"><span leaf="">{{小节标题}}</span></section>
   </section>
 </section>
 ```
@@ -170,7 +170,7 @@
 
 ```html
 <section style="margin-bottom:32px;padding:0 20px;">
-  <p style="font-size:14px;color:#555;line-height:1.9;margin-bottom:16px;text-align:justify;">
+  <p style="font-size:15px;color:#555;line-height:1.9;margin-bottom:16px;text-align:justify;">
     <span leaf="">{{正文内容}}</span>
   </p>
 </section>
@@ -257,7 +257,7 @@
 ```html
 <section style="margin-bottom:32px;padding:0 20px;">
   <section style="background:#F0FDF4;border-left:4px solid #059669;padding:14px 16px;margin-bottom:0;">
-    <p style="font-size:14px;color:#1a1a1a;font-weight:600;line-height:1.7;margin:0;">
+    <p style="font-size:15px;color:#1a1a1a;font-weight:600;line-height:1.7;margin:0;">
       <span leaf="">{{前缀}}</span>
       <span style="color:#059669;"><span leaf="">{{结论内容}}</span></span>
     </p>
@@ -300,12 +300,12 @@
 ```html
 <section style="margin-bottom:32px;padding:0 20px;">
   <section style="background:#fffef8;border:2px solid #1a1a1a;box-shadow:3px 3px 0 #1a1a1a;padding:20px;margin-bottom:0;">
-    <p style="font-size:15px;color:#1a1a1a;font-weight:700;line-height:1.8;margin:0 0 12px;text-align:center;">
+    <p style="font-size:16px;color:#1a1a1a;font-weight:700;line-height:1.8;margin:0 0 12px;text-align:center;">
       <span leaf="">{{金句前半}}</span>
       <span style="color:#059669;font-size:24px;"><span leaf="">{{大数字}}</span></span>
       <span leaf="">{{金句后半}}</span>
     </p>
-    <p style="font-size:14px;color:#555;line-height:1.8;margin:0;text-align:justify;">
+    <p style="font-size:15px;color:#555;line-height:1.8;margin:0;text-align:justify;">
       <span leaf="">{{补充说明}}</span>
     </p>
   </section>
@@ -336,7 +336,7 @@
 
 ## 组件 13 结尾互动区 footer-cta（本主题的签名/CTA 区）
 
-**用途**：文章结尾，票据风的"点赞·推荐·星标"三连区，撕票虚线收尾。SVG 图标微信支持，原样保留。
+**用途**：文章结尾，票据风的"点赞·转发·推荐"三连区，撕票虚线收尾。SVG 图标微信支持，原样保留。
 
 **签名文案适配**：SKILL.md 的作者签名（"我是 {{作者名}}…"两段，默认占位、由用户替换）以正文段落（组件 5）形式放在本组件**之前**；本组件内部 `{{互动文案}}` 直接使用 SKILL.md 固定的第二段（"如果你觉得今天这篇有收获…三连，我们下篇见"），不要重复堆叠两句"三连"。
 
@@ -357,15 +357,15 @@
       </section>
       <section style="text-align:center;color:#555;">
         <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#fff;border:1px solid #1a1a1a;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 18v-4a8 8 0 0 1 8-8h8"></path><polyline points="16 2 20 6 16 10"></polyline></svg>
         </section>
-        <span style="font-size:10px;font-weight:600;"><span leaf="">推荐</span></span>
+        <span style="font-size:10px;font-weight:600;"><span leaf="">转发</span></span>
       </section>
       <section style="text-align:center;color:#059669;">
         <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#F0FDF4;border:2px solid #059669;">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
         </section>
-        <span style="font-size:10px;font-weight:600;"><span leaf="">星标</span></span>
+        <span style="font-size:10px;font-weight:600;"><span leaf="">推荐</span></span>
       </section>
     </section>
     <section style="border-top:1px dashed #ccc;padding-top:12px;">
@@ -384,7 +384,7 @@
 **用途**：文章最末尾收尾，放在外层容器（组件 1）内最后，footer-cta 之后。
 
 ```html
-<p style="text-align:center;color:#D1D5DB;font-size:14px;margin:24px 0 0 0;">
+<p style="text-align:center;color:#D1D5DB;font-size:15px;margin:24px 0 0 0;">
   <span leaf="">/</span>
 </p>
 ```
