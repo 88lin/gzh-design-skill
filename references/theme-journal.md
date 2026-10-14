@@ -125,9 +125,9 @@
 ## 组件 7 摘录卡（深底 + 蜜杏字，书摘专用）
 
 ```html
-<section style="margin:24px 0;padding:24px 22px;background:#14181A;border-radius:14px;">
-  <p style="margin:0 0 10px;font-size:16px;line-height:2;color:#FFF5F5;text-align:justify;"><span leaf="">「摘录原文，可以长一些。」</span></p>
-  <p style="margin:0;font-size:13px;color:#E8B4B8;text-align:right;"><span leaf="">——《书名》第 X 页</span></p>
+<section style="margin:24px 0;padding:24px 22px;background:#FFE3F1;border:1px solid #FBCFE0;border-radius:14px;">
+  <p style="margin:0 0 10px;font-size:16px;line-height:2;color:#83314E;text-align:justify;"><span leaf="">「摘录原文，可以长一些。」</span></p>
+  <p style="margin:0;font-size:13px;color:#BE185D;text-align:right;"><span leaf="">——《书名》第 X 页</span></p>
 </section>
 ```
 
