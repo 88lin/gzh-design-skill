@@ -20,6 +20,12 @@
 
 一个给 AI Agent（Claude Code / Codex / Cursor 等）用的公众号排版 Skill。你写完 Markdown，它按你选的主题，生成**样式全内联、粘贴到公众号编辑器不掉格式**的 HTML——自动编章节号、标关键词下划线、配引言卡与目录、处理代码块和图片、合并作者签名，并用脚本确定性地兜住公众号平台的各种限制。
 
+> [!TIP]
+> **⭐ 顺手点个 Star 再往下看**——公众号平台隔三差五改过滤规则，每次适配都会第一时间推到这里。Star 一下，哪天粘贴突然掉格式了，你能一秒翻回这个仓库拿到修好的版本。
+
+> [!NOTE]
+> **在线效果预览**：[88lin.github.io/gzh-design-skill/docs/gallery/index.html](https://88lin.github.io/gzh-design-skill/docs/gallery/index.html) —— 14 套主题渲染成真实长文，手机/电脑都能直接滚动查看。
+
 ## ✨ 核心特性
 
 - **14 套精选主题**：摸鱼绿（默认）· 科技钴蓝 · 克莱因蓝 · 红白 · 石墨极简 · 留白禅意 · 摸鱼票据 · 橄榄手记 —— 每套都是自成体系的厚组件库（设计变量 + 数十个精细组件 + 视觉层级表 + 文章类型配方表）。
@@ -63,7 +69,8 @@
 </tr>
 </table>
 
-> 📚 **14 套主题（全部含预览）→ [docs/all-themes.md](docs/all-themes.md)**　｜　在线预览：https://88lin.github.io/gzh-design-skill/docs/gallery/index.html
+> [!TIP]
+> **👀 在线预览全部 14 套主题**：[88lin.github.io/gzh-design-skill/docs/gallery/index.html](https://88lin.github.io/gzh-design-skill/docs/gallery/index.html) —— 每套都能直接滚动看全文，选中意的直接复制组件。
 
 ## ✅ 适合 / ❌ 不适合
 
@@ -134,6 +141,11 @@ git clone https://github.com/88lin/gzh-design-skill.git ~/.claude/skills/gzh-des
 
 > 用摸鱼绿把这篇文章排成公众号 HTML：`article.md`
 
+> [!TIP]
+> **懒人一键**：以上安装步骤全能省——直接对 Agent 说「帮我安装这个排版 skill：https://github.com/88lin/gzh-design-skill」，它会自己 clone、接入并验证可用。
+
+## 📖 使用流程
+
 ## 📖 使用流程
 
 1. **选主题** — 按题材自动推荐最契合的主题并请你一步确认（默认摸鱼绿）；也可直接指定，或让 AI 生成新主题。
@@ -150,6 +162,9 @@ git clone https://github.com/88lin/gzh-design-skill.git ~/.claude/skills/gzh-des
    调用 `scripts/wechat_draft.py` 的 `upload_and_cleanup()`，草稿直接推送到公众号草稿箱，全程无需手动操作。
 
 ## 🔧 API 上传草稿（路线二）
+
+> [!NOTE]
+> 路线二适合**自动化 / 无头发布**：草稿直接推到公众号草稿箱，手机上打开公众号后台就能发。只需要手动粘贴的话用路线一就够了。
 
 依赖 `pip install requests Pillow`。
 
@@ -221,9 +236,11 @@ python3 scripts/component_lint.py .            # 源头关：扫组件库反模�
 python3 scripts/validate_gzh_html.py out.html  # 产物关：扫最终 HTML 合规
 ```
 
-- **源头关** 查 `white-space:pre`（大空白）、正文四周虚线框、平台禁用项 —— 须 0 ERROR。
-- **产物关** 查禁用标签、`<span leaf>` 包裹、半角标点 —— 须 0 ERROR / 半角 0 WARN。
-- 逻辑：源头干净 → 产物必然干净。详见 `references/eval-cases.md`。
+> [!IMPORTANT]
+> 两关全绿才交付：**源头关**查 `white-space:pre`（大空白）、正文四周虚线框、平台禁用项；**产物关**查禁用标签、`<span leaf>` 包裹、半角标点。逻辑是源头干净 → 产物必然干净，详见 `references/eval-cases.md`。
+
+> [!WARNING]
+> 公众号编辑器会静默过滤 `<style>/<script>/<div>`、`class/id`、`position`、`float`、`display:grid`、CSS 变量等写法——**不要**把普通网页 HTML 直接粘贴进去，务必走本 skill 生成。
 
 ## 💡 为什么这么设计
 
@@ -304,9 +321,8 @@ gzh-design/
 ## 🗺 Roadmap
 
 - [x] 主题生成器：按描述/参考图生成自定义主题
+- [x] GitHub Pages 在线画廊（[14 套在线预览](https://88lin.github.io/gzh-design-skill/docs/gallery/index.html)）
 - [ ] 更多精选内置主题（欢迎 [提建议](../../issues/new?template=theme_request.md)）
-- [ ] 主题静态截图预览（docs/screenshots/）
-- [ ] GitHub Pages 在线画廊
 - [ ] 一键把整篇 Markdown + 配图打包导出
 
 ## ❓ FAQ
@@ -351,3 +367,9 @@ A：跑 `scripts/validate_gzh_html.py`，报 ERROR 就回到装配步骤修；�
 ## 🤝 贡献
 
 欢迎新主题、修复与文档改进，请先读 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+---
+
+**看到这儿了，说明这个 skill 大概率对你有用 —— 那就[点个 ⭐ Star](https://github.com/88lin/gzh-design-skill) 吧**
+
+一秒的事，却能让更多写公众号的人搜到它，也能在你下次排版时第一时间找到这里。
