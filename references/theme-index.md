@@ -16,6 +16,8 @@
 | 摸鱼票据风 | `#059669` emerald | 测评、工具对比、创意评测（票据/门票视觉隐喻，星级评分+编号+硬阴影卡片） | `references/theme-moyu-ticket.md` | `border-bottom:2px solid #A7F3D0;font-weight:600;` |
 | 橄榄手记 | `#1e1f23` 墨黑（配橙 `#ed7b2f`） | 内刊手记、深度评测、案例复盘、系统性说明文档（编辑部内刊质感，分节形式多样，信息密度偏高） | `references/theme-olive-journal.md` | `border-bottom:2px solid #ed7b2f;font-weight:600;` |
 | 克莱因蓝艺术展册 | `#002FA7` 克莱因蓝 | 艺术评论、品牌叙事、深度观点、人物特稿（高纯度蓝色锚点、展册式结构、克制留白） | `references/theme-klein-blue.md` | `border-bottom:2px solid #002FA7;font-weight:600;color:#111111;` |
+| 豆沙 | `#96545C` 豆沙红 | 生活方式、好物分享、书单随笔、温柔系干货（奶油金下划线、圆角软卡、衬线标题，最柔和安静） | `references/theme-redbean.md` | `border-bottom:2px solid #EFD3A8;font-weight:600;color:#2B2124;` |
+| 藕荷 | `#8A2F84` 兰紫 | 创作分享、美学随笔、个人成长、女性向干货（兰紫渐变卡、花瓣圆点、奶油黄下划线，梦幻但压得住） | `references/theme-orchid.md` | `border-bottom:2px solid #F7DEA4;font-weight:600;color:#2D1D2C;` |
 
 ## 选择建议
 
