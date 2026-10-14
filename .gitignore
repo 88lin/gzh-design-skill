@@ -23,3 +23,6 @@ node_modules/
 # 预览图托管在 GitHub Release，不入库
 docs/screenshots/
 *.png
+
+# README 主题预览图（需入库）
+!assets/lf-*.png
