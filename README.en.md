@@ -6,7 +6,7 @@
 
 **Turn Markdown into polished HTML you can paste straight into the WeChat editor**
 
-8 curated themes + theme generator · code blocks / images / GIFs · auto section numbers & keyword marks · two-gate quality checks
+10 curated themes + theme generator · code blocks / images / GIFs · auto section numbers & keyword marks · two-gate quality checks
 
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blue)](https://claude.ai/code)
@@ -24,7 +24,7 @@ A layout Skill for AI agents (Claude Code / Codex / Cursor …). You write Markd
 
 ## ✨ Features
 
-- **8 curated themes**: Moyu Green (default) · Tech Cobalt · Klein Blue · Red & White · Graphite Minimal · Zen Whitespace · Moyu Ticket · Olive Journal — each a self-contained thick component library (design tokens + dozens of components + visual-hierarchy table + article-type recipe table).
+- **10 curated themes**: Moyu Green (default) · Tech Cobalt · Klein Blue · Red & White · Graphite Minimal · Zen Whitespace · Moyu Ticket · Olive Journal — each a self-contained thick component library (design tokens + dozens of components + visual-hierarchy table + article-type recipe table).
 - **Theme generator**: none fit? Describe a style in one line or drop a reference image, and generate a fresh component library saved for reuse (see `references/theme-generator.md`).
 - **Full content support**: code blocks (dark/light, monospace), images, GIFs (with an animated badge), inline code, quotes, lists, product badges, Markdown hyperlinks (auto-converted to superscript footnotes + an end-of-article "References" list).
 - **Smart layout**: auto section numbering (last chapter ∞ / ///), 1–3 keyword underlines per paragraph, intro card & TOC distilled from the body, de-duplicated signature.
@@ -53,9 +53,9 @@ A layout Skill for AI agents (Claude Code / Codex / Cursor …). You write Markd
 | Word / PDF draft → WeChat | auto-normalize format → then pick a theme by topic |
 | A style beyond the built-ins | Theme generator: make one from a line or an image |
 
-## 🎨 8 Curated Themes
+## 🎨 10 Curated Themes
 
-One long-form article laid out in all 8 themes (screenshots plus interactive HTML previews):
+One long-form article laid out in all 10 themes (screenshots plus interactive HTML previews):
 
 <table>
 <tr>
@@ -71,11 +71,15 @@ One long-form article laid out in all 8 themes (screenshots plus interactive HTM
 <tr>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>Open the full interactive preview</b></a><br><sub><b>Tech Cobalt</b></sub></td>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>Open the full interactive preview</b></a><br><sub><b>Klein Blue</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>All 8 previews</b></a><br><sub><b>More themes</b></sub></td>
+<td width="33%" align="center"><img src="assets/lf-redbean.png" width="250"><br><sub><b>Red Bean</b></sub></td>
+<td width="33%" align="center"><img src="assets/lf-orchid.png" width="250"><br><sub><b>Orchid</b></sub></td>
+<td width="33%" align="center"><img src="assets/lf-redbean.png" width="250"><br><sub><b>Red Bean</b></sub></td>
+<td width="33%" align="center"><img src="assets/lf-orchid.png" width="250"><br><sub><b>Orchid</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>All 10 previews</b></a><br><sub><b>More themes</b></sub></td>
 </tr>
 </table>
 
-> 📚 **All 8 themes (all previewed) → [docs/all-themes.md](docs/all-themes.md)**　|　online preview: https://88lin.github.io/gzh-design-skill/docs/gallery/index.html
+> 📚 **All 10 themes (all previewed) → [docs/all-themes.md](docs/all-themes.md)**　|　online preview: https://88lin.github.io/gzh-design-skill/docs/gallery/index.html
 
 ### Theme cheat-sheet
 

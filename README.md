@@ -4,7 +4,7 @@
 
 **把 Markdown 一键排成可直接粘贴进微信公众号编辑器的精致 HTML**
 
-8 套精选主题 + 主题生成器 · 代码块/图片/GIF · 自动章节编号与关键词标记 · 双关卡质量校验
+10 套精选主题 + 主题生成器 · 代码块/图片/GIF · 自动章节编号与关键词标记 · 双关卡质量校验
 
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blue)](https://claude.ai/code)
@@ -22,7 +22,7 @@
 
 ## ✨ 核心特性
 
-- **8 套精选主题**：摸鱼绿（默认）· 科技钴蓝 · 克莱因蓝 · 红白 · 石墨极简 · 留白禅意 · 摸鱼票据 · 橄榄手记 —— 每套都是自成体系的厚组件库（设计变量 + 数十个精细组件 + 视觉层级表 + 文章类型配方表）。
+- **10 套精选主题**：摸鱼绿（默认）· 科技钴蓝 · 克莱因蓝 · 红白 · 石墨极简 · 留白禅意 · 摸鱼票据 · 橄榄手记 · 豆沙 · 藕荷 —— 每套都是自成体系的厚组件库（设计变量 + 数十个精细组件 + 视觉层级表 + 文章类型配方表）。
 - **主题生成器**：不满足现成主题？用一句话描述或一张参考图，生成一套全新组件库并保存本地复用（见 `references/theme-generator.md`）。
 - **内容全兼容**：代码块（深/浅色，等宽不折行）、图片、GIF（带动图角标）、行内代码、引用、列表、产品徽章、Markdown 超链接（自动转上标脚注 + 文末「参考资料」列表）。
 - **智能排版**：章节自动编号（末章 ∞ / ///）、每段主动标 1–3 个关键词下划线、从正文提炼引言卡与目录、作者签名去重合并。
@@ -33,7 +33,7 @@
 
 ## 👀 效果预览
 
-8 套主题各排同一篇长文（真实长图与交互预览，含配图、引言卡、编号章节、金句、名词旁注等完整组件）：
+10 套主题各排同一篇长文（真实长图与交互预览，含配图、引言卡、编号章节、金句、名词旁注等完整组件）：
 
 <table>
 <tr>
@@ -53,11 +53,13 @@
 <tr>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>打开完整交互预览</b></a><br><sub><b>科技钴蓝</b></sub></td>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>打开完整交互预览</b></a><br><sub><b>克莱因蓝</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>打开完整交互预览（全部 8 套）</b></a><br><sub><b>更多主题</b></sub></td>
+<td width="33%" align="center"><img src="assets/lf-redbean.png" width="250"><br><sub><b>豆沙</b></sub></td>
+<td width="33%" align="center"><img src="assets/lf-orchid.png" width="250"><br><sub><b>藕荷</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>打开完整交互预览（全部 10 套）</b></a><br><sub><b>更多主题</b></sub></td>
 </tr>
 </table>
 
-> 📚 **8 套主题（全部含预览）→ [docs/all-themes.md](docs/all-themes.md)**　｜　在线预览：https://88lin.github.io/gzh-design-skill/docs/gallery/index.html
+> 📚 **10 套主题（全部含预览）→ [docs/all-themes.md](docs/all-themes.md)**　｜　在线预览：https://88lin.github.io/gzh-design-skill/docs/gallery/index.html
 
 ## ✅ 适合 / ❌ 不适合
 
@@ -79,7 +81,7 @@
 | Word / PDF 稿转公众号 | 先自动格式归一化 → 再按题材选主题 |
 | 想要现成之外的风格 | 主题生成器：一句话或参考图现造一套 |
 
-## 🎨 8 套精选主题
+## 🎨 10 套精选主题
 
 覆盖绝大多数公众号题材，每套都打磨到「拿来即用」：
 
@@ -227,8 +229,8 @@ python3 scripts/validate_gzh_html.py out.html  # 产物关：扫最终 HTML 合�
 gzh-design/
 ├── SKILL.md                    # 排版工作流主文档（Agent 入口）
 ├── references/
-│   ├── theme-index.md          # 8 套主题索引（主色/适用/下划线，单一来源）
-│   ├── theme-*.md              # 8 套主题组件库（theme-moyu-green.md 等）
+│   ├── theme-index.md          # 10 套主题索引（主色/适用/下划线，单一来源）
+│   ├── theme-*.md              # 10 套主题组件库（theme-moyu-green.md 等）
 │   ├── theme-generator.md      # 主题生成器（按描述/参考图生成新主题）
 │   ├── common-components.md    # 跨主题通用增量组件（代码块/图片/小标签）
 │   ├── format-normalize.md     # 格式归一化（docx/pdf/纯文本 → Markdown）
@@ -252,11 +254,11 @@ gzh-design/
 - **克制用色** — 主色只在锚点出现（全文 ≤5 处），大面积白底 + 灰阶，彩色只做点缀。
 - **灰阶承重** — 约 90% 的文字交给一套中性灰阶，色彩不承担正文阅读，避免花哨。
 
-## 🧠 方法论：不止 8 套，自己造主题
+## 🧠 方法论：不止 10 套，自己造主题
 
 ### 主题生成：一句话 / 一张参考图，现造一套新主题
 
-内置 8 套不够用时不必等更新——让 AI 现造一套。背后是 [`references/theme-generator.md`](references/theme-generator.md) 定义的第二条工作流：
+内置 10 套不够用时不必等更新——让 AI 现造一套。背后是 [`references/theme-generator.md`](references/theme-generator.md) 定义的第二条工作流：
 
 1. **收集偏好**（一次问全，不逐条追问）：主题描述必填（或给参考图），名称 / 主色 / 背景 / 正文色 / 强调色 / 装饰色 / 字体 / 圆角 / 阴影 / 适用场景可留空自动补全。
 2. **生成区块库**：AI 产出 45~75 个区块的完整 HTML 组件库，存到 `assets/theme-previews/{id}.html`，浏览器整页一次浏览确认风格（不逐块问）。

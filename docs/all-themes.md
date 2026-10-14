@@ -1,8 +1,8 @@
-# 全部 8 套主题效果预览 · All 8 Themes
+# 全部 10 套主题效果预览 · All 10 Themes
 
-同一篇长文（《做了些爆款 Skills 以后，我对 Skills 的看法》），用 8 套精选主题排版，全部含真实长图/交互预览（含配图、引言卡、编号章节、金句、名词旁注等完整组件）。
+同一篇长文（《做了些爆款 Skills 以后，我对 Skills 的看法》），用 10 套精选主题排版，全部含真实长图/交互预览（含配图、引言卡、编号章节、金句、名词旁注等完整组件）。
 
-> The same long-form article laid out in all 8 curated themes (all 8 previews below). Back to [README](../README.md).
+> The same long-form article laid out in all 10 curated themes (all 10 previews below). Back to [README](../README.md).
 
 <table>
 <tr>
@@ -18,7 +18,11 @@
 <tr>
 <td align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>打开完整交互预览</b></a><br><sub><b>科技钴蓝 Tech Cobalt</b></sub></td>
 <td align="center"><img src="../assets/lf-klein-blue.png" width="250"><br><sub><b>克莱因蓝 Klein Blue</b></sub></td>
-<td></td>
+<td align="center"><img src="../assets/lf-redbean.png" width="250"><br><sub><b>豆沙 Red Bean</b></sub></td>
+</tr>
+<tr>
+<td align="center"><img src="../assets/lf-orchid.png" width="250"><br><sub><b>藕荷 Orchid</b></sub></td>
+<td colspan="2"></td>
 </tr>
 </table>
 
