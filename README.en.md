@@ -59,19 +59,29 @@ One long-form article laid out in all 14 themes (screenshots plus interactive HT
 
 <table>
 <tr>
-<td width="33%" align="center"><img src="assets/lf-moyu-green.png" width="250"><br><sub><b>Moyu Green (default)</b></sub></td>
-<td width="33%" align="center"><img src="assets/lf-red-white.png" width="250"><br><sub><b>Red & White</b></sub></td>
-<td width="33%" align="center"><img src="assets/lf-graphite-minimal.png" width="250"><br><sub><b>Graphite Minimal</b></sub></td>
+<td width="33%" align="center"><img src="assets/lf-moyu-green.thumb.png" width="250"><br><sub><b>Moyu Green (default)</b></sub></td>
+<td width="33%" align="center"><img src="assets/lf-red-white.thumb.png" width="250"><br><sub><b>Red & White</b></sub></td>
+<td width="33%" align="center"><img src="assets/lf-graphite-minimal.thumb.png" width="250"><br><sub><b>Graphite Minimal</b></sub></td>
 </tr>
 <tr>
-<td align="center"><img src="assets/lf-zen-whitespace.png" width="250"><br><sub><b>Zen Whitespace</b></sub></td>
-<td align="center"><img src="assets/lf-moyu-ticket.png" width="250"><br><sub><b>Moyu Ticket</b></sub></td>
-<td align="center"><img src="assets/lf-olive-journal.png" width="250"><br><sub><b>Olive Journal</b></sub></td>
+<td align="center"><img src="assets/lf-zen-whitespace.thumb.png" width="250"><br><sub><b>Zen Whitespace</b></sub></td>
+<td align="center"><img src="assets/lf-moyu-ticket.thumb.png" width="250"><br><sub><b>Moyu Ticket</b></sub></td>
+<td align="center"><img src="assets/lf-olive-journal.thumb.png" width="250"><br><sub><b>Olive Journal</b></sub></td>
 </tr>
 <tr>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>Open the full interactive preview</b></a><br><sub><b>Tech Cobalt</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>Open the full interactive preview</b></a><br><sub><b>Klein Blue</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>All 14 previews</b></a><br><sub><b>More themes</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/klein-blue.html"><img src="assets/lf-klein-blue.thumb.png" width="250"></a><br><sub><b>Klein Blue</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/letter.html"><img src="assets/lf-letter.thumb.png" width="250"></a><br><sub><b>Letter 奶咖信纸</b></sub></td>
+</tr>
+<tr>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/bento.html"><img src="assets/lf-bento.thumb.png" width="250"></a><br><sub><b>Bento 粉彩便当盒</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/chat.html"><img src="assets/lf-chat.thumb.png" width="250"></a><br><sub><b>Chat 薄荷对话</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/magazine.html"><img src="assets/lf-magazine.thumb.png" width="250"></a><br><sub><b>Magazine 孔雀蓝杂志</b></sub></td>
+</tr>
+<tr>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/journal.html"><img src="assets/lf-journal.thumb.png" width="250"></a><br><sub><b>Journal 珊瑚手账</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/daily.html"><img src="assets/lf-daily.thumb.png" width="250"></a><br><sub><b>Daily 珊瑚日报</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>All 14 previews ↗</b><br><sub><b>interactive</b></sub></td>
 </tr>
 </table>
 
