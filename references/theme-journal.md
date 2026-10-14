@@ -1,8 +1,8 @@
-# 公众号排版组件库 —— 赤陶手账 Journal
+# 公众号排版组件库 —— 珊瑚手账 Journal
 
-> **使用说明**：本组件库为「赤陶手账」主题，所有组件使用**内联样式**，可直接复制粘贴到微信公众号编辑器。
+> **使用说明**：本组件库为「珊瑚手账」主题，所有组件使用**内联样式**，可直接复制粘贴到微信公众号编辑器。
 >
-> **设计风格**：手账拼贴风——纸感底 `#FDF8F1`、赤陶红 `#A8452F`（主）、蜜杏 `#EFCE9A`（强调）、松绿 `#2F6B5B`（反衬）。核心元素：**手写批注框**（虚线边框 + 倾斜标签）、**胶带贴纸**（斜贴在标题上的半透明色条）、**书卡**（books 组件直系：左封面右信息）。适合读书笔记、随笔、收藏分享、好物记录。
+> **设计风格**：手账拼贴风——纸感底 `#FEFAF5`、赤陶红 `#C33D46`（主）、蜜杏 `#EFCE9A`（强调）、松绿 `#2F6B5B`（反衬）。核心元素：**手写批注框**（虚线边框 + 倾斜标签）、**胶带贴纸**（斜贴在标题上的半透明色条）、**书卡**（books 组件直系：左封面右信息）。适合读书笔记、随笔、收藏分享、好物记录。
 >
 > **公众号平台限制须知**：
 > - ❌ 不支持 `<style>`/`<script>`、CSS class、`position`、`float`、`transform:rotate`（微信编辑器会剥掉 rotate，倾斜效果用预斜字体风格替代——所以"手写感"靠字体与不对称，不靠 transform）
@@ -18,15 +18,15 @@
 ## 设计变量速查表
 
 ```
-纸感底：        #FDF8F1
-墨色正文：      #2A1D18
-次要文字：      #5A463D
-辅助文字：      #706158
-赤陶主色：      #A8452F（深 #83301F，浅 #CF7059）
-蜜杏强调：      #EFCE9A / 蜜杏底 #F8EBD6
+纸感底：        #FEFAF5
+墨色正文：      #1F2226
+次要文字：      #4A4A52
+辅助文字：      #8A8A92
+赤陶主色：      #C33D46（深 #9E2E38，浅 #D46E74）
+蜜杏强调：      #EFCE9A / 蜜杏底 #FDF0E4
 松绿反衬：      #2F6B5B / 松绿底 #E6F1ED
-深面板：        #241814
-虚线批注框：    1.5px dashed #CF7059
+深面板：        #1F2226
+虚线批注框：    1.5px dashed #D46E74
 正文字号：      17px，line-height:2
 ```
 
@@ -37,7 +37,7 @@
 ## 组件 1 全局容器
 
 ```html
-<section style="max-width:677px;margin:0 auto;background:#FDF8F1;padding:40px 26px 36px;font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif;color:#2A1D18;font-size:17px;line-height:2;overflow-x:hidden;">
+<section style="max-width:677px;margin:0 auto;background:#FEFAF5;padding:40px 26px 36px;font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif;color:#1F2226;font-size:17px;line-height:2;overflow-x:hidden;">
   <!-- 所有文章组件放在这里 -->
 </section>
 ```
@@ -48,7 +48,7 @@
 
 ```html
 <section style="text-align:center;margin-bottom:24px;">
-  <span style="font-size:13px;letter-spacing:3px;color:#706158;"><span leaf="">🗓 十月十五日 · 晴 · 手账第 42 页</span></span>
+  <span style="font-size:13px;letter-spacing:3px;color:#8A8A92;"><span leaf="">🗓 十月十五日 · 晴 · 手账第 42 页</span></span>
 </section>
 ```
 
@@ -61,11 +61,11 @@
   <section style="margin-bottom:14px;">
     <span style="display:inline-block;width:96px;height:14px;background:rgba(239,206,154,0.55);border-radius:2px;font-size:0;line-height:0;"><span leaf=""><br></span></span>
   </section>
-  <p style="margin:0 0 8px;font-size:28px;font-weight:900;line-height:1.6;color:#2A1D18;word-break:normal;overflow-wrap:normal;">
+  <p style="margin:0 0 8px;font-size:28px;font-weight:900;line-height:1.6;color:#1F2226;word-break:normal;overflow-wrap:normal;">
     <span leaf="">最近在重读的</span><br>
     <span leaf="">5 本旧书</span>
   </p>
-  <p style="margin:0;font-size:15px;color:#5A463D;line-height:1.9;"><span leaf="">书还是那些书，读书的人换了几茬想法</span></p>
+  <p style="margin:0;font-size:15px;color:#4A4A52;line-height:1.9;"><span leaf="">书还是那些书，读书的人换了几茬想法</span></p>
 </section>
 ```
 
@@ -80,9 +80,9 @@
 ## 组件 4 手写批注框（虚线 + 「批注：」标签）
 
 ```html
-<section style="margin:24px 0;padding:18px 18px 14px;border:1.5px dashed #CF7059;border-radius:6px;background:transparent;">
-  <span style="display:inline-block;font-size:12px;font-weight:bold;letter-spacing:2px;color:#CF7059;margin-bottom:6px;"><span leaf="">✎ 批注</span></span>
-  <p style="margin:0;font-size:15px;line-height:2;color:#83301F;"><span leaf="">手写感短批注，一两句话，像写在页边的铅笔字。</span></p>
+<section style="margin:24px 0;padding:18px 18px 14px;border:1.5px dashed #D46E74;border-radius:6px;background:transparent;">
+  <span style="display:inline-block;font-size:12px;font-weight:bold;letter-spacing:2px;color:#D46E74;margin-bottom:6px;"><span leaf="">✎ 批注</span></span>
+  <p style="margin:0;font-size:15px;line-height:2;color:#9E2E38;"><span leaf="">手写感短批注，一两句话，像写在页边的铅笔字。</span></p>
 </section>
 ```
 
@@ -91,7 +91,7 @@
 ## 组件 5 正文段（赤陶荧光笔）
 
 ```html
-<p style="margin:0 0 18px;font-size:17px;line-height:2;color:#2A1D18;text-align:justify;">
+<p style="margin:0 0 18px;font-size:17px;line-height:2;color:#1F2226;text-align:justify;">
   <span leaf="">重读《置身事内》，第一次读是看热闹，这一次终于看懂了门道。</span>
   <span style="background:linear-gradient(transparent 60%, #EFCE9A 60%);font-weight:bold;padding:0 2px;"><span leaf="">书没变，是读者的处境变了。</span></span>
 </p>
@@ -102,13 +102,13 @@
 ## 组件 6 书卡（左封面右信息）
 
 ```html
-<section style="margin:22px 0;padding:18px;background:#FEFCF8;border:1px solid rgba(42,29,24,0.10);border-radius:14px;box-shadow:0 3px 10px rgba(42,29,24,0.06);">
+<section style="margin:22px 0;padding:18px;background:#FEFCFA;border:1px solid rgba(31,34,38,0.10);border-radius:14px;box-shadow:0 3px 10px rgba(31,34,38,0.06);">
   <section style="display:flex;align-items:stretch;">
     <section style="flex-shrink:0;width:86px;min-height:118px;border-radius:6px;margin-right:16px;overflow:hidden;"><span leaf=""><img src="{{封面URL}}" style="width:86px;height:118px;object-fit:cover;display:block;"></span></section>
     <section style="flex:1;">
-      <p style="margin:2px 0 6px;font-size:17px;font-weight:900;color:#2A1D18;"><span leaf="">《书名》</span></p>
-      <p style="margin:0 0 4px;font-size:13px;color:#706158;"><span leaf="">作者 / 出版社</span></p>
-      <p style="margin:0;font-size:14px;line-height:1.9;color:#5A463D;text-align:justify;"><span leaf="">一句话推荐语，控制在两行内。</span></p>
+      <p style="margin:2px 0 6px;font-size:17px;font-weight:900;color:#1F2226;"><span leaf="">《书名》</span></p>
+      <p style="margin:0 0 4px;font-size:13px;color:#8A8A92;"><span leaf="">作者 / 出版社</span></p>
+      <p style="margin:0;font-size:14px;line-height:1.9;color:#4A4A52;text-align:justify;"><span leaf="">一句话推荐语，控制在两行内。</span></p>
     </section>
   </section>
 </section>
@@ -125,9 +125,9 @@
 ## 组件 7 摘录卡（深底 + 蜜杏字，书摘专用）
 
 ```html
-<section style="margin:24px 0;padding:24px 22px;background:#241814;border-radius:14px;">
-  <p style="margin:0 0 10px;font-size:16px;line-height:2;color:#F3ECE2;text-align:justify;"><span leaf="">「摘录原文，可以长一些。」</span></p>
-  <p style="margin:0;font-size:13px;color:#CF9E7E;text-align:right;"><span leaf="">——《书名》第 X 页</span></p>
+<section style="margin:24px 0;padding:24px 22px;background:#14181A;border-radius:14px;">
+  <p style="margin:0 0 10px;font-size:16px;line-height:2;color:#FFF5F5;text-align:justify;"><span leaf="">「摘录原文，可以长一些。」</span></p>
+  <p style="margin:0;font-size:13px;color:#E8B4B8;text-align:right;"><span leaf="">——《书名》第 X 页</span></p>
 </section>
 ```
 
@@ -148,7 +148,7 @@
 ```html
 <section style="margin-bottom:8px;">
   <span style="font-size:15px;color:#2F6B5B;font-weight:bold;"><span leaf="">☑</span></span>
-  <span style="font-size:16px;color:#2A1D18;"><span leaf="">清单项内容</span></span>
+  <span style="font-size:16px;color:#1F2226;"><span leaf="">清单项内容</span></span>
 </section>
 ```
 
@@ -160,9 +160,9 @@
 
 ```html
 <section style="margin:24px 0;text-align:center;">
-  <section style="display:inline-block;padding:10px 10px 30px;background:#FFFFFF;border:1px solid rgba(42,29,24,0.08);border-radius:4px;box-shadow:0 4px 14px rgba(42,29,24,0.10);">
+  <section style="display:inline-block;padding:10px 10px 30px;background:#FFFFFF;border:1px solid rgba(31,34,38,0.08);border-radius:4px;box-shadow:0 4px 14px rgba(31,34,38,0.10);">
     <span leaf=""><img src="{{图片URL}}" style="width:100%;max-width:280px;border-radius:2px;"></span>
-    <p style="margin:8px 0 0;font-size:12px;color:#706158;"><span leaf="">{{图片说明}}</span></p>
+    <p style="margin:8px 0 0;font-size:12px;color:#8A8A92;"><span leaf="">{{图片说明}}</span></p>
   </section>
 </section>
 ```
@@ -174,8 +174,8 @@
 ```html
 <section style="text-align:center;margin:40px 0 0;">
   <span style="display:inline-block;width:72px;height:12px;background:rgba(239,206,154,0.55);border-radius:2px 10px 2px 10px;font-size:0;line-height:0;margin-bottom:14px;"><span leaf=""><br></span></span>
-  <p style="margin:0;font-size:16px;font-weight:900;color:#2A1D18;line-height:1.8;"><span leaf="">今天先记到这里。</span></p>
-  <p style="margin:6px 0 0;font-size:13px;color:#706158;letter-spacing:2px;"><span leaf="">—— 手账第 42 页 · 完</span></p>
+  <p style="margin:0;font-size:16px;font-weight:900;color:#1F2226;line-height:1.8;"><span leaf="">今天先记到这里。</span></p>
+  <p style="margin:6px 0 0;font-size:13px;color:#8A8A92;letter-spacing:2px;"><span leaf="">—— 手账第 42 页 · 完</span></p>
 </section>
 ```
 
@@ -185,8 +185,8 @@
 
 ```html
 <section style="text-align:center;padding:20px 0 0;">
-  <p style="margin:0 0 4px;font-size:15px;font-weight:bold;color:#2A1D18;"><span leaf="">作者名</span></p>
-  <p style="margin:0;font-size:13px;color:#706158;line-height:1.8;">
+  <p style="margin:0 0 4px;font-size:15px;font-weight:bold;color:#1F2226;"><span leaf="">作者名</span></p>
+  <p style="margin:0;font-size:13px;color:#8A8A92;line-height:1.8;">
     <span leaf="">▪️{{签名第一行}}</span><br>
     <span leaf="">▪️{{签名第二行}}</span>
   </p>
@@ -198,7 +198,7 @@
 ## 完整文章模板骨架
 
 ```html
-<section style="max-width:677px;margin:0 auto;background:#FDF8F1;padding:40px 26px 36px;...">
+<section style="max-width:677px;margin:0 auto;background:#FEFAF5;padding:40px 26px 36px;...">
   <!-- 1. 题头日期（组件 2） -->
   <!-- 2. 大标题 + 胶带（组件 3） -->
   <!-- 3. 正文段（组件 5） -->
@@ -237,7 +237,7 @@
 
 ---
 
-## Markdown → 赤陶手账 映射规则
+## Markdown → 珊瑚手账 映射规则
 
 | Markdown 元素 | 对应组件 | 说明 |
 |---|---|---|
@@ -249,7 +249,7 @@
 | `**加粗**` | 蜜杏荧光笔 span | |
 | `- [x] 清单` | 组件 9 打勾清单 | |
 | `![](图片)` | 组件 10 拍立得 | |
-| 行内 `` `code` `` | `background:#F8EBD6;color:#83301F` 等宽胶囊 | |
+| 行内 `` `code` `` | `background:#FDF0E4;color:#9E2E38` 等宽胶囊 | |
 | ` ``` 代码块 ``` ` | 通用库 1a/1b | |
-| `[text](url)` | 通用库 4a/4b（角标赤陶 `#A8452F`） | |
+| `[text](url)` | 通用库 4a/4b（角标赤陶 `#C33D46`） | |
 | 文末 | 组件 11 结尾 + 12 签名档 | |
