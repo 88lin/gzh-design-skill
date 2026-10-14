@@ -2,7 +2,7 @@
 
 <div align="center">
 
-# gzh-design-skill · WeChat Layout Skill
+# gzh-skill-kit · WeChat Layout Skill
 
 **Turn Markdown into polished HTML you can paste straight into the WeChat editor**
 
@@ -72,24 +72,24 @@ One long-form article laid out in all 14 themes (screenshots plus interactive HT
 <td align="center"><img src="assets/lf-olive-journal.thumb.png" width="250"><br><sub><b>Olive Journal</b></sub></td>
 </tr>
 <tr>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>Open the full interactive preview</b></a><br><sub><b>Tech Cobalt</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/klein-blue.html"><img src="assets/lf-klein-blue.thumb.png" width="250"></a><br><sub><b>Klein Blue</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/letter.html"><img src="assets/lf-letter.thumb.png" width="250"></a><br><sub><b>Letter 奶咖信纸</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/index.html"><b>Open the full interactive preview</b></a><br><sub><b>Tech Cobalt</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/klein-blue.html"><img src="assets/lf-klein-blue.thumb.png" width="250"></a><br><sub><b>Klein Blue</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/letter.html"><img src="assets/lf-letter.thumb.png" width="250"></a><br><sub><b>Letter 奶咖信纸</b></sub></td>
 </tr>
 <tr>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/bento.html"><img src="assets/lf-bento.thumb.png" width="250"></a><br><sub><b>Bento 粉彩便当盒</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/chat.html"><img src="assets/lf-chat.thumb.png" width="250"></a><br><sub><b>Chat 薄荷对话</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/magazine.html"><img src="assets/lf-magazine.thumb.png" width="250"></a><br><sub><b>Magazine 孔雀蓝杂志</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/bento.html"><img src="assets/lf-bento.thumb.png" width="250"></a><br><sub><b>Bento 粉彩便当盒</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/chat.html"><img src="assets/lf-chat.thumb.png" width="250"></a><br><sub><b>Chat 薄荷对话</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/magazine.html"><img src="assets/lf-magazine.thumb.png" width="250"></a><br><sub><b>Magazine 孔雀蓝杂志</b></sub></td>
 </tr>
 <tr>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/journal.html"><img src="assets/lf-journal.thumb.png" width="250"></a><br><sub><b>Journal 珊瑚手账</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/daily.html"><img src="assets/lf-daily.thumb.png" width="250"></a><br><sub><b>Daily 珊瑚日报</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>All 14 previews ↗</b><br><sub><b>interactive</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/journal.html"><img src="assets/lf-journal.thumb.png" width="250"></a><br><sub><b>Journal 珊瑚手账</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/daily.html"><img src="assets/lf-daily.thumb.png" width="250"></a><br><sub><b>Daily 珊瑚日报</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/index.html"><b>All 14 previews ↗</b><br><sub><b>interactive</b></sub></td>
 </tr>
 </table>
 
 > [!TIP]
-> **👀 Preview all 14 themes online**: [88lin.github.io/gzh-design-skill/docs/gallery/index.html](https://88lin.github.io/gzh-design-skill/docs/gallery/index.html) — scroll the full rendered article for each theme, then copy the components you like.
+> **👀 Preview all 14 themes online**: [88lin.github.io/gzh-skill-kit/docs/gallery/index.html](https://88lin.github.io/gzh-skill-kit/docs/gallery/index.html) — scroll the full rendered article for each theme, then copy the components you like.
 
 ### Theme cheat-sheet
 
@@ -110,15 +110,15 @@ One long-form article laid out in all 14 themes (screenshots plus interactive HT
 
 ```bash
 # One-line install (recommended)
-npx skills add https://github.com/88lin/gzh-design-skill
+npx skills add https://github.com/88lin/gzh-skill-kit
 
 # Or manual clone
-git clone https://github.com/88lin/gzh-design-skill.git ~/.claude/skills/gzh-design
+git clone https://github.com/88lin/gzh-skill-kit.git ~/.claude/skills/gzh-design
 ```
 
 Or just ask **any agent** (Claude Code / Codex / Cursor …):
 
-> Please find and install the skill at https://github.com/88lin/gzh-design-skill
+> Please find and install the skill at https://github.com/88lin/gzh-skill-kit
 
 Then, once installed, tell your agent:
 
@@ -205,7 +205,7 @@ Give just a primary color or a vibe, and the generator derives the whole harmoni
 
 **Can it output several themes at once?** Yes — say "lay this out in each of these themes" for a batch to choose from.
 
-**How do I update?** Re-run `npx skills add https://github.com/88lin/gzh-design-skill`, or `git pull` in the install dir.
+**How do I update?** Re-run `npx skills add https://github.com/88lin/gzh-skill-kit`, or `git pull` in the install dir.
 
 **What if the agent's output isn't compliant?** Run `scripts/validate_gzh_html.py`; fix on ERROR until both gates are green. Still stuck? Open an Issue.
 

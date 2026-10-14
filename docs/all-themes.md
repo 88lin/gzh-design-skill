@@ -18,7 +18,7 @@
 <tr>
 <td align="center"><img src="../assets/lf-tech-cobalt.thumb.png" width="250"><br><sub><b>科技钴蓝 Tech Cobalt</b></sub></td>
 <td align="center"><img src="../assets/lf-klein-blue.thumb.png" width="250"><br><sub><b>克莱因蓝 Klein Blue</b></sub></td>
-<td align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>全部在线交互预览 ↗</b></a></td>
+<td align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/index.html"><b>全部在线交互预览 ↗</b></a></td>
 </tr>
 <tr>
 <td align="center"><img src="../assets/lf-letter.thumb.png" width="250"><br><sub><b>奶咖信纸 Letter</b></sub></td>
@@ -34,4 +34,4 @@
 
 ---
 
-> 以上为每套排版的首屏长图；完整可交互 HTML 见 [`gallery/index.html`](gallery/index.html)（在线预览：https://88lin.github.io/gzh-design-skill/docs/gallery/index.html）。每套主题的主色 / 适用场景 / 英文标识见 [`../references/theme-index.md`](../references/theme-index.md)。需要别的风格可用[主题生成器](../references/theme-generator.md)现生成一套。
+> 以上为每套排版的首屏长图；完整可交互 HTML 见 [`gallery/index.html`](gallery/index.html)（在线预览：https://88lin.github.io/gzh-skill-kit/docs/gallery/index.html）。每套主题的主色 / 适用场景 / 英文标识见 [`../references/theme-index.md`](../references/theme-index.md)。需要别的风格可用[主题生成器](../references/theme-generator.md)现生成一套。

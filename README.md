@@ -1,6 +1,6 @@
 <div align="center">
 
-# gzh-design-skill · 公众号排版技能
+# gzh-skill-kit · 公众号排版技能
 
 **把 Markdown 一键排成可直接粘贴进微信公众号编辑器的精致 HTML**
 
@@ -24,7 +24,7 @@
 > **⭐ 顺手点个 Star 再往下看**——公众号平台隔三差五改过滤规则，每次适配都会第一时间推到这里。Star 一下，哪天粘贴突然掉格式了，你能一秒翻回这个仓库拿到修好的版本。
 
 > [!NOTE]
-> **在线效果预览**：[88lin.github.io/gzh-design-skill/docs/gallery/index.html](https://88lin.github.io/gzh-design-skill/docs/gallery/index.html) —— 14 套主题渲染成真实长文，手机/电脑都能直接滚动查看。
+> **在线效果预览**：[88lin.github.io/gzh-skill-kit/docs/gallery/index.html](https://88lin.github.io/gzh-skill-kit/docs/gallery/index.html) —— 14 套主题渲染成真实长文，手机/电脑都能直接滚动查看。
 
 ## ✨ 核心特性
 
@@ -43,34 +43,34 @@
 
 <table>
 <tr>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/moyu-green.html"><img src="assets/lf-moyu-green.thumb.png" width="250"></a><br><sub><b>摸鱼绿（默认）</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/red-white.html"><img src="assets/lf-red-white.thumb.png" width="250"></a><br><sub><b>红白色系</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/graphite-minimal.html"><img src="assets/lf-graphite-minimal.thumb.png" width="250"></a><br><sub><b>石墨极简风</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/moyu-green.html"><img src="assets/lf-moyu-green.thumb.png" width="250"></a><br><sub><b>摸鱼绿（默认）</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/red-white.html"><img src="assets/lf-red-white.thumb.png" width="250"></a><br><sub><b>红白色系</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/graphite-minimal.html"><img src="assets/lf-graphite-minimal.thumb.png" width="250"></a><br><sub><b>石墨极简风</b></sub></td>
 </tr>
 <tr>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/zen-whitespace.html"><img src="assets/lf-zen-whitespace.thumb.png" width="250"></a><br><sub><b>留白禅意风</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/moyu-ticket.html"><img src="assets/lf-moyu-ticket.thumb.png" width="250"></a><br><sub><b>摸鱼票据风</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/olive-journal.html"><img src="assets/lf-olive-journal.thumb.png" width="250"></a><br><sub><b>橄榄手记</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/zen-whitespace.html"><img src="assets/lf-zen-whitespace.thumb.png" width="250"></a><br><sub><b>留白禅意风</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/moyu-ticket.html"><img src="assets/lf-moyu-ticket.thumb.png" width="250"></a><br><sub><b>摸鱼票据风</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/olive-journal.html"><img src="assets/lf-olive-journal.thumb.png" width="250"></a><br><sub><b>橄榄手记</b></sub></td>
 </tr>
 <tr>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/tech-cobalt.html"><img src="assets/lf-tech-cobalt.thumb.png" width="250"></a><br><sub><b>科技钴蓝</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/klein-blue.html"><img src="assets/lf-klein-blue.thumb.png" width="250"></a><br><sub><b>克莱因蓝</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/letter.html"><img src="assets/lf-letter.thumb.png" width="250"></a><br><sub><b>奶咖信纸</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/tech-cobalt.html"><img src="assets/lf-tech-cobalt.thumb.png" width="250"></a><br><sub><b>科技钴蓝</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/klein-blue.html"><img src="assets/lf-klein-blue.thumb.png" width="250"></a><br><sub><b>克莱因蓝</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/letter.html"><img src="assets/lf-letter.thumb.png" width="250"></a><br><sub><b>奶咖信纸</b></sub></td>
 </tr>
 <tr>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/bento.html"><img src="assets/lf-bento.thumb.png" width="250"></a><br><sub><b>粉彩便当盒</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/chat.html"><img src="assets/lf-chat.thumb.png" width="250"></a><br><sub><b>薄荷对话</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/magazine.html"><img src="assets/lf-magazine.thumb.png" width="250"></a><br><sub><b>孔雀蓝杂志</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/bento.html"><img src="assets/lf-bento.thumb.png" width="250"></a><br><sub><b>粉彩便当盒</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/chat.html"><img src="assets/lf-chat.thumb.png" width="250"></a><br><sub><b>薄荷对话</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/magazine.html"><img src="assets/lf-magazine.thumb.png" width="250"></a><br><sub><b>孔雀蓝杂志</b></sub></td>
 </tr>
 <tr>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/journal.html"><img src="assets/lf-journal.thumb.png" width="250"></a><br><sub><b>珊瑚手账</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/daily.html"><img src="assets/lf-daily.thumb.png" width="250"></a><br><sub><b>珊瑚日报</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>全部 14 套<br>在线交互预览 ↗</b></a></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/journal.html"><img src="assets/lf-journal.thumb.png" width="250"></a><br><sub><b>珊瑚手账</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/daily.html"><img src="assets/lf-daily.thumb.png" width="250"></a><br><sub><b>珊瑚日报</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/index.html"><b>全部 14 套<br>在线交互预览 ↗</b></a></td>
 </tr>
 </table>
 
 > [!TIP]
-> **👀 在线预览全部 14 套主题**：[88lin.github.io/gzh-design-skill/docs/gallery/index.html](https://88lin.github.io/gzh-design-skill/docs/gallery/index.html) —— 每套都能直接滚动看全文，选中意的直接复制组件。
+> **👀 在线预览全部 14 套主题**：[88lin.github.io/gzh-skill-kit/docs/gallery/index.html](https://88lin.github.io/gzh-skill-kit/docs/gallery/index.html) —— 每套都能直接滚动看全文，选中意的直接复制组件。
 
 ## ✅ 适合 / ❌ 不适合
 
@@ -120,21 +120,21 @@
 ### 方式一：一行安装（推荐）
 
 ```bash
-npx skills add https://github.com/88lin/gzh-design-skill
+npx skills add https://github.com/88lin/gzh-skill-kit
 ```
 
 ### 方式二：让 AI 自己装
 
 对**任意 Agent**（Claude Code / Codex / Cursor 等）说一句：
 
-> 请帮我查找并自动安装 https://github.com/88lin/gzh-design-skill 这个 skill
+> 请帮我查找并自动安装 https://github.com/88lin/gzh-skill-kit 这个 skill
 
 它会自行 clone 到对应的 skills 目录并接入。
 
 ### 方式三：手动 clone
 
 ```bash
-git clone https://github.com/88lin/gzh-design-skill.git ~/.claude/skills/gzh-design
+git clone https://github.com/88lin/gzh-skill-kit.git ~/.claude/skills/gzh-design
 ```
 
 装好后，直接对 Agent 说：
@@ -142,7 +142,7 @@ git clone https://github.com/88lin/gzh-design-skill.git ~/.claude/skills/gzh-des
 > 用摸鱼绿把这篇文章排成公众号 HTML：`article.md`
 
 > [!TIP]
-> **懒人一键**：以上安装步骤全能省——直接对 Agent 说「帮我安装这个排版 skill：https://github.com/88lin/gzh-design-skill」，它会自己 clone、接入并验证可用。
+> **懒人一键**：以上安装步骤全能省——直接对 Agent 说「帮我安装这个排版 skill：https://github.com/88lin/gzh-skill-kit」，它会自己 clone、接入并验证可用。
 
 ## 📖 使用流程
 
@@ -321,7 +321,7 @@ gzh-design/
 ## 🗺 Roadmap
 
 - [x] 主题生成器：按描述/参考图生成自定义主题
-- [x] GitHub Pages 在线画廊（[14 套在线预览](https://88lin.github.io/gzh-design-skill/docs/gallery/index.html)）
+- [x] GitHub Pages 在线画廊（[14 套在线预览](https://88lin.github.io/gzh-skill-kit/docs/gallery/index.html)）
 - [ ] 更多精选内置主题（欢迎 [提建议](../../issues/new?template=theme_request.md)）
 - [ ] 一键把整篇 Markdown + 配图打包导出
 
@@ -343,7 +343,7 @@ A：不挑模型，**国内外模型都能跑出一致效果**。排版逻辑全
 A：能。说「用这几套主题各排一遍这篇」即可批量生成多套供你挑。
 
 **Q：怎么更新到最新版？**
-A：重新跑 `npx skills add https://github.com/88lin/gzh-design-skill`，或到安装目录 `git pull`。
+A：重新跑 `npx skills add https://github.com/88lin/gzh-skill-kit`，或到安装目录 `git pull`。
 
 **Q：Agent 写出来不合规怎么办？**
 A：跑 `scripts/validate_gzh_html.py`，报 ERROR 就回到装配步骤修；两关全绿才交付，仍有问题欢迎开 Issue。
@@ -370,6 +370,6 @@ A：跑 `scripts/validate_gzh_html.py`，报 ERROR 就回到装配步骤修；�
 
 ---
 
-**看到这儿了，说明这个 skill 大概率对你有用 —— 那就[点个 ⭐ Star](https://github.com/88lin/gzh-design-skill) 吧**
+**看到这儿了，说明这个 skill 大概率对你有用 —— 那就[点个 ⭐ Star](https://github.com/88lin/gzh-skill-kit) 吧**
 
 一秒的事，却能让更多写公众号的人搜到它，也能在你下次排版时第一时间找到这里。
