@@ -6,29 +6,29 @@
 
 <table>
 <tr>
-<td width="33%" align="center"><img src="assets/lf-moyu-green.png" width="250"><br><sub><b>摸鱼绿 Moyu Green（默认）</b></sub></td>
-<td width="33%" align="center"><img src="assets/lf-red-white.png" width="250"><br><sub><b>红白色系 Red &amp; White</b></sub></td>
-<td width="33%" align="center"><img src="assets/lf-graphite-minimal.png" width="250"><br><sub><b>石墨极简风 Graphite Minimal</b></sub></td>
+<td width="33%" align="center"><img src="../assets/lf-moyu-green.thumb.png" width="250"><br><sub><b>摸鱼绿 Moyu Green（默认）</b></sub></td>
+<td width="33%" align="center"><img src="../assets/lf-red-white.thumb.png" width="250"><br><sub><b>红白色系 Red &amp; White</b></sub></td>
+<td width="33%" align="center"><img src="../assets/lf-graphite-minimal.thumb.png" width="250"><br><sub><b>石墨极简风 Graphite Minimal</b></sub></td>
 </tr>
 <tr>
-<td align="center"><img src="assets/lf-zen-whitespace.png" width="250"><br><sub><b>留白禅意风 Zen Whitespace</b></sub></td>
-<td align="center"><img src="assets/lf-moyu-ticket.png" width="250"><br><sub><b>摸鱼票据风 Moyu Ticket</b></sub></td>
-<td align="center"><img src="assets/lf-olive-journal.png" width="250"><br><sub><b>橄榄手记 Olive Journal</b></sub></td>
+<td align="center"><img src="../assets/lf-zen-whitespace.thumb.png" width="250"><br><sub><b>留白禅意风 Zen Whitespace</b></sub></td>
+<td align="center"><img src="../assets/lf-moyu-ticket.thumb.png" width="250"><br><sub><b>摸鱼票据风 Moyu Ticket</b></sub></td>
+<td align="center"><img src="../assets/lf-olive-journal.thumb.png" width="250"><br><sub><b>橄榄手记 Olive Journal</b></sub></td>
 </tr>
 <tr>
-<td align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>打开完整交互预览</b></a><br><sub><b>科技钴蓝 Tech Cobalt</b></sub></td>
-<td align="center"><img src="../assets/lf-klein-blue.png" width="250"><br><sub><b>克莱因蓝 Klein Blue</b></sub></td>
-<td></td>
+<td align="center"><img src="../assets/lf-tech-cobalt.thumb.png" width="250"><br><sub><b>科技钴蓝 Tech Cobalt</b></sub></td>
+<td align="center"><img src="../assets/lf-klein-blue.thumb.png" width="250"><br><sub><b>克莱因蓝 Klein Blue</b></sub></td>
+<td align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>全部在线交互预览 ↗</b></a></td>
 </tr>
 <tr>
-<td align="center"><img src="../assets/lf-letter.png" width="250"><br><sub><b>奶咖信纸 Letter</b></sub></td>
-<td align="center"><img src="../assets/lf-bento.png" width="250"><br><sub><b>粉彩便当盒 Bento</b></sub></td>
-<td align="center"><img src="../assets/lf-chat.png" width="250"><br><sub><b>薄荷对话 Chat</b></sub></td>
+<td align="center"><img src="../assets/lf-letter.thumb.png" width="250"><br><sub><b>奶咖信纸 Letter</b></sub></td>
+<td align="center"><img src="../assets/lf-bento.thumb.png" width="250"><br><sub><b>粉彩便当盒 Bento</b></sub></td>
+<td align="center"><img src="../assets/lf-chat.thumb.png" width="250"><br><sub><b>薄荷对话 Chat</b></sub></td>
 </tr>
 <tr>
-<td align="center"><img src="../assets/lf-magazine.png" width="250"><br><sub><b>孔雀蓝杂志 Magazine</b></sub></td>
-<td align="center"><img src="../assets/lf-journal.png" width="250"><br><sub><b>珊瑚手账 Journal</b></sub></td>
-<td align="center"><img src="../assets/lf-daily.png" width="250"><br><sub><b>珊瑚日报 Daily</b></sub></td>
+<td align="center"><img src="../assets/lf-magazine.thumb.png" width="250"><br><sub><b>孔雀蓝杂志 Magazine</b></sub></td>
+<td align="center"><img src="../assets/lf-journal.thumb.png" width="250"><br><sub><b>珊瑚手账 Journal</b></sub></td>
+<td align="center"><img src="../assets/lf-daily.thumb.png" width="250"><br><sub><b>珊瑚日报 Daily</b></sub></td>
 </tr>
 </table>
 
