@@ -6,7 +6,7 @@
 
 <table>
 <tr>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/tech-cobalt.html"><img src="../assets/lf-tech-cobalt.thumb.png" width="250"></a><br><sub><b>科技钴蓝 Tech Cobalt</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/tech-cobalt.html"><img src="../assets/lf-tech-cobalt.thumb.png" width="250"></a><br><sub><b>科技钴蓝 Tech Cobalt（默认）</b></sub></td>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/klein-blue.html"><img src="../assets/lf-klein-blue.thumb.png" width="250"></a><br><sub><b>克莱因蓝 Klein Blue</b></sub></td>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/letter.html"><img src="../assets/lf-letter.thumb.png" width="250"></a><br><sub><b>奶咖信纸 Letter</b></sub></td>
 </tr>
@@ -18,7 +18,7 @@
 <tr>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/journal.html"><img src="../assets/lf-journal.thumb.png" width="250"></a><br><sub><b>珊瑚手账 Journal</b></sub></td>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/daily.html"><img src="../assets/lf-daily.thumb.png" width="250"></a><br><sub><b>珊瑚日报 Daily</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/moyu-green.html"><img src="../assets/lf-moyu-green.thumb.png" width="250"></a><br><sub><b>摸鱼绿 Moyu Green（默认）</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/moyu-green.html"><img src="../assets/lf-moyu-green.thumb.png" width="250"></a><br><sub><b>摸鱼绿 Moyu Green</b></sub></td>
 </tr>
 <tr>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/red-white.html"><img src="../assets/lf-red-white.thumb.png" width="250"></a><br><sub><b>红白色系 Red &amp; White</b></sub></td>
