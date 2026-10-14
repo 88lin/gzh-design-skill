@@ -2,7 +2,7 @@
 
 > **使用说明**：本组件库为「珊瑚手账」主题，所有组件使用**内联样式**，可直接复制粘贴到微信公众号编辑器。
 >
-> **设计风格**：手账拼贴风——纸感底 `#FEFAF5`、赤陶红 `#C33D46`（主）、蜜杏 `#EFCE9A`（强调）、松绿 `#2F6B5B`（反衬）。核心元素：**手写批注框**（虚线边框 + 倾斜标签）、**胶带贴纸**（斜贴在标题上的半透明色条）、**书卡**（books 组件直系：左封面右信息）。适合读书笔记、随笔、收藏分享、好物记录。
+> **设计风格**：手账拼贴风——纸感底 `#FEFAF5`、赤陶红 `#C33D46`（主）、蜜杏 `#F5B8B3`（强调）、松绿 `#2F6B5B`（反衬）。核心元素：**手写批注框**（虚线边框 + 倾斜标签）、**胶带贴纸**（斜贴在标题上的半透明色条）、**书卡**（books 组件直系：左封面右信息）。适合读书笔记、随笔、收藏分享、好物记录。
 >
 > **公众号平台限制须知**：
 > - ❌ 不支持 `<style>`/`<script>`、CSS class、`position`、`float`、`transform:rotate`（微信编辑器会剥掉 rotate，倾斜效果用预斜字体风格替代——所以"手写感"靠字体与不对称，不靠 transform）
@@ -23,7 +23,7 @@
 次要文字：      #4A4A52
 辅助文字：      #8A8A92
 赤陶主色：      #C33D46（深 #9E2E38，浅 #D46E74）
-蜜杏强调：      #EFCE9A / 蜜杏底 #FDF0E4
+蜜杏强调：      #F5B8B3 / 蜜杏底 #FDF0E4
 松绿反衬：      #2F6B5B / 松绿底 #E6F1ED
 深面板：        #1F2226
 虚线批注框：    1.5px dashed #D46E74
@@ -59,7 +59,7 @@
 ```html
 <section style="margin-bottom:32px;">
   <section style="margin-bottom:14px;">
-    <span style="display:inline-block;width:96px;height:14px;background:rgba(239,206,154,0.55);border-radius:2px;font-size:0;line-height:0;"><span leaf=""><br></span></span>
+    <span style="display:inline-block;width:96px;height:14px;background:rgba(242,147,140,0.45);border-radius:2px;font-size:0;line-height:0;"><span leaf=""><br></span></span>
   </section>
   <p style="margin:0 0 8px;font-size:28px;font-weight:900;line-height:1.6;color:#1F2226;word-break:normal;overflow-wrap:normal;">
     <span leaf="">最近在重读的</span><br>
@@ -72,7 +72,7 @@
 胶带条位置在标题左上方（视觉上像贴纸斜贴，微信不支持 rotate，用不规则圆角 `border-radius:2px 10px 2px 10px` 模拟手撕胶带感）：
 
 ```html
-<span style="display:inline-block;width:96px;height:14px;background:rgba(239,206,154,0.55);border-radius:2px 10px 2px 10px;font-size:0;line-height:0;"><span leaf=""><br></span></span>
+<span style="display:inline-block;width:96px;height:14px;background:rgba(242,147,140,0.45);border-radius:2px 10px 2px 10px;font-size:0;line-height:0;"><span leaf=""><br></span></span>
 ```
 
 ---
@@ -93,7 +93,7 @@
 ```html
 <p style="margin:0 0 18px;font-size:17px;line-height:2;color:#1F2226;text-align:justify;">
   <span leaf="">重读《置身事内》，第一次读是看热闹，这一次终于看懂了门道。</span>
-  <span style="background:linear-gradient(transparent 60%, #EFCE9A 60%);font-weight:bold;padding:0 2px;"><span leaf="">书没变，是读者的处境变了。</span></span>
+  <span style="background:linear-gradient(transparent 60%, #F5B8B3 60%);font-weight:bold;padding:0 2px;"><span leaf="">书没变，是读者的处境变了。</span></span>
 </p>
 ```
 
@@ -173,7 +173,7 @@
 
 ```html
 <section style="text-align:center;margin:40px 0 0;">
-  <span style="display:inline-block;width:72px;height:12px;background:rgba(239,206,154,0.55);border-radius:2px 10px 2px 10px;font-size:0;line-height:0;margin-bottom:14px;"><span leaf=""><br></span></span>
+  <span style="display:inline-block;width:72px;height:12px;background:rgba(242,147,140,0.45);border-radius:2px 10px 2px 10px;font-size:0;line-height:0;margin-bottom:14px;"><span leaf=""><br></span></span>
   <p style="margin:0;font-size:16px;font-weight:900;color:#1F2226;line-height:1.8;"><span leaf="">今天先记到这里。</span></p>
   <p style="margin:6px 0 0;font-size:13px;color:#8A8A92;letter-spacing:2px;"><span leaf="">—— 手账第 42 页 · 完</span></p>
 </section>

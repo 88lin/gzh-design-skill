@@ -23,8 +23,8 @@
 ```
 页面底：        #FDFBF9（孔白）
 墨色正文：      #1D2A2D
-次要文字：      #3D5156
-辅助文字：      #52666B
+次要文字：      #2C4249
+辅助文字：      #3A4E54
 孔雀蓝主色：    #15697C（深 #0C4552，浅 #4EA2B5）
 蜜桃强调：      #F5CDB4 / 蜜桃底 #FAE9DE
 赤陶点缀：      #B24935 / 赤陶底 #F8E8E3
@@ -66,8 +66,8 @@
     <span leaf="">一个县城女孩的</span><br>
     <span leaf="">AI 自学笔记</span>
   </p>
-  <p style="margin:0 0 6px;font-size:16px;color:#3D5156;line-height:1.9;"><span leaf="">没有名校光环，没有大厂背景，她用 14 个月把自己变成了公司离不开的人</span></p>
-  <p style="margin:0;font-size:13px;color:#52666B;letter-spacing:1px;"><span leaf="">文 / 茉灵智库 · 约 4200 字 · 阅读 11 分钟</span></p>
+  <p style="margin:0 0 6px;font-size:16px;color:#2C4249;line-height:1.9;"><span leaf="">没有名校光环，没有大厂背景，她用 14 个月把自己变成了公司离不开的人</span></p>
+  <p style="margin:0;font-size:13px;color:#3A4E54;letter-spacing:1px;"><span leaf="">文 / 茉灵智库 · 约 4200 字 · 阅读 11 分钟</span></p>
 </section>
 ```
 
@@ -77,7 +77,7 @@
 
 ```html
 <section style="margin-bottom:40px;">
-  <p style="margin:0;font-family:Georgia,'Songti SC','Noto Serif SC',serif;font-style:italic;font-size:17px;line-height:2;color:#3D5156;text-align:justify;">
+  <p style="margin:0;font-family:Georgia,'Songti SC','Noto Serif SC',serif;font-style:italic;font-size:17px;line-height:2;color:#2C4249;text-align:justify;">
     <span leaf="">「这是我今年听过最野的一张成长路径：白天在县城超市理货，晚上跟着开源文档学 Agent。14 个月后，她给三家创业公司做自动化顾问。」</span>
   </p>
 </section>
@@ -120,7 +120,7 @@
 ```html
 <section style="margin:26px 0;padding:6px 0 6px 20px;border-left:3px solid #15697C;">
   <p style="margin:0 0 6px;font-family:Georgia,'Songti SC','Noto Serif SC',serif;font-style:italic;font-size:17px;line-height:2;color:#0C4552;"><span leaf="">"别人问我怕不怕被 AI 取代。我说我是那个学会用 AI 的人，怕什么？"</span></p>
-  <p style="margin:0;font-size:13px;color:#52666B;"><span leaf="">—— 受访者小鹿，自动化顾问</span></p>
+  <p style="margin:0;font-size:13px;color:#3A4E54;"><span leaf="">—— 受访者小鹿，自动化顾问</span></p>
 </section>
 ```
 
@@ -132,15 +132,15 @@
 <section style="margin:28px 0;text-align:center;">
   <section style="margin-bottom:8px;">
     <span style="font-family:Georgia,serif;font-size:34px;font-weight:900;color:#15697C;"><span leaf="">14</span></span>
-    <span style="font-size:14px;color:#52666B;"><span leaf=""> 个月自学</span></span>
+    <span style="font-size:14px;color:#3A4E54;"><span leaf=""> 个月自学</span></span>
   </section>
   <section style="margin-bottom:8px;">
     <span style="font-family:Georgia,serif;font-size:34px;font-weight:900;color:#15697C;"><span leaf="">3</span></span>
-    <span style="font-size:14px;color:#52666B;"><span leaf=""> 家付费客户</span></span>
+    <span style="font-size:14px;color:#3A4E54;"><span leaf=""> 家付费客户</span></span>
   </section>
   <section>
     <span style="font-family:Georgia,serif;font-size:34px;font-weight:900;color:#15697C;"><span leaf="">0</span></span>
-    <span style="font-size:14px;color:#52666B;"><span leaf=""> 元报班费用</span></span>
+    <span style="font-size:14px;color:#3A4E54;"><span leaf=""> 元报班费用</span></span>
   </section>
 </section>
 ```
@@ -154,7 +154,7 @@
 ```html
 <span leaf=""><img src="{{图片URL}}" style="width:100%;border-radius:10px;margin-bottom:8px;"></span>
 <section style="text-align:center;margin-bottom:24px;">
-  <span style="font-size:13px;color:#52666B;"><span leaf="">▲ {{图片说明}}</span></span>
+  <span style="font-size:13px;color:#3A4E54;"><span leaf="">▲ {{图片说明}}</span></span>
 </section>
 ```
 
@@ -197,7 +197,7 @@
 ```html
 <section style="text-align:center;padding:20px 0 0;">
   <p style="margin:0 0 4px;font-size:15px;font-weight:bold;color:#1D2A2D;"><span leaf="">作者名</span></p>
-  <p style="margin:0;font-size:13px;color:#52666B;line-height:1.8;">
+  <p style="margin:0;font-size:13px;color:#3A4E54;line-height:1.8;">
     <span leaf="">▪️{{签名第一行}}</span><br>
     <span leaf="">▪️{{签名第二行}}</span>
   </p>

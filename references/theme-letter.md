@@ -23,7 +23,7 @@
 信纸底：       #fefcf6（奶白）
 正文色：       #1A1A2E（墨色）
 次要文字：     #4A4A5A
-辅助文字：     #8A8A9A
+辅助文字：     #6E6258
 主色蓝：       #2B7FD8（kicker 备选/装饰词/链接）
 强调黄：       #F4D758（黄短条/荧光笔/装饰条中段）
 点缀红：       #E84A5F（kicker/装饰条尾段）
@@ -199,7 +199,7 @@
 
 ```html
 <section style="text-align:center;margin-bottom:20px;">
-  <span style="font-size:13px;color:#8A8A9A;"><span leaf="">△ {{图片说明}}</span></span>
+  <span style="font-size:13px;color:#6E6258;"><span leaf="">△ {{图片说明}}</span></span>
 </section>
 ```
 
@@ -211,7 +211,7 @@
 <section style="text-align:center;margin:48px 0 36px;">
   <span style="font-family:Georgia,serif;font-style:italic;font-size:56px;color:rgba(43,127,216,0.18);line-height:1;"><span leaf="">“</span></span>
   <p style="margin:8px 0 6px;font-family:Georgia,'Songti SC','Noto Serif SC',serif;font-size:21px;font-weight:900;line-height:1.8;color:#1A1A2E;"><span leaf="">核心金句文字</span></p>
-  <p style="margin:0 0 16px;font-size:14px;color:#8A8A9A;"><span leaf="">副句 / 补充</span></p>
+  <p style="margin:0 0 16px;font-size:14px;color:#6E6258;"><span leaf="">副句 / 补充</span></p>
   <section style="text-align:center;">
     <span style="display:inline-block;width:36px;height:4px;background:#2B7FD8;border-radius:2px;font-size:0;line-height:0;"><span leaf=""><br></span></span>
     <span style="display:inline-block;width:18px;height:4px;background:#F4D758;border-radius:2px;margin-left:5px;font-size:0;line-height:0;"><span leaf=""><br></span></span>
@@ -227,7 +227,7 @@
 ```html
 <section style="text-align:center;padding:20px 0 0;">
   <p style="margin:0 0 4px;font-size:15px;font-weight:bold;color:#1A1A2E;"><span leaf="">{{作者名}}</span></p>
-  <p style="margin:0;font-size:13px;color:#8A8A9A;line-height:1.8;">
+  <p style="margin:0;font-size:13px;color:#6E6258;line-height:1.8;">
     <span leaf="">▪️{{签名第一行，如：在 AI 时代认真生活的女生}}</span><br>
     <span leaf="">▪️{{签名第二行，如：跟 Agent 搭档的第 1 年}}</span>
   </p>
