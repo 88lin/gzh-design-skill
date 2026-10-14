@@ -80,7 +80,7 @@
   <section style="margin-bottom:6px;">
     <span style="font-size:12px;font-weight:bold;letter-spacing:2px;color:#41684F;"><span leaf="">🙋 我</span></span>
   </section>
-  <section style="display:inline-block;max-width:88%;padding:16px 18px;background:#FEFDFA;border:1.5px solid #6E9B7D;border-radius:4px 18px 18px 18px;box-shadow:0 2px 8px rgba(65,104,79,0.08);">
+  <section style="display:inline-block;max-width:88%;padding:16px 18px;background:#FFFFFF;border:1.5px solid #C4ECDC;border-radius:4px 18px 18px 18px;box-shadow:0 2px 8px rgba(65,104,79,0.08);">
     <p style="margin:0;font-size:16px;line-height:2;color:#1F2A22;"><span leaf="">提问内容，口语化，一两句话。</span></p>
   </section>
 </section>
@@ -95,8 +95,8 @@
   <section style="margin-bottom:6px;">
     <span style="font-size:12px;font-weight:bold;letter-spacing:2px;color:#B44761;"><span leaf="">🤖 AI</span></span>
   </section>
-  <section style="display:inline-block;max-width:88%;padding:16px 18px;background:#41684F;border-radius:18px 4px 18px 18px;text-align:left;">
-    <p style="margin:0;font-size:16px;line-height:2;color:#FFFFFF;text-align:justify;"><span leaf="">回答内容。可以长一些，关键短语用浅绿强调。</span></p>
+  <section style="display:inline-block;max-width:88%;padding:16px 18px;background:#E0F6EF;border:1px solid #C4ECDC;border-radius:18px 4px 18px 18px;text-align:left;">
+    <p style="margin:0;font-size:16px;line-height:2;color:#1F5C42;text-align:justify;"><span leaf="">回答内容。可以长一些，关键短语用浅绿强调。</span></p>
   </section>
 </section>
 ```
@@ -104,7 +104,7 @@
 绿底气泡内强调：
 
 ```html
-<span style="color:#F4D793;font-weight:bold;"><span leaf="">关键短语</span></span>
+<span style="color:#B45309;font-weight:bold;"><span leaf="">关键短语</span></span>
 ```
 
 ---
@@ -133,7 +133,7 @@
 ## 组件 8 要点卡（蜜黄底，对话后收束要点用）
 
 ```html
-<section style="margin:24px 0;padding:20px 20px;background:#FBF1DA;border-radius:16px;">
+<section style="margin:24px 0;padding:20px 20px;background:#FFF4D6;border:1px solid #F8E6B0;border-radius:16px;">
   <p style="margin:0 0 8px;font-size:16px;font-weight:900;color:#1F2A22;"><span leaf="">📌 这轮聊下来</span></p>
   <p style="margin:0;font-size:16px;line-height:2;color:#1F2A22;text-align:justify;"><span leaf="">把对话的结论压成两三句。每轮对话后配一张，读者可以只看要点卡。</span></p>
 </section>

@@ -53,7 +53,7 @@
 <section style="margin-bottom:24px;">
   <section style="border-bottom:2px solid #1F2226;font-size:0;line-height:0;"><span leaf=""><br></span></section>
   <section style="display:flex;justify-content:space-between;align-items:center;padding:12px 2px;">
-    <span style="font-family:Georgia,'Songti SC','Noto Serif SC',serif;font-size:26px;font-weight:900;color:#9E2E38;letter-spacing:2px;"><span leaf="">茉灵日报</span></span>
+    <span style="font-family:Georgia,'Songti SC','Noto Serif SC',serif;font-size:26px;font-weight:900;color:#C33D46;letter-spacing:2px;"><span leaf="">茉灵日报</span></span>
     <span style="font-size:12px;color:#8A8A92;letter-spacing:1px;"><span leaf="">第 042 期 · 十月十五日</span></span>
   </section>
   <section style="border-bottom:1px solid #1F2226;font-size:0;line-height:0;"><span leaf=""><br></span></section>
@@ -137,7 +137,7 @@
 ```html
 <section style="margin:30px 0 22px;">
   <section style="display:flex;align-items:center;margin-bottom:14px;">
-    <span style="font-size:13px;font-weight:900;letter-spacing:4px;color:#9E2E38;margin-right:12px;"><span leaf="">▎产品版</span></span>
+    <span style="font-size:13px;font-weight:900;letter-spacing:4px;color:#C33D46;margin-right:12px;"><span leaf="">▎产品版</span></span>
     <section style="flex:1;border-bottom:1px solid rgba(31,34,38,.2);font-size:0;line-height:0;"><span leaf=""><br></span></section>
   </section>
 </section>
@@ -171,8 +171,8 @@
 ## 组件 9 订阅收尾条（深底反白）
 
 ```html
-<section style="margin:30px 0 0;padding:18px 20px;background:#14181A;border-radius:10px;text-align:center;">
-  <p style="margin:0 0 6px;font-size:15px;font-weight:900;color:#FFFFFF;"><span leaf="">每天 3 分钟，看懂 AI 圈</span></p>
+<section style="margin:30px 0 0;padding:18px 20px;background:#FFF4D6;border:1px solid #F8E6B0;border-radius:10px;text-align:center;">
+  <p style="margin:0 0 6px;font-size:15px;font-weight:900;color:#92600A;"><span leaf="">每天 3 分钟，看懂 AI 圈</span></p>
   <p style="margin:0;font-size:13px;color:#C9C9D0;"><span leaf="">关注茉灵智库，下期日报准时送达 📰</span></p>
 </section>
 ```
