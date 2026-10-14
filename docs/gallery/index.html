@@ -3,52 +3,106 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>gzh-design · 8 套主题排版预览</title>
+<title>gzh-design · 10 套主题排版预览</title>
 <style>
-  body{margin:0;background:#f4f4f5;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;color:#1f2937}
-  header{padding:32px 24px 8px;max-width:1480px;margin:0 auto}
-  h1{font-size:24px;margin:0 0 8px}
-  .sub{color:#6b7280;font-size:15px;line-height:1.7;margin:0 0 4px}
-  .grid{display:flex;flex-wrap:wrap;gap:24px;padding:16px 24px 32px;max-width:1480px;margin:0 auto}
-  .card{background:#fff;border-radius:14px;box-shadow:0 4px 16px -6px rgba(0,0,0,.12);overflow:hidden;width:380px;display:flex;flex-direction:column}
-  .bar{display:flex;align-items:center;gap:10px;padding:13px 18px;border-bottom:1px solid #f0f0f0}
-  .dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;border:1px solid rgba(0,0,0,.06)}
-  .tname{font-weight:700;font-size:16px}
-  .tmeta{margin-left:auto;font-size:11px;color:#9ca3af;font-family:monospace}
-  .tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:10px;background:#ecfdf5;color:#059669;margin-left:6px}
-  iframe{width:100%;height:680px;border:0;background:#fff}
-  footer{max-width:1480px;margin:0 auto;padding:8px 24px 40px;color:#9ca3af;font-size:13px}
+  :root{
+    --brand:#96545C; --brand-deep:#743E46;
+    --highlight:#EFD3A8; --highlight-soft:#FAF0E2;
+    --pop:#7D5D91; --pop-soft:#F0EAF4;
+    --cream:#FDFAF6; --cream-dark:#F5EDE5;
+    --ink:#2B2124; --ink-light:#584A4D; --ink-faint:#A29396;
+    --border:rgba(43,33,36,.11); --card-bg:#FEFCFA;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;color:var(--ink-light)}
+  ::selection{background:var(--highlight);color:var(--ink)}
+
+  header{max-width:1480px;margin:0 auto;padding:64px 24px 8px}
+  .kicker{display:flex;align-items:center;margin-bottom:18px}
+  .kicker .dot{width:8px;height:8px;border-radius:50% 50% 50% 2px;background:var(--brand);margin-right:10px}
+  .kicker .line{width:56px;height:1px;background:var(--border);margin-right:10px}
+  .kicker span.en{font-family:Georgia,'Noto Serif SC',serif;font-size:11px;color:var(--brand);letter-spacing:3px}
+  h1{font-family:Georgia,'Noto Serif SC','Songti SC',serif;font-weight:700;color:var(--ink);font-size:clamp(26px,4vw,38px);margin:0 0 14px;line-height:1.4}
+  h1 em{font-style:normal;background:linear-gradient(180deg,transparent 62%,var(--highlight) 62%)}
+  .sub{color:var(--ink-light);font-size:15.5px;line-height:1.9;margin:0 0 6px;max-width:760px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}
+  .meta .pill{display:inline-block;font-size:12.5px;font-weight:700;padding:4px 14px;border-radius:999px;background:var(--highlight-soft);color:var(--brand-deep)}
+  .meta .pill.alt{background:var(--pop-soft);color:#5D416D}
+
+  .grid{display:flex;flex-wrap:wrap;gap:28px;padding:36px 24px 24px;max-width:1480px;margin:0 auto}
+  .card{background:var(--card-bg);border:1px solid var(--border);border-radius:18px;overflow:hidden;width:400px;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 16px 40px -18px rgba(43,33,36,.25)}
+  .bar{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid rgba(43,33,36,.06)}
+  .dot{width:13px;height:13px;border-radius:50% 50% 50% 2px;flex-shrink:0}
+  .tname{font-weight:700;font-size:15.5px;color:var(--ink)}
+  .tmeta{margin-left:auto;font-size:11px;color:var(--ink-faint);font-family:Consolas,Monaco,monospace}
+  .tag{display:inline-block;font-size:11px;padding:1px 9px;border-radius:999px;margin-left:6px;font-weight:700}
+  .tag.new{background:var(--highlight);color:var(--brand-deep)}
+  .tag.fem{background:var(--pop-soft);color:#5D416D}
+  .tag.default{background:#E8F5F0;color:#1F6E52}
+  iframe{width:100%;height:680px;border:0;background:var(--cream)}
+
+  .howto{max-width:1480px;margin:0 auto;padding:8px 24px 24px;display:flex;flex-wrap:wrap;gap:16px}
+  .howto .step{flex:1;min-width:260px;background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+  .howto .step b{display:block;font-size:13px;color:var(--brand-deep);margin-bottom:6px}
+  .howto .step code{font-size:12.5px;color:var(--ink-light);background:var(--cream-dark);padding:2px 8px;border-radius:6px;word-break:break-all}
+  .howto .step p{margin:0;font-size:13.5px;line-height:1.8;color:var(--ink-light)}
+
+  footer{max-width:1480px;margin:0 auto;padding:8px 24px 48px;color:var(--ink-faint);font-size:13px;line-height:1.8}
+  footer b{color:var(--brand-deep)}
 </style>
 </head>
 <body>
 <header>
-  <h1>gzh-design · 8 套主题排版预览</h1>
-  <p class="sub">同一篇文章《做了些爆款 Skills 以后，我对 Skills 的看法》用 8 套精选主题各排一遍。每个画框约等于公众号手机宽度，可在框内滚动查看全文。</p>
-  <p class="sub">全部通过合规校验：无 <code>div/class/style</code> 标签、文字 <code>span leaf</code> 包裹、标点全角。不够用时可让 AI 用主题生成器现生成一套。</p>
+  <div class="kicker"><span class="dot"></span><span class="line"></span><span class="en">GZH DESIGN · SHOWCASE</span></div>
+  <h1>10 套主题，<em>同一篇长文</em>，10 种气质。</h1>
+  <p class="sub">从杂志感的摸鱼绿，到克制的石墨极简、深邃的克莱因蓝，再到温柔安静的豆沙与藕荷——同一篇《做了些爆款 Skills 以后，我对 Skills 的看法》用每套主题各排一遍。每个画框约等于公众号手机宽度，可在框内滚动查看全文。</p>
+  <p class="sub">全部通过合规校验：无 <code>div/class/style</code> 标签、文字 <code>span leaf</code> 包裹、标点全角、样式全内联。不够用时可让 AI 用主题生成器现生成一套。</p>
+  <div class="meta">
+    <span class="pill">10 套主题</span>
+    <span class="pill alt">全内联样式</span>
+    <span class="pill">粘贴不掉格式</span>
+    <span class="pill alt">确定性校验兜底</span>
+  </div>
 </header>
+
 <div class="grid" id="grid"></div>
-<footer>茉灵智库 · 主题清单见 references/theme-index.md</footer>
+
+<div class="howto">
+  <div class="step"><b>① 在线看效果</b><p>下面的画框就是排版结果，滚动即预览，无需安装任何东西。</p></div>
+  <div class="step"><b>② 装进你的 Agent</b><p><code>npx skills add https://github.com/88lin/gzh-design-skill</code></p></div>
+  <div class="step"><b>③ 一句话排版</b><p>对任意 Agent 说「用 XX 主题帮我排这篇公众号文章」，产出可直接粘贴的 HTML。</p></div>
+</div>
+
+<footer>
+  <b>茉灵智库</b> · 主题清单见 <span style="font-family:Consolas,Monaco,monospace">references/theme-index.md</span> · 预览页与主题视觉遵循 88lin/mydesign-system 品牌基因（主色 60 · 强调 30 · 点缀 10）
+</footer>
+
 <script>
   const THEMES=[
-    ["摸鱼绿（默认）","#059669","moyu-green.html","default"],
-    ["科技钴蓝","#1D4ED8","tech-cobalt.html","new"],
+    ["摸鱼绿","#059669","moyu-green.html","default"],
+    ["科技钴蓝","#1D4ED8","tech-cobalt.html",""],
     ["红白色系","#DC2626","red-white.html",""],
     ["石墨极简风","#52525B","graphite-minimal.html",""],
     ["留白禅意风","#4A5D52","zen-whitespace.html",""],
     ["摸鱼票据风","#059669","moyu-ticket.html",""],
     ["橄榄手记","#1e1f23","olive-journal.html",""],
-    ["克莱因蓝艺术展册","#002FA7","klein-blue.html","new"],
+    ["克莱因蓝艺术展册","#002FA7","klein-blue.html",""],
+    ["豆沙","#96545C","redbean.html","fem"],
+    ["藕荷","#8A2F84","orchid.html","fem"],
   ];
+  const TAGS={default:["default","默认"],new:["new","新"],fem:["fem","新"]};
   const grid=document.getElementById('grid');
   THEMES.forEach(function(t){
     var name=t[0],color=t[1],file=t[2],tag=t[3];
     var slug=file.replace('.html','');
+    var tagHtml=tag?'<span class="tag '+TAGS[tag][0]+'">'+TAGS[tag][1]+'</span>':'';
     var card=document.createElement('div');
     card.className='card';
     card.innerHTML=
       '<div class="bar">'+
         '<span class="dot" style="background:'+color+'"></span>'+
-        '<span class="tname">'+name+(tag?'<span class="tag">'+tag+'</span>':'')+'</span>'+
+        '<span class="tname">'+name+tagHtml+'</span>'+
         '<span class="tmeta">'+slug+'</span>'+
       '</div>'+
       '<iframe src="'+file+'" loading="lazy" title="'+name+'"></iframe>';
