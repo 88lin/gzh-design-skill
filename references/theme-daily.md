@@ -22,13 +22,13 @@
 
 ```
 报纸底：        #FEFAF5
-墨色正文：      #2A1C1C
-次要文字：      #57433F
-辅助文字：      #71625D
+墨色正文：      #1F2226
+次要文字：      #4A4A52
+辅助文字：      #8A8A92
 珊瑚红主色：    #C33D46（深 #9E2E38）
 蜜黄强调：      #FBD97C / 蜜黄底 #FEF2D3
 孔雀绿次色：    #2C7967 / 绿底 #E6F2EE
-细线：          2px solid #2A1C1C（报头粗线）+ 1px solid rgba(42,28,28,.2)（正文细线）
+细线：          2px solid #1F2226（报头粗线）+ 1px solid rgba(31,34,38,.2)（正文细线）
 报头字体：      Georgia,'Songti SC','Noto Serif SC',serif
 正文字号：      16px（报纸密度），line-height:1.9
 ```
@@ -40,7 +40,7 @@
 ## 组件 1 全局容器
 
 ```html
-<section style="max-width:677px;margin:0 auto;background:#FEFAF5;padding:36px 24px 32px;font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif;color:#2A1C1C;font-size:16px;line-height:1.9;overflow-x:hidden;">
+<section style="max-width:677px;margin:0 auto;background:#FEFAF5;padding:36px 24px 32px;font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif;color:#1F2226;font-size:16px;line-height:1.9;overflow-x:hidden;">
   <!-- 所有文章组件放在这里 -->
 </section>
 ```
@@ -51,12 +51,12 @@
 
 ```html
 <section style="margin-bottom:24px;">
-  <section style="border-bottom:2px solid #2A1C1C;font-size:0;line-height:0;"><span leaf=""><br></span></section>
+  <section style="border-bottom:2px solid #1F2226;font-size:0;line-height:0;"><span leaf=""><br></span></section>
   <section style="display:flex;justify-content:space-between;align-items:center;padding:12px 2px;">
     <span style="font-family:Georgia,'Songti SC','Noto Serif SC',serif;font-size:26px;font-weight:900;color:#9E2E38;letter-spacing:2px;"><span leaf="">茉灵日报</span></span>
-    <span style="font-size:12px;color:#71625D;letter-spacing:1px;"><span leaf="">第 042 期 · 十月十五日</span></span>
+    <span style="font-size:12px;color:#8A8A92;letter-spacing:1px;"><span leaf="">第 042 期 · 十月十五日</span></span>
   </section>
-  <section style="border-bottom:1px solid #2A1C1C;font-size:0;line-height:0;"><span leaf=""><br></span></section>
+  <section style="border-bottom:1px solid #1F2226;font-size:0;line-height:0;"><span leaf=""><br></span></section>
 </section>
 ```
 
@@ -66,11 +66,11 @@
 
 ```html
 <section style="margin-bottom:26px;">
-  <p style="margin:0 0 10px;font-family:Georgia,'Songti SC','Noto Serif SC',serif;font-size:24px;font-weight:900;line-height:1.6;color:#2A1C1C;word-break:normal;overflow-wrap:normal;">
+  <p style="margin:0 0 10px;font-family:Georgia,'Songti SC','Noto Serif SC',serif;font-size:24px;font-weight:900;line-height:1.6;color:#1F2226;word-break:normal;overflow-wrap:normal;">
     <span leaf="">本周 AI 圈，</span><br>
     <span leaf="">值得记住的 6 件事</span>
   </p>
-  <p style="margin:0;font-size:15px;line-height:2;color:#57433F;text-align:justify;"><span leaf="">导语一到两句，说清这期日报的口径：<span style="background:linear-gradient(transparent 60%, #FBD97C 60%);font-weight:bold;padding:0 1px;">只挑真的值得记的，不凑数。</span></span></p>
+  <p style="margin:0;font-size:15px;line-height:2;color:#4A4A52;text-align:justify;"><span leaf="">导语一到两句，说清这期日报的口径：<span style="background:linear-gradient(transparent 60%, #FBD97C 60%);font-weight:bold;padding:0 1px;">只挑真的值得记的，不凑数。</span></span></p>
 </section>
 ```
 
@@ -82,9 +82,9 @@
 <section style="margin-bottom:22px;">
   <section style="display:flex;align-items:baseline;margin-bottom:6px;">
     <span style="font-family:Georgia,serif;font-size:20px;font-weight:900;color:#C33D46;margin-right:10px;"><span leaf="">01</span></span>
-    <span style="font-size:17px;font-weight:900;color:#2A1C1C;"><span leaf="">条目标题，一句话说清事件</span></span>
+    <span style="font-size:17px;font-weight:900;color:#1F2226;"><span leaf="">条目标题，一句话说清事件</span></span>
   </section>
-  <p style="margin:0;font-size:15px;line-height:1.9;color:#57433F;text-align:justify;">
+  <p style="margin:0;font-size:15px;line-height:1.9;color:#4A4A52;text-align:justify;">
     <span leaf="">条目正文两到三行，先事实后观点。</span>
     <span style="background:linear-gradient(transparent 60%, #FBD97C 60%);font-weight:bold;padding:0 1px;"><span leaf="">蜜黄标记一句关键判断。</span></span>
   </p>
@@ -97,9 +97,9 @@
 <section style="margin-bottom:22px;">
   <section style="display:flex;align-items:baseline;margin-bottom:6px;">
     <span style="font-family:Georgia,serif;font-size:20px;font-weight:900;color:#2C7967;margin-right:10px;"><span leaf="">05</span></span>
-    <span style="font-size:17px;font-weight:900;color:#2A1C1C;"><span leaf="">次要条目标题</span></span>
+    <span style="font-size:17px;font-weight:900;color:#1F2226;"><span leaf="">次要条目标题</span></span>
   </section>
-  <p style="margin:0;font-size:15px;line-height:1.9;color:#57433F;text-align:justify;"><span leaf="">正文。</span></p>
+  <p style="margin:0;font-size:15px;line-height:1.9;color:#4A4A52;text-align:justify;"><span leaf="">正文。</span></p>
 </section>
 ```
 
@@ -114,16 +114,16 @@
   <section style="flex:1;padding-right:14px;">
     <section style="margin-bottom:6px;">
       <span style="font-family:Georgia,serif;font-size:18px;font-weight:900;color:#C33D46;"><span leaf="">07</span></span>
-      <span style="font-size:15px;font-weight:900;color:#2A1C1C;"><span leaf="">左栏标题</span></span>
+      <span style="font-size:15px;font-weight:900;color:#1F2226;"><span leaf="">左栏标题</span></span>
     </section>
-    <p style="margin:0;font-size:14px;line-height:1.9;color:#57433F;text-align:justify;"><span leaf="">左栏短正文。</span></p>
+    <p style="margin:0;font-size:14px;line-height:1.9;color:#4A4A52;text-align:justify;"><span leaf="">左栏短正文。</span></p>
   </section>
-  <section style="flex:1;padding-left:14px;border-left:1px solid rgba(42,28,28,.2);">
+  <section style="flex:1;padding-left:14px;border-left:1px solid rgba(31,34,38,.2);">
     <section style="margin-bottom:6px;">
       <span style="font-family:Georgia,serif;font-size:18px;font-weight:900;color:#2C7967;"><span leaf="">08</span></span>
-      <span style="font-size:15px;font-weight:900;color:#2A1C1C;"><span leaf="">右栏标题</span></span>
+      <span style="font-size:15px;font-weight:900;color:#1F2226;"><span leaf="">右栏标题</span></span>
     </section>
-    <p style="margin:0;font-size:14px;line-height:1.9;color:#57433F;text-align:justify;"><span leaf="">右栏短正文。</span></p>
+    <p style="margin:0;font-size:14px;line-height:1.9;color:#4A4A52;text-align:justify;"><span leaf="">右栏短正文。</span></p>
   </section>
 </section>
 ```
@@ -138,7 +138,7 @@
 <section style="margin:30px 0 22px;">
   <section style="display:flex;align-items:center;margin-bottom:14px;">
     <span style="font-size:13px;font-weight:900;letter-spacing:4px;color:#9E2E38;margin-right:12px;"><span leaf="">▎产品版</span></span>
-    <section style="flex:1;border-bottom:1px solid rgba(42,28,28,.2);font-size:0;line-height:0;"><span leaf=""><br></span></section>
+    <section style="flex:1;border-bottom:1px solid rgba(31,34,38,.2);font-size:0;line-height:0;"><span leaf=""><br></span></section>
   </section>
 </section>
 ```
@@ -151,7 +151,7 @@
 
 ```html
 <section style="margin:24px 0;padding:16px 18px;background:#FEF2D3;border-radius:10px;">
-  <p style="margin:0;font-size:14px;line-height:1.9;color:#2A1C1C;text-align:justify;"><span leaf="">✍️ 编者按：放在头条之后或日报末尾，说一段「为什么选这 6 件」的编辑逻辑。</span></p>
+  <p style="margin:0;font-size:14px;line-height:1.9;color:#1F2226;text-align:justify;"><span leaf="">✍️ 编者按：放在头条之后或日报末尾，说一段「为什么选这 6 件」的编辑逻辑。</span></p>
 </section>
 ```
 
@@ -160,9 +160,9 @@
 ## 组件 8 图片（报纸图：细边框 + 图注）
 
 ```html
-<span leaf=""><img src="{{图片URL}}" style="width:100%;border:1px solid rgba(42,28,28,.2);border-radius:4px;margin-bottom:6px;"></span>
+<span leaf=""><img src="{{图片URL}}" style="width:100%;border:1px solid rgba(31,34,38,.2);border-radius:4px;margin-bottom:6px;"></span>
 <section style="text-align:center;margin-bottom:20px;">
-  <span style="font-size:12px;color:#71625D;"><span leaf="">▲ {{图片说明}}（图源：{{来源}}）</span></span>
+  <span style="font-size:12px;color:#8A8A92;"><span leaf="">▲ {{图片说明}}（图源：{{来源}}）</span></span>
 </section>
 ```
 
@@ -171,9 +171,9 @@
 ## 组件 9 订阅收尾条（深底反白）
 
 ```html
-<section style="margin:30px 0 0;padding:18px 20px;background:#241615;border-radius:10px;text-align:center;">
+<section style="margin:30px 0 0;padding:18px 20px;background:#14181A;border-radius:10px;text-align:center;">
   <p style="margin:0 0 6px;font-size:15px;font-weight:900;color:#FFFFFF;"><span leaf="">每天 3 分钟，看懂 AI 圈</span></p>
-  <p style="margin:0;font-size:13px;color:#D0C4C0;"><span leaf="">关注茉灵智库，下期日报准时送达 📰</span></p>
+  <p style="margin:0;font-size:13px;color:#C9C9D0;"><span leaf="">关注茉灵智库，下期日报准时送达 📰</span></p>
 </section>
 ```
 
@@ -183,8 +183,8 @@
 
 ```html
 <section style="text-align:center;padding:18px 0 0;">
-  <p style="margin:0 0 4px;font-size:14px;font-weight:bold;color:#2A1C1C;"><span leaf="">作者名</span></p>
-  <p style="margin:0;font-size:12px;color:#71625D;line-height:1.8;">
+  <p style="margin:0 0 4px;font-size:14px;font-weight:bold;color:#1F2226;"><span leaf="">作者名</span></p>
+  <p style="margin:0;font-size:12px;color:#8A8A92;line-height:1.8;">
     <span leaf="">▪️{{签名第一行}}</span><br>
     <span leaf="">▪️{{签名第二行}}</span>
   </p>
