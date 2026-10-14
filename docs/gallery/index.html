@@ -3,57 +3,209 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>gzh-design · 8 套主题排版预览</title>
+<title>gzh-design · 14 套主题排版预览</title>
 <style>
-  body{margin:0;background:#f4f4f5;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;color:#1f2937}
-  header{padding:32px 24px 8px;max-width:1480px;margin:0 auto}
-  h1{font-size:24px;margin:0 0 8px}
-  .sub{color:#6b7280;font-size:15px;line-height:1.7;margin:0 0 4px}
-  .grid{display:flex;flex-wrap:wrap;gap:24px;padding:16px 24px 32px;max-width:1480px;margin:0 auto}
-  .card{background:#fff;border-radius:14px;box-shadow:0 4px 16px -6px rgba(0,0,0,.12);overflow:hidden;width:380px;display:flex;flex-direction:column}
-  .bar{display:flex;align-items:center;gap:10px;padding:13px 18px;border-bottom:1px solid #f0f0f0}
-  .dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;border:1px solid rgba(0,0,0,.06)}
-  .tname{font-weight:700;font-size:16px}
-  .tmeta{margin-left:auto;font-size:11px;color:#9ca3af;font-family:monospace}
-  .tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:10px;background:#ecfdf5;color:#059669;margin-left:6px}
-  iframe{width:100%;height:680px;border:0;background:#fff}
-  footer{max-width:1480px;margin:0 auto;padding:8px 24px 40px;color:#9ca3af;font-size:13px}
+  :root{
+    --paper:#FDFBF7; --ink:#2B2124; --ink-2:#584A4D; --ink-3:#A29396;
+    --line:rgba(43,33,36,.10); --card:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;color:var(--ink)}
+  .serif{font-family:Georgia,'Songti SC','Noto Serif SC',serif}
+
+  header{max-width:1240px;margin:0 auto;padding:56px 28px 8px;text-align:center}
+  .kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:6px;color:#E84A5F;margin-bottom:18px}
+  h1{font-size:38px;margin:0 0 14px;line-height:1.4;font-weight:900}
+  h1 .hl{background:linear-gradient(transparent 62%, #F4D758 62%);padding:0 3px}
+  .sub{color:var(--ink-2);font-size:16px;line-height:1.9;margin:0 auto 6px;max-width:640px}
+  .tri{margin:26px 0 10px}
+  .tri i{display:inline-block;height:4px;border-radius:2px}
+  .tri i:nth-child(1){width:36px;background:#2B7FD8}
+  .tri i:nth-child(2){width:18px;background:#F4D758;margin-left:5px}
+  .tri i:nth-child(3){width:8px;background:#E84A5F;margin-left:5px}
+
+  .howto{max-width:820px;margin:26px auto 0;padding:0 28px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+  .how{flex:1;min-width:220px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;text-align:left}
+  .how b{display:block;font-size:13px;letter-spacing:2px;color:#96545C;margin-bottom:6px}
+  .how p{margin:0;font-size:14px;line-height:1.8;color:var(--ink-2)}
+
+  .grid{max-width:1240px;margin:0 auto;padding:36px 28px 24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(370px,1fr));gap:26px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 34px -14px rgba(43,33,36,.22)}
+  .bar{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--line)}
+  .swatch{display:flex;gap:4px;flex-shrink:0}
+  .swatch i{width:12px;height:12px;border-radius:50%;display:block}
+  .tname{font-weight:800;font-size:16px}
+  .new{display:inline-block;font-size:10px;padding:1px 8px;border-radius:10px;background:#F8E7EC;color:#B54070;font-weight:700;margin-left:8px;letter-spacing:1px}
+  .tmeta{margin-left:auto;font-size:11px;color:var(--ink-3);font-family:monospace}
+  iframe{width:100%;height:640px;border:0;background:#fff}
+  .card footer{padding:11px 18px 13px;font-size:13px;color:var(--ink-2);line-height:1.7;border-top:1px solid var(--line);background:#FDFBF7}
+
+  footer.page{max-width:1240px;margin:0 auto;padding:14px 28px 56px;color:var(--ink-3);font-size:13px;text-align:center;line-height:2}
 </style>
 </head>
 <body>
+
 <header>
-  <h1>gzh-design · 8 套主题排版预览</h1>
-  <p class="sub">同一篇文章《做了些爆款 Skills 以后，我对 Skills 的看法》用 8 套精选主题各排一遍。每个画框约等于公众号手机宽度，可在框内滚动查看全文。</p>
-  <p class="sub">全部通过合规校验：无 <code>div/class/style</code> 标签、文字 <code>span leaf</code> 包裹、标点全角。不够用时可让 AI 用主题生成器现生成一套。</p>
+  <span class="kicker">GZH-DESIGN · 排版主题馆</span>
+  <h1 class="serif">同一篇长文，<span class="hl">14 种气质</span></h1>
+  <p class="sub">从杂志信纸到手账日报，每套主题都是一份完整的公众号组件库——纯内联样式，选一套、复制、粘贴进微信编辑器即可发布。</p>
+  <div class="tri"><i></i><i></i><i></i></div>
+  <div class="howto">
+    <div class="how"><b>① 选主题</b><p>点下方卡片里的「打开 ↗」进入单主题在线预览，或直接在卡片画框内滚动看全文。</p></div>
+    <div class="how"><b>② 取组件</b><p>仓库 references/ 目录下有对应组件库文档，全部组件可直接复制。</p></div>
+    <div class="how"><b>③ 发出去</b><p>粘贴进公众号编辑器，样式全内联、677px 宽，所见即所得。</p></div>
+  </div>
 </header>
-<div class="grid" id="grid"></div>
-<footer>茉灵智库 · 主题清单见 references/theme-index.md</footer>
-<script>
-  const THEMES=[
-    ["摸鱼绿（默认）","#059669","moyu-green.html","default"],
-    ["科技钴蓝","#1D4ED8","tech-cobalt.html","new"],
-    ["红白色系","#DC2626","red-white.html",""],
-    ["石墨极简风","#52525B","graphite-minimal.html",""],
-    ["留白禅意风","#4A5D52","zen-whitespace.html",""],
-    ["摸鱼票据风","#059669","moyu-ticket.html",""],
-    ["橄榄手记","#1e1f23","olive-journal.html",""],
-    ["克莱因蓝艺术展册","#002FA7","klein-blue.html","new"],
-  ];
-  const grid=document.getElementById('grid');
-  THEMES.forEach(function(t){
-    var name=t[0],color=t[1],file=t[2],tag=t[3];
-    var slug=file.replace('.html','');
-    var card=document.createElement('div');
-    card.className='card';
-    card.innerHTML=
-      '<div class="bar">'+
-        '<span class="dot" style="background:'+color+'"></span>'+
-        '<span class="tname">'+name+(tag?'<span class="tag">'+tag+'</span>':'')+'</span>'+
-        '<span class="tmeta">'+slug+'</span>'+
-      '</div>'+
-      '<iframe src="'+file+'" loading="lazy" title="'+name+'"></iframe>';
-    grid.appendChild(card);
-  });
-</script>
+
+<div class="grid">
+
+  <section class="card">
+    <div class="bar">
+      <span class="swatch"><i style="background:#059669"></i><i style="background:#A7F3D0"></i><i style="background:#1a1a1a"></i></span>
+      <span class="tname">摸鱼绿</span>
+      <span class="tmeta">moyu-green</span>
+    </div>
+    <iframe src="./moyu-green.html" loading="lazy" title="摸鱼绿"></iframe>
+    <footer>杂志卡片式，教程、测评、清单通用默认款。在线预览：<a href="https://88lin.github.io/gzh-design-skill/docs/gallery/moyu-green.html" target="_blank">打开 ↗</a></footer>
+  </section>
+
+  <section class="card">
+    <div class="bar">
+      <span class="swatch"><i style="background:#DC2626"></i><i style="background:#FECACA"></i><i style="background:#1a1a1a"></i></span>
+      <span class="tname">红白色系</span>
+      <span class="tmeta">red-white</span>
+    </div>
+    <iframe src="./red-white.html" loading="lazy" title="红白色系"></iframe>
+    <footer>经典编辑风，深度分析与观点话题。在线预览：<a href="https://88lin.github.io/gzh-design-skill/docs/gallery/red-white.html" target="_blank">打开 ↗</a></footer>
+  </section>
+
+  <section class="card">
+    <div class="bar">
+      <span class="swatch"><i style="background:#52525B"></i><i style="background:#A1A1AA"></i><i style="background:#27272A"></i></span>
+      <span class="tname">石墨极简风</span>
+      <span class="tmeta">graphite-minimal</span>
+    </div>
+    <iframe src="./graphite-minimal.html" loading="lazy" title="石墨极简风"></iframe>
+    <footer>全灰阶极简，设计评论与专业观点。在线预览：<a href="https://88lin.github.io/gzh-design-skill/docs/gallery/graphite-minimal.html" target="_blank">打开 ↗</a></footer>
+  </section>
+
+  <section class="card">
+    <div class="bar">
+      <span class="swatch"><i style="background:#4A5D52"></i><i style="background:#B5C8BC"></i><i style="background:#8a8a8a"></i></span>
+      <span class="tname">留白禅意风</span>
+      <span class="tmeta">zen-whitespace</span>
+    </div>
+    <iframe src="./zen-whitespace.html" loading="lazy" title="留白禅意风"></iframe>
+    <footer>呼吸感最强，随笔与慢生活。在线预览：<a href="https://88lin.github.io/gzh-design-skill/docs/gallery/zen-whitespace.html" target="_blank">打开 ↗</a></footer>
+  </section>
+
+  <section class="card">
+    <div class="bar">
+      <span class="swatch"><i style="background:#059669"></i><i style="background:#1a1a1a"></i><i style="background:#A7F3D0"></i></span>
+      <span class="tname">摸鱼票据风</span>
+      <span class="tmeta">moyu-ticket</span>
+    </div>
+    <iframe src="./moyu-ticket.html" loading="lazy" title="摸鱼票据风"></iframe>
+    <footer>票据门票隐喻，测评与创意评测。在线预览：<a href="https://88lin.github.io/gzh-design-skill/docs/gallery/moyu-ticket.html" target="_blank">打开 ↗</a></footer>
+  </section>
+
+  <section class="card">
+    <div class="bar">
+      <span class="swatch"><i style="background:#1e1f23"></i><i style="background:#ed7b2f"></i><i style="background:#F6EEE2"></i></span>
+      <span class="tname">橄榄手记</span>
+      <span class="tmeta">olive-journal</span>
+    </div>
+    <iframe src="./olive-journal.html" loading="lazy" title="橄榄手记"></iframe>
+    <footer>编辑部内刊质感，系统说明文档。在线预览：<a href="https://88lin.github.io/gzh-design-skill/docs/gallery/olive-journal.html" target="_blank">打开 ↗</a></footer>
+  </section>
+
+  <section class="card">
+    <div class="bar">
+      <span class="swatch"><i style="background:#002FA7"></i><i style="background:#4D6FD1"></i><i style="background:#DCE4F5"></i></span>
+      <span class="tname">克莱因蓝艺术展册</span>
+      <span class="tmeta">klein-blue</span>
+    </div>
+    <iframe src="./klein-blue.html" loading="lazy" title="克莱因蓝"></iframe>
+    <footer>高纯度蓝色锚点，艺术评论与品牌叙事。在线预览：<a href="https://88lin.github.io/gzh-design-skill/docs/gallery/klein-blue.html" target="_blank">打开 ↗</a></footer>
+  </section>
+
+  <section class="card">
+    <div class="bar">
+      <span class="swatch"><i style="background:#1D4ED8"></i><i style="background:#93C5FD"></i><i style="background:#FDE047"></i></span>
+      <span class="tname">科技钴蓝</span>
+      <span class="tmeta">tech-cobalt</span>
+    </div>
+    <iframe src="./tech-cobalt.html" loading="lazy" title="科技钴蓝"></iframe>
+    <footer>冷静清晰的工具说明与工作流指南。在线预览：<a href="https://88lin.github.io/gzh-design-skill/docs/gallery/tech-cobalt.html" target="_blank">打开 ↗</a></footer>
+  </section>
+
+  <section class="card">
+    <div class="bar">
+      <span class="swatch"><i style="background:#2B7FD8"></i><i style="background:#F4D758"></i><i style="background:#E84A5F"></i></span>
+      <span class="tname serif">奶咖信纸</span><span class="new">NEW</span>
+      <span class="tmeta">letter</span>
+    </div>
+    <iframe src="./letter.html" loading="lazy" title="奶咖信纸"></iframe>
+    <footer>奶白信纸底 + 三色装饰条，叙事长文与方法论，无卡片堆砌的一封长信。在线预览：<a href="https://88lin.github.io/gzh-design-skill/docs/gallery/letter.html" target="_blank">打开 ↗</a></footer>
+  </section>
+
+  <section class="card">
+    <div class="bar">
+      <span class="swatch"><i style="background:#71519B"></i><i style="background:#F6DC8E"></i><i style="background:#B54070"></i></span>
+      <span class="tname">紫藤便当盒</span><span class="new">NEW</span>
+      <span class="tmeta">bento</span>
+    </div>
+    <iframe src="./bento.html" loading="lazy" title="紫藤便当盒"></iframe>
+    <footer>马卡龙色块卡堆叠 + 等宽眉标，工具测评与干货合集。在线预览：<a href="https://88lin.github.io/gzh-design-skill/docs/gallery/bento.html" target="_blank">打开 ↗</a></footer>
+  </section>
+
+  <section class="card">
+    <div class="bar">
+      <span class="swatch"><i style="background:#41684F"></i><i style="background:#F4D793"></i><i style="background:#B44761"></i></span>
+      <span class="tname">鼠尾草对话</span><span class="new">NEW</span>
+      <span class="tmeta">chat</span>
+    </div>
+    <iframe src="./chat.html" loading="lazy" title="鼠尾草对话"></iframe>
+    <footer>左右气泡问答推进，AI 访谈实录与问答教程。在线预览：<a href="https://88lin.github.io/gzh-design-skill/docs/gallery/chat.html" target="_blank">打开 ↗</a></footer>
+  </section>
+
+  <section class="card">
+    <div class="bar">
+      <span class="swatch"><i style="background:#15697C"></i><i style="background:#F5CDB4"></i><i style="background:#B24935"></i></span>
+      <span class="tname serif">孔雀蓝杂志</span><span class="new">NEW</span>
+      <span class="tmeta">magazine</span>
+    </div>
+    <iframe src="./magazine.html" loading="lazy" title="孔雀蓝杂志"></iframe>
+    <footer>左对齐特稿排版 + 超大斜体装饰词，人物故事与行业观察。在线预览：<a href="https://88lin.github.io/gzh-design-skill/docs/gallery/magazine.html" target="_blank">打开 ↗</a></footer>
+  </section>
+
+  <section class="card">
+    <div class="bar">
+      <span class="swatch"><i style="background:#A8452F"></i><i style="background:#EFCE9A"></i><i style="background:#2F6B5B"></i></span>
+      <span class="tname">赤陶手账</span><span class="new">NEW</span>
+      <span class="tmeta">journal</span>
+    </div>
+    <iframe src="./journal.html" loading="lazy" title="赤陶手账"></iframe>
+    <footer>纸感底 + 胶带批注 + 书卡摘录，读书笔记与随笔。在线预览：<a href="https://88lin.github.io/gzh-design-skill/docs/gallery/journal.html" target="_blank">打开 ↗</a></footer>
+  </section>
+
+  <section class="card">
+    <div class="bar">
+      <span class="swatch"><i style="background:#C33D46"></i><i style="background:#FBD97C"></i><i style="background:#2C7967"></i></span>
+      <span class="tname">珊瑚日报</span><span class="new">NEW</span>
+      <span class="tmeta">daily</span>
+    </div>
+    <iframe src="./daily.html" loading="lazy" title="珊瑚日报"></iframe>
+    <footer>双细线报头 + 红绿编号条目，资讯日报与快讯合集。在线预览：<a href="https://88lin.github.io/gzh-design-skill/docs/gallery/daily.html" target="_blank">打开 ↗</a></footer>
+  </section>
+
+</div>
+
+<footer class="page">
+  <div class="tri"><i></i><i></i><i></i></div>
+  <p style="margin:14px 0 0">14 套主题 · 全部组件纯内联样式 · 与 <a href="https://github.com/88lin/mydesign-system" target="_blank" style="color:#96545C">mydesign-system</a> 品牌基因同源<br>© 2026 88lin（茉灵智库）</p>
+</footer>
+
 </body>
 </html>
