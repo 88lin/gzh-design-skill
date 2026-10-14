@@ -1,8 +1,8 @@
-# 全部 8 套主题效果预览 · All 8 Themes
+# 全部 14 套主题效果预览 · All 14 Themes
 
-同一篇长文（《做了些爆款 Skills 以后，我对 Skills 的看法》），用 8 套精选主题排版，全部含真实长图/交互预览（含配图、引言卡、编号章节、金句、名词旁注等完整组件）。
+同一篇长文（《做了些爆款 Skills 以后，我对 Skills 的看法》），用 14 套精选主题排版，全部含真实长图/交互预览（含配图、引言卡、编号章节、金句、名词旁注等完整组件）。
 
-> The same long-form article laid out in all 8 curated themes (all 8 previews below). Back to [README](../README.md).
+> The same long-form article laid out in all 14 curated themes (all 14 previews below). Back to [README](../README.md).
 
 <table>
 <tr>
@@ -19,6 +19,16 @@
 <td align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>打开完整交互预览</b></a><br><sub><b>科技钴蓝 Tech Cobalt</b></sub></td>
 <td align="center"><img src="../assets/lf-klein-blue.png" width="250"><br><sub><b>克莱因蓝 Klein Blue</b></sub></td>
 <td></td>
+</tr>
+<tr>
+<td align="center"><img src="../assets/lf-letter.png" width="250"><br><sub><b>奶咖信纸 Letter</b></sub></td>
+<td align="center"><img src="../assets/lf-bento.png" width="250"><br><sub><b>粉彩便当盒 Bento</b></sub></td>
+<td align="center"><img src="../assets/lf-chat.png" width="250"><br><sub><b>薄荷对话 Chat</b></sub></td>
+</tr>
+<tr>
+<td align="center"><img src="../assets/lf-magazine.png" width="250"><br><sub><b>孔雀蓝杂志 Magazine</b></sub></td>
+<td align="center"><img src="../assets/lf-journal.png" width="250"><br><sub><b>珊瑚手账 Journal</b></sub></td>
+<td align="center"><img src="../assets/lf-daily.png" width="250"><br><sub><b>珊瑚日报 Daily</b></sub></td>
 </tr>
 </table>
 
