@@ -22,6 +22,9 @@ English ｜ [中文](README.md)
 
 A layout Skill for AI agents (Claude Code / Codex / Cursor …). You write Markdown; it renders HTML with **fully inlined styles that survive pasting into the WeChat editor** — auto section numbers, keyword underlines, intro cards, code blocks, images, merged author signature — with scripts that deterministically enforce WeChat's platform limits.
 
+> [!TIP]
+> **⭐ Drop a Star before you scroll on** — WeChat tweaks its sanitizer every now and then; every fix lands here first. Star it so you can find your way back the day pasting suddenly breaks.
+
 ## ✨ Features
 
 - **14 curated themes**: Moyu Green (default) · Tech Cobalt · Klein Blue · Red & White · Graphite Minimal · Zen Whitespace · Moyu Ticket · Olive Journal — each a self-contained thick component library (design tokens + dozens of components + visual-hierarchy table + article-type recipe table).
@@ -85,7 +88,8 @@ One long-form article laid out in all 14 themes (screenshots plus interactive HT
 </tr>
 </table>
 
-> 📚 **All 14 themes (all previewed) → [docs/all-themes.md](docs/all-themes.md)**　|　online preview: https://88lin.github.io/gzh-design-skill/docs/gallery/index.html
+> [!TIP]
+> **👀 Preview all 14 themes online**: [88lin.github.io/gzh-design-skill/docs/gallery/index.html](https://88lin.github.io/gzh-design-skill/docs/gallery/index.html) — scroll the full rendered article for each theme, then copy the components you like.
 
 ### Theme cheat-sheet
 
