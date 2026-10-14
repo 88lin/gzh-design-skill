@@ -44,6 +44,31 @@
   .card footer{padding:11px 18px 13px;font-size:13px;color:var(--ink-2);line-height:1.7;border-top:1px solid var(--line);background:#FDFBF7}
 
   footer.page{max-width:1240px;margin:0 auto;padding:14px 28px 56px;color:var(--ink-3);font-size:13px;text-align:center;line-height:2}
+
+  .gh-btn{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:10px 22px;background:var(--ink);color:#FDFBF7;border-radius:999px;text-decoration:none;font-size:14px;font-weight:700;letter-spacing:1px;transition:transform .2s ease,box-shadow .2s ease;box-shadow:0 4px 14px -6px rgba(43,33,36,.4)}
+  .gh-btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px -8px rgba(43,33,36,.45)}
+  .gh-btn svg{width:18px;height:18px;fill:currentColor}
+
+  /* —— 移动端适配 —— */
+  @media (max-width:640px){
+    header{padding:40px 18px 8px}
+    h1{font-size:27px}
+    .sub{font-size:14.5px}
+    .kicker{letter-spacing:3px;font-size:11px}
+    .howto{padding:0 14px;gap:10px}
+    .how{min-width:100%;padding:15px 17px}
+    .grid{padding:26px 14px 16px;gap:18px;grid-template-columns:1fr}
+    .bar{padding:12px 14px}
+    .tname{font-size:15px}
+    iframe{height:520px}
+    .card footer{padding:10px 14px 12px;font-size:12.5px}
+    footer.page{padding:12px 18px 44px;font-size:12px}
+    .gh-btn{padding:9px 18px;font-size:13px}
+  }
+  @media (min-width:641px) and (max-width:900px){
+    .grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));padding:30px 20px 20px;gap:20px}
+    header{padding:46px 20px 8px}
+  }
 </style>
 </head>
 <body>
@@ -53,6 +78,10 @@
   <h1 class="serif">同一篇长文，<span class="hl">14 种气质</span></h1>
   <p class="sub">从杂志信纸到手账日报，每套主题都是一份完整的公众号组件库——纯内联样式，选一套、复制、粘贴进微信编辑器即可发布。</p>
   <div class="tri"><i></i><i></i><i></i></div>
+  <a class="gh-btn" href="https://github.com/88lin/gzh-design-skill" target="_blank" rel="noopener">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+    GitHub · 88lin/gzh-design-skill
+  </a>
   <div class="howto">
     <div class="how"><b>① 选主题</b><p>点下方卡片里的「打开 ↗」进入单主题在线预览，或直接在卡片画框内滚动看全文。</p></div>
     <div class="how"><b>② 取组件</b><p>仓库 references/ 目录下有对应组件库文档，全部组件可直接复制。</p></div>
@@ -206,7 +235,7 @@
 
 <footer class="page">
   <div class="tri"><i></i><i></i><i></i></div>
-  <p style="margin:14px 0 0">14 套主题 · 全部组件纯内联样式 · 与 <a href="https://github.com/88lin/mydesign-system" target="_blank" style="color:#96545C">mydesign-system</a> 品牌基因同源<br>© 2026 88lin（茉灵智库）</p>
+  <p style="margin:14px 0 0">14 套主题 · 全部组件纯内联样式<br>© 2026 <a href="https://dev.88lin.eu.org/" target="_blank" style="color:#96545C;text-decoration:none;border-bottom:1px solid #E4C7CB">88lin</a>（茉灵智库）</p>
 </footer>
 
 </body>
