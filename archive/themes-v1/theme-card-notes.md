@@ -65,7 +65,7 @@
 > **文案策略（先读，比代码重要）**：
 > - 引言卡金句和公众号外标题是**两层**，视角要错开——外标题卖"为什么点开"，引言卡卖"核心观点是什么"
 > - 已知外标题时，金句**禁止原样复述**其核心关键词；从文章第一段或核心论点提炼一句有张力的判断句
-> - 右下署名按文章实际作者填，未知则整行删掉，**不要固定写"甲木"**
+> - 右下署名按文章实际作者填，未知则整行删掉，**不要固定写"茉灵智库"**
 > - 靛紫底白字标签仅在本卡片内使用（视觉焦点），正文中的关键词标签一律用浅靛底深靛字（组件 7b）
 
 ```html
@@ -593,7 +593,7 @@
 <section style="padding:0 10px;">
   <section style="background:#ffffff;border-radius:16px;border:1px solid #E5E7EB;padding:24px;margin-bottom:16px;">
     <p style="margin-bottom:12px;font-size:15px;line-height:1.8;color:#374151;">
-      <span leaf="">我是甲木，热衷于分享一些 AI 观察、AI 干货内容。</span>
+      <span leaf="">我是茉灵智库，专注 AI 观察与知识干货，帮你把复杂的东西讲简单。</span>
     </p>
     <p style="margin-bottom:0;font-size:15px;line-height:1.8;color:#374151;">
       <span leaf="">如果你觉得今天这篇有收获，欢迎</span>

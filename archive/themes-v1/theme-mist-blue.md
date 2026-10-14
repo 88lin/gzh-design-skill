@@ -1,4 +1,4 @@
-# 甲木公众号排版组件库 —— 雾蓝晴空风（Mist Blue）
+# 茉灵智库公众号排版组件库 —— 雾蓝晴空风（Mist Blue）
 
 > **使用说明**：本组件库为「雾蓝晴空风」主题，所有组件使用**内联样式**，可直接复制粘贴到微信公众号编辑器。
 >
@@ -479,7 +479,7 @@
 ```html
 <section style="padding: 0 10px;">
   <p style="margin-bottom: 20px;font-size: 15px;line-height: 1.85;text-align: justify;color: #5A6B74;">
-    <span leaf="">我是甲木，热衷于分享一些 AI 观察，AI 干货内容</span>
+    <span leaf="">我是茉灵智库，专注 AI 观察与知识干货</span>
   </p>
   <p style="margin-bottom: 20px;font-size: 15px;line-height: 1.85;text-align: justify;color: #5A6B74;">
     <span leaf="">如果你觉得今天这篇有收获，欢迎</span>

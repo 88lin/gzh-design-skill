@@ -46,9 +46,9 @@
 <td colspan="3" align="center"><img src="https://origin.picgo.net/2026/07/07/-747b33f502544254.jpg" width="100%"><br><sub><b>橄榄手记</b></sub></td>
 </tr>
 <tr>
-<td width="33%" align="center"><img src="https://github.com/isjiamu/gzh-design-skill/releases/download/assets-v1/lf-graphite-minimal.png?v=1" width="250"><br><sub><b>石墨极简风</b></sub></td>
-<td width="33%" align="center"><img src="https://github.com/isjiamu/gzh-design-skill/releases/download/assets-v1/lf-zen-whitespace.png?v=1" width="250"><br><sub><b>留白禅意风</b></sub></td>
-<td width="33%" align="center"><img src="https://github.com/isjiamu/gzh-design-skill/releases/download/assets-v1/lf-moyu-ticket.png?v=1" width="250"><br><sub><b>摸鱼票据风</b></sub></td>
+<td width="33%" align="center"><img src="assets/lf-graphite-minimal.png" width="250"><br><sub><b>石墨极简风</b></sub></td>
+<td width="33%" align="center"><img src="assets/lf-zen-whitespace.png" width="250"><br><sub><b>留白禅意风</b></sub></td>
+<td width="33%" align="center"><img src="assets/lf-moyu-ticket.png" width="250"><br><sub><b>摸鱼票据风</b></sub></td>
 </tr>
 <tr>
 <td colspan="3" align="center"><a href="docs/gallery/tech-cobalt.html"><b>打开完整交互预览</b></a><br><sub><b>科技钴蓝</b></sub></td>
@@ -99,21 +99,21 @@
 ### 方式一：一行安装（推荐）
 
 ```bash
-npx skills add https://github.com/isjiamu/gzh-design-skill
+npx skills add https://github.com/88lin/gzh-design-skill
 ```
 
 ### 方式二：让 AI 自己装
 
 对**任意 Agent**（Claude Code / Codex / Cursor 等）说一句：
 
-> 请帮我查找并自动安装 https://github.com/isjiamu/gzh-design-skill 这个 skill
+> 请帮我查找并自动安装 https://github.com/88lin/gzh-design-skill 这个 skill
 
 它会自行 clone 到对应的 skills 目录并接入。
 
 ### 方式三：手动 clone
 
 ```bash
-git clone https://github.com/isjiamu/gzh-design-skill.git ~/.claude/skills/gzh-design
+git clone https://github.com/88lin/gzh-design-skill.git ~/.claude/skills/gzh-design
 ```
 
 装好后，直接对 Agent 说：
@@ -313,7 +313,7 @@ A：不挑模型，**国内外模型都能跑出一致效果**。排版逻辑全
 A：能。说「用这几套主题各排一遍这篇」即可批量生成多套供你挑。
 
 **Q：怎么更新到最新版？**
-A：重新跑 `npx skills add https://github.com/isjiamu/gzh-design-skill`，或到安装目录 `git pull`。
+A：重新跑 `npx skills add https://github.com/88lin/gzh-design-skill`，或到安装目录 `git pull`。
 
 **Q：Agent 写出来不合规怎么办？**
 A：跑 `scripts/validate_gzh_html.py`，报 ERROR 就回到装配步骤修；两关全绿才交付，仍有问题欢迎开 Issue。

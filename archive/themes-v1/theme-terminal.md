@@ -1,4 +1,4 @@
-# 甲木公众号排版组件库 —— 终端极客风（Terminal / Dark）
+# 茉灵智库公众号排版组件库 —— 终端极客风（Terminal / Dark）
 
 > **使用说明**：本组件库为「终端极客风」主题，所有组件使用**内联样式**，可直接复制粘贴到微信公众号编辑器。
 >
@@ -86,7 +86,7 @@
     </p>
     <!-- 署名行 -->
     <p style="text-align:right;font-size:12px;color:#8B949E;margin:10px 0 0;font-family:'SF Mono',Consolas,Monaco,monospace;letter-spacing:1px;">
-      <span leaf="">—— 作者名（按文章作者或主题而定，不要固定写"甲木"）</span>
+      <span leaf="">—— 作者名（按文章作者或主题而定，不要固定写"茉灵智库"）</span>
     </p>
   </section>
 </section>
@@ -476,7 +476,7 @@
       <span leaf=""> whoami</span>
     </p>
     <p style="margin-bottom:14px;font-size:15px;line-height:1.8;color:#C9D1D9;">
-      <span leaf="">我是甲木，热衷于分享一些 AI 观察，AI 干货内容。</span>
+      <span leaf="">我是茉灵智库，专注 AI 观察与知识干货，帮你把复杂的东西讲简单。</span>
     </p>
     <p style="margin-bottom:0;font-size:15px;line-height:1.8;color:#C9D1D9;">
       <span leaf="">如果你觉得今天这篇有收获，欢迎</span>

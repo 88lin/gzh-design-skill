@@ -6,14 +6,14 @@
 
 <table>
 <tr>
-<td width="33%" align="center"><img src="https://github.com/isjiamu/gzh-design-skill/releases/download/assets-v1/lf-moyu-green.png?v=1" width="250"><br><sub><b>摸鱼绿 Moyu Green（默认）</b></sub></td>
-<td width="33%" align="center"><img src="https://github.com/isjiamu/gzh-design-skill/releases/download/assets-v1/lf-red-white.png?v=1" width="250"><br><sub><b>红白色系 Red &amp; White</b></sub></td>
-<td width="33%" align="center"><img src="https://github.com/isjiamu/gzh-design-skill/releases/download/assets-v1/lf-graphite-minimal.png?v=1" width="250"><br><sub><b>石墨极简风 Graphite Minimal</b></sub></td>
+<td width="33%" align="center"><img src="assets/lf-moyu-green.png" width="250"><br><sub><b>摸鱼绿 Moyu Green（默认）</b></sub></td>
+<td width="33%" align="center"><img src="assets/lf-red-white.png" width="250"><br><sub><b>红白色系 Red &amp; White</b></sub></td>
+<td width="33%" align="center"><img src="assets/lf-graphite-minimal.png" width="250"><br><sub><b>石墨极简风 Graphite Minimal</b></sub></td>
 </tr>
 <tr>
-<td align="center"><img src="https://github.com/isjiamu/gzh-design-skill/releases/download/assets-v1/lf-zen-whitespace.png?v=1" width="250"><br><sub><b>留白禅意风 Zen Whitespace</b></sub></td>
-<td align="center"><img src="https://github.com/isjiamu/gzh-design-skill/releases/download/assets-v1/lf-moyu-ticket.png?v=1" width="250"><br><sub><b>摸鱼票据风 Moyu Ticket</b></sub></td>
-<td align="center"><img src="https://github.com/isjiamu/gzh-design-skill/releases/download/assets-v1/lf-olive-journal.png?v=1" width="250"><br><sub><b>橄榄手记 Olive Journal</b></sub></td>
+<td align="center"><img src="assets/lf-zen-whitespace.png" width="250"><br><sub><b>留白禅意风 Zen Whitespace</b></sub></td>
+<td align="center"><img src="assets/lf-moyu-ticket.png" width="250"><br><sub><b>摸鱼票据风 Moyu Ticket</b></sub></td>
+<td align="center"><img src="assets/lf-olive-journal.png" width="250"><br><sub><b>橄榄手记 Olive Journal</b></sub></td>
 </tr>
 <tr>
 <td align="center"><a href="gallery/tech-cobalt.html"><b>打开完整交互预览</b></a><br><sub><b>科技钴蓝 Tech Cobalt</b></sub></td>
