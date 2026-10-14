@@ -27,7 +27,7 @@
 </tr>
 <tr>
 <td align="center"><img src="../assets/lf-magazine.png" width="250"><br><sub><b>孔雀蓝杂志 Magazine</b></sub></td>
-<td align="center"><img src="../assets/lf-journal.png" width="250"><br><sub><b>赤陶手账 Journal</b></sub></td>
+<td align="center"><img src="../assets/lf-journal.png" width="250"><br><sub><b>珊瑚手账 Journal</b></sub></td>
 <td align="center"><img src="../assets/lf-daily.png" width="250"><br><sub><b>珊瑚日报 Daily</b></sub></td>
 </tr>
 </table>
