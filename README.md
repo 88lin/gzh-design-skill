@@ -28,7 +28,7 @@
 
 ## ✨ 核心特性
 
-- **14 套精选主题**：科技钴蓝 · 克莱因蓝 · 奶咖信纸 · 粉彩便当盒 · 薄荷对话 · 孔雀蓝杂志 · 珊瑚手账 · 珊瑚日报 · 摸鱼绿（默认）· 红白 · 石墨极简 · 留白禅意 · 摸鱼票据 · 橄榄手记 —— 每套都是自成体系的厚组件库（设计变量 + 数十个精细组件 + 视觉层级表 + 文章类型配方表）。
+- **14 套精选主题**：科技钴蓝（默认）· 克莱因蓝 · 奶咖信纸 · 粉彩便当盒 · 薄荷对话 · 孔雀蓝杂志 · 珊瑚手账 · 珊瑚日报 · 摸鱼绿 · 红白 · 石墨极简 · 留白禅意 · 摸鱼票据 · 橄榄手记 —— 每套都是自成体系的厚组件库（设计变量 + 数十个精细组件 + 视觉层级表 + 文章类型配方表）。
 - **主题生成器**：不满足现成主题？用一句话描述或一张参考图，生成一套全新组件库并保存本地复用（见 `references/theme-generator.md`）。
 - **内容全兼容**：代码块（深/浅色，等宽不折行）、图片、GIF（带动图角标）、行内代码、引用、列表、产品徽章、Markdown 超链接（自动转上标脚注 + 文末「参考资料」列表）。
 - **智能排版**：章节自动编号（末章 ∞ / ///）、每段主动标 1–3 个关键词下划线、从正文提炼引言卡与目录、作者签名去重合并。
@@ -43,7 +43,7 @@
 
 <table>
 <tr>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/tech-cobalt.html"><img src="assets/lf-tech-cobalt.thumb.png" width="250"></a><br><sub><b>科技钴蓝</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/tech-cobalt.html"><img src="assets/lf-tech-cobalt.thumb.png" width="250"></a><br><sub><b>科技钴蓝（默认）</b></sub></td>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/klein-blue.html"><img src="assets/lf-klein-blue.thumb.png" width="250"></a><br><sub><b>克莱因蓝</b></sub></td>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/letter.html"><img src="assets/lf-letter.thumb.png" width="250"></a><br><sub><b>奶咖信纸</b></sub></td>
 </tr>
@@ -55,7 +55,7 @@
 <tr>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/journal.html"><img src="assets/lf-journal.thumb.png" width="250"></a><br><sub><b>珊瑚手账</b></sub></td>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/daily.html"><img src="assets/lf-daily.thumb.png" width="250"></a><br><sub><b>珊瑚日报</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/moyu-green.html"><img src="assets/lf-moyu-green.thumb.png" width="250"></a><br><sub><b>摸鱼绿（默认）</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/moyu-green.html"><img src="assets/lf-moyu-green.thumb.png" width="250"></a><br><sub><b>摸鱼绿</b></sub></td>
 </tr>
 <tr>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/red-white.html"><img src="assets/lf-red-white.thumb.png" width="250"></a><br><sub><b>红白色系</b></sub></td>
@@ -98,7 +98,7 @@
 
 | 主题 | 适合 |
 |---|---|
-| **科技钴蓝** | AI 工具、开发教程、产品说明、工作流指南（冷静清晰、黄蓝对比） |
+| **科技钴蓝**（默认） | AI 工具、开发教程、产品说明、工作流指南（冷静清晰、黄蓝对比） |
 | **克莱因蓝** | 艺术评论、品牌叙事、人物特稿、深度观点（浅蓝底圆角卡流、蓝点步骤卡） |
 | **奶咖信纸** | 叙事长文、观点、方法论、年度总结（信纸底 + 三色条 + 荧光笔，无卡片堆砌） |
 | **粉彩便当盒** | 工具测评、清单、干货合集（马卡龙色块卡 + 等宽眉标） |
@@ -106,7 +106,7 @@
 | **孔雀蓝杂志** | 人物故事、行业观察、深度特稿（左对齐特稿 + 超大斜体装饰词） |
 | **珊瑚手账** | 读书笔记、随笔、好物清单（纸感底 + 胶带批注 + 书卡摘录） |
 | **珊瑚日报** | 资讯日报、周报盘点、快讯合集（日期胶囊 + 六色粉彩卡片流） |
-| **摸鱼绿**（默认） | 教程、测评、清单、工具盘点（卡片丰富、信息密度高） |
+| **摸鱼绿** | 教程、测评、清单、工具盘点（卡片丰富、信息密度高） |
 | **红白色系** | 深度分析、观点、力量感话题（经典编辑风） |
 | **石墨极简风** | 设计、科技评论、专业观点、高端品牌 |
 | **留白禅意风** | 禅意、极简生活、深度随笔（呼吸感最强） |
@@ -146,9 +146,7 @@ git clone https://github.com/88lin/gzh-skill-kit.git ~/.claude/skills/gzh-design
 
 ## 📖 使用流程
 
-## 📖 使用流程
-
-1. **选主题** — 按题材自动推荐最契合的主题并请你一步确认（默认摸鱼绿）；也可直接指定，或让 AI 生成新主题。
+1. **选主题** — 按题材自动推荐最契合的主题并请你一步确认（默认科技钴蓝）；也可直接指定，或让 AI 生成新主题。
 2. **读组件库** — 读所选主题库 + 通用增量库（代码块/图片/小标签）。
 3. **解析 Markdown** — 识别标题、章节、加粗、高亮、引用、图片、代码块、列表、超链接。
 4. **装配 HTML** — 用组件库里的真实组件拼装，落实编号、下划线、全角、签名。
@@ -352,7 +350,7 @@ A：跑 `scripts/validate_gzh_html.py`，报 ERROR 就回到装配步骤修；�
 
 | 主色 | 主题 | 适用 |
 |---|---|---|
-| ![](https://placehold.co/12/1D4ED8/1D4ED8.png) `#1D4ED8` | 科技钴蓝 | AI 工具、开发教程、产品说明、工作流指南 |
+| ![](https://placehold.co/12/1D4ED8/1D4ED8.png) `#1D4ED8` | 科技钴蓝（默认） | AI 工具、开发教程、产品说明、工作流指南 |
 | ![](https://placehold.co/12/002FA7/002FA7.png) `#002FA7` | 克莱因蓝 | 艺术评论、品牌叙事、人物特稿、展册式深度内容 |
 | ![](https://placehold.co/12/2B7FD8/2B7FD8.png) `#2B7FD8` | 奶咖信纸 | 叙事长文、观点、方法论、年度总结 |
 | ![](https://placehold.co/12/71519B/71519B.png) `#71519B` | 粉彩便当盒 | 工具测评、清单、干货合集 |
@@ -360,7 +358,7 @@ A：跑 `scripts/validate_gzh_html.py`，报 ERROR 就回到装配步骤修；�
 | ![](https://placehold.co/12/15697C/15697C.png) `#15697C` | 孔雀蓝杂志 | 人物故事、行业观察、深度特稿 |
 | ![](https://placehold.co/12/C33D46/C33D46.png) `#C33D46` | 珊瑚手账 | 读书笔记、随笔、好物清单 |
 | ![](https://placehold.co/12/C33D46/C33D46.png) `#C33D46` | 珊瑚日报 | 资讯日报、周报盘点、快讯合集 |
-| ![](https://placehold.co/12/059669/059669.png) `#059669` | 摸鱼绿（默认） | 教程、测评、清单、工具盘点 |
+| ![](https://placehold.co/12/059669/059669.png) `#059669` | 摸鱼绿 | 教程、测评、清单、工具盘点 |
 | ![](https://placehold.co/12/DC2626/DC2626.png) `#DC2626` | 红白色系 | 深度分析、观点、力量感话题 |
 | ![](https://placehold.co/12/52525B/52525B.png) `#52525B` | 石墨极简风 | 设计、科技评论、专业观点、高端品牌 |
 | ![](https://placehold.co/12/4A5D52/4A5D52.png) `#4A5D52` | 留白禅意风 | 禅意、极简生活、深度随笔 |

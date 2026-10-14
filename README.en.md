@@ -27,7 +27,7 @@ A layout Skill for AI agents (Claude Code / Codex / Cursor …). You write Markd
 
 ## ✨ Features
 
-- **14 curated themes**: Moyu Green (default) · Tech Cobalt · Klein Blue · Red & White · Graphite Minimal · Zen Whitespace · Moyu Ticket · Olive Journal — each a self-contained thick component library (design tokens + dozens of components + visual-hierarchy table + article-type recipe table).
+- **14 curated themes**: Tech Cobalt (default) · Klein Blue · Letter · Bento · Chat · Magazine · Journal · Daily · Moyu Green · Red & White · Graphite Minimal · Zen Whitespace · Moyu Ticket · Olive Journal — each a self-contained thick component library (design tokens + dozens of components + visual-hierarchy table + article-type recipe table).
 - **Theme generator**: none fit? Describe a style in one line or drop a reference image, and generate a fresh component library saved for reuse (see `references/theme-generator.md`).
 - **Full content support**: code blocks (dark/light, monospace), images, GIFs (with an animated badge), inline code, quotes, lists, product badges, Markdown hyperlinks (auto-converted to superscript footnotes + an end-of-article "References" list).
 - **Smart layout**: auto section numbering (last chapter ∞ / ///), 1–3 keyword underlines per paragraph, intro card & TOC distilled from the body, de-duplicated signature.
@@ -62,7 +62,7 @@ One long-form article laid out in all 14 themes (screenshots plus interactive HT
 
 <table>
 <tr>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/tech-cobalt.html"><img src="assets/lf-tech-cobalt.thumb.png" width="250"></a><br><sub><b>Tech Cobalt</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/tech-cobalt.html"><img src="assets/lf-tech-cobalt.thumb.png" width="250"></a><br><sub><b>Tech Cobalt (default)</b></sub></td>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/klein-blue.html"><img src="assets/lf-klein-blue.thumb.png" width="250"></a><br><sub><b>Klein Blue</b></sub></td>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/letter.html"><img src="assets/lf-letter.thumb.png" width="250"></a><br><sub><b>Letter</b></sub></td>
 </tr>
@@ -74,7 +74,7 @@ One long-form article laid out in all 14 themes (screenshots plus interactive HT
 <tr>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/journal.html"><img src="assets/lf-journal.thumb.png" width="250"></a><br><sub><b>Journal</b></sub></td>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/daily.html"><img src="assets/lf-daily.thumb.png" width="250"></a><br><sub><b>Daily</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/moyu-green.html"><img src="assets/lf-moyu-green.thumb.png" width="250"></a><br><sub><b>Moyu Green (default)</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/moyu-green.html"><img src="assets/lf-moyu-green.thumb.png" width="250"></a><br><sub><b>Moyu Green</b></sub></td>
 </tr>
 <tr>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/red-white.html"><img src="assets/lf-red-white.thumb.png" width="250"></a><br><sub><b>Red & White</b></sub></td>
@@ -95,7 +95,7 @@ One long-form article laid out in all 14 themes (screenshots plus interactive HT
 
 | | Theme | Best for |
 |---|---|---|
-| ![](https://placehold.co/12/1D4ED8/1D4ED8.png) `#1D4ED8` | Tech Cobalt | AI tools, developer tutorials, product docs, workflow guides |
+| ![](https://placehold.co/12/1D4ED8/1D4ED8.png) `#1D4ED8` | Tech Cobalt (default) | AI tools, developer tutorials, product docs, workflow guides |
 | ![](https://placehold.co/12/002FA7/002FA7.png) `#002FA7` | Klein Blue | Art criticism, brand narratives, profiles, editorial-style long reads |
 | ![](https://placehold.co/12/2B7FD8/2B7FD8.png) `#2B7FD8` | Letter (Latte Stationery) | Narrative long reads, opinions, methodologies, year-end recaps |
 | ![](https://placehold.co/12/71519B/71519B.png) `#71519B` | Bento (Pastel) | Tool reviews, checklists, curated lists |
@@ -103,13 +103,12 @@ One long-form article laid out in all 14 themes (screenshots plus interactive HT
 | ![](https://placehold.co/12/15697C/15697C.png) `#15697C` | Magazine (Peacock Blue) | People stories, industry observations, deep features |
 | ![](https://placehold.co/12/C33D46/C33D46.png) `#C33D46` | Journal (Coral) | Reading notes, essays, favorite-things lists |
 | ![](https://placehold.co/12/C33D46/C33D46.png) `#C33D46` | Daily (Coral) | News digests, weekly roundups, quick briefs |
-| ![](https://placehold.co/12/059669/059669.png) `#059669` | Moyu Green (default) | Tutorials, reviews, checklists, tool roundups |
+| ![](https://placehold.co/12/059669/059669.png) `#059669` | Moyu Green | Tutorials, reviews, checklists, tool roundups |
 | ![](https://placehold.co/12/DC2626/DC2626.png) `#DC2626` | Red & White | Deep analysis, opinions, strong takes |
 | ![](https://placehold.co/12/52525B/52525B.png) `#52525B` | Graphite Minimal | Design, tech commentary, premium brand |
 | ![](https://placehold.co/12/4A5D52/4A5D52.png) `#4A5D52` | Zen Whitespace | Zen, minimal living, reflective essays |
 | ![](https://placehold.co/12/059669/059669.png) `#059669` | Moyu Ticket | Tool comparisons, creative reviews (ticket motif) |
 | ![](https://placehold.co/12/1e1f23/1e1f23.png) `#1e1f23` | Olive Journal | Editorial notes, deep reviews, case recaps |
-
 > English slug, library file and underline CSS for each theme: see [`references/theme-index.md`](references/theme-index.md). Need another style? Have the AI generate one with the [theme generator](references/theme-generator.md).
 
 ## 🚀 Quick Start
@@ -133,7 +132,7 @@ Then, once installed, tell your agent:
 
 ## 📖 Workflow
 
-1. **Pick a theme** — auto-suggests the best fit by topic and asks you to confirm (defaults to Moyu Green); or specify one, or generate a new one.
+1. **Pick a theme** — auto-suggests the best fit by topic and asks you to confirm (defaults to Tech Cobalt); or specify one, or generate a new one.
 2. **Load libraries** — the chosen theme lib + the shared incremental lib (code/image/label).
 3. **Parse Markdown** — headings, chapters, bold, highlight, quotes, images, code, lists.
 4. **Assemble HTML** — from real components; apply numbering, underlines, full-width punctuation, signature.
