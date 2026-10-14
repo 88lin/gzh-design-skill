@@ -1,6 +1,6 @@
-# 88lin公众号排版组件库
+# 茉灵智库公众号排版组件库
 
-> **使用说明**：本组件库从88lin公众号文章中抽取，所有组件均使用**内联样式**，确保在微信公众号编辑器中直接复制粘贴即可使用。
+> **使用说明**：本组件库从茉灵智库公众号文章中抽取，所有组件均使用**内联样式**，确保在微信公众号编辑器中直接复制粘贴即可使用。
 >
 > **设计风格**：天蓝色系（#0EA5E9 主色调）、简约克制、留白充足、信息层次分明。
 >
@@ -333,7 +333,7 @@
     <span leaf=""><img src="个人名片或引导图URL" style="max-width:100%;"></span>
   </section>
   <p style="margin-bottom: 20px;font-size: 15px;line-height: 1.8;text-align: justify;">
-    <span leaf="">我是88lin，热衷于分享一些 AI 观察， AI 干货内容</span>
+    <span leaf="">我是茉灵智库，热衷于分享一些 AI 观察， AI 干货内容</span>
   </p>
   <p style="margin-bottom: 20px;font-size: 15px;line-height: 1.8;text-align: justify;">
     <span leaf="">如果你觉得今天这篇有收获，欢迎</span>

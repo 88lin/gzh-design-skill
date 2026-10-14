@@ -1,4 +1,4 @@
-# 88lin公众号排版组件库 —— 青石板极简风
+# 茉灵智库公众号排版组件库 —— 青石板极简风
 
 > **使用说明**：本组件库为「青石板极简风」主题，所有组件使用**内联样式**，可直接复制粘贴到微信公众号编辑器。
 >
@@ -72,7 +72,7 @@
     <span leaf=""> ，金句的后半部分延续阐述。</span>
   </p>
   <p style="text-align:right;font-size:12px;color:#9CA3AF;margin:8px 0 0;letter-spacing:1px;">
-    <span leaf="">—— 88lin</span>
+    <span leaf="">—— 茉灵智库</span>
   </p>
 </section>
 ```
@@ -471,7 +471,7 @@
     <span leaf=""><img src="个人名片或引导图URL" style="max-width:100%;"></span>
   </section>
   <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:justify;">
-    <span leaf="">我是88lin，热衷于分享一些 AI 观察， AI 干货内容</span>
+    <span leaf="">我是茉灵智库，热衷于分享一些 AI 观察， AI 干货内容</span>
   </p>
   <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:justify;">
     <span leaf="">如果你觉得今天这篇有收获，欢迎</span>

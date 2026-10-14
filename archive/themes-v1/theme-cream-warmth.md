@@ -1,4 +1,4 @@
-# 88lin公众号排版组件库 —— 奶油暖阳风（Cream）
+# 茉灵智库公众号排版组件库 —— 奶油暖阳风（Cream）
 
 > **使用说明**：本组件库为「奶油暖阳风」主题，所有组件使用**内联样式**，可直接复制粘贴到微信公众号编辑器。
 >
@@ -437,7 +437,7 @@
 ```html
 <section style="padding: 0 10px;">
   <p style="margin-bottom: 20px;font-size: 15px;line-height: 1.85;text-align: justify;color: #6B5D4F;">
-    <span leaf="">我是88lin，热衷于分享一些 AI 观察，AI 干货内容</span>
+    <span leaf="">我是茉灵智库，专注 AI 观察与知识干货</span>
   </p>
   <p style="margin-bottom: 20px;font-size: 15px;line-height: 1.85;text-align: justify;color: #6B5D4F;">
     <span leaf="">如果你觉得今天这篇有收获，欢迎</span>
