@@ -1,8 +1,8 @@
 # 全部 8 套主题效果预览 · All 8 Themes
 
-同一篇长文（《做了些爆款 Skills 以后，我对 Skills 的看法》），用 8 套精选主题排版，其中 7 套有真实长图/交互预览（含配图、引言卡、编号章节、金句、名词旁注等完整组件）；克莱因蓝的预览待补。
+同一篇长文（《做了些爆款 Skills 以后，我对 Skills 的看法》），用 8 套精选主题排版，全部含真实长图/交互预览（含配图、引言卡、编号章节、金句、名词旁注等完整组件）。
 
-> The same long-form article laid out in all 8 curated themes (7 previews below; Klein Blue preview pending). Back to [README](../README.md).
+> The same long-form article laid out in all 8 curated themes (all 8 previews below). Back to [README](../README.md).
 
 <table>
 <tr>
@@ -16,12 +16,12 @@
 <td align="center"><img src="assets/lf-olive-journal.png" width="250"><br><sub><b>橄榄手记 Olive Journal</b></sub></td>
 </tr>
 <tr>
-<td align="center"><a href="gallery/tech-cobalt.html"><b>打开完整交互预览</b></a><br><sub><b>科技钴蓝 Tech Cobalt</b></sub></td>
-<td align="center"><sub><b>克莱因蓝 Klein Blue<br>（预览待补）</b></sub></td>
+<td align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>打开完整交互预览</b></a><br><sub><b>科技钴蓝 Tech Cobalt</b></sub></td>
+<td align="center"><img src="../assets/lf-klein-blue.png" width="250"><br><sub><b>克莱因蓝 Klein Blue</b></sub></td>
 <td></td>
 </tr>
 </table>
 
 ---
 
-> 以上为每套排版的首屏长图；完整可交互 HTML 见 [`gallery/index.html`](gallery/index.html)（克隆后浏览器打开，无需服务器）。每套主题的主色 / 适用场景 / 英文标识见 [`../references/theme-index.md`](../references/theme-index.md)。需要别的风格可用[主题生成器](../references/theme-generator.md)现生成一套。
+> 以上为每套排版的首屏长图；完整可交互 HTML 见 [`gallery/index.html`](gallery/index.html)（在线预览：https://88lin.github.io/gzh-design-skill/docs/gallery/index.html）。每套主题的主色 / 适用场景 / 英文标识见 [`../references/theme-index.md`](../references/theme-index.md)。需要别的风格可用[主题生成器](../references/theme-generator.md)现生成一套。

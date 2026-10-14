@@ -33,17 +33,17 @@
 
 ## 👀 效果预览
 
-8 套主题中的 7 套各排同一篇长文（真实长图与交互预览，含配图、引言卡、编号章节、金句、名词旁注等完整组件；克莱因蓝预览待补）：
+8 套主题各排同一篇长文（真实长图与交互预览，含配图、引言卡、编号章节、金句、名词旁注等完整组件）：
 
 <table>
 <tr>
-<td colspan="3" align="center"><img src="https://origin.picgo.net/2026/07/07/-40619312d679bc34.jpg" width="100%"><br><sub><b>摸鱼绿（默认）</b></sub></td>
+<td colspan="3" align="center"><img src="assets/lf-moyu-green.png" width="100%"><br><sub><b>摸鱼绿（默认）</b></sub></td>
 </tr>
 <tr>
-<td colspan="3" align="center"><img src="https://origin.picgo.net/2026/07/07/-084eb2b9d6f8d5e2.jpg" width="100%"><br><sub><b>红白色系</b></sub></td>
+<td colspan="3" align="center"><img src="assets/lf-red-white.png" width="100%"><br><sub><b>红白色系</b></sub></td>
 </tr>
 <tr>
-<td colspan="3" align="center"><img src="https://origin.picgo.net/2026/07/07/-747b33f502544254.jpg" width="100%"><br><sub><b>橄榄手记</b></sub></td>
+<td colspan="3" align="center"><img src="assets/lf-olive-journal.png" width="100%"><br><sub><b>橄榄手记</b></sub></td>
 </tr>
 <tr>
 <td width="33%" align="center"><img src="assets/lf-graphite-minimal.png" width="250"><br><sub><b>石墨极简风</b></sub></td>
@@ -51,11 +51,13 @@
 <td width="33%" align="center"><img src="assets/lf-moyu-ticket.png" width="250"><br><sub><b>摸鱼票据风</b></sub></td>
 </tr>
 <tr>
-<td colspan="3" align="center"><a href="docs/gallery/tech-cobalt.html"><b>打开完整交互预览</b></a><br><sub><b>科技钴蓝</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>打开完整交互预览</b></a><br><sub><b>科技钴蓝</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>打开完整交互预览</b></a><br><sub><b>克莱因蓝</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>打开完整交互预览（全部 8 套）</b></a><br><sub><b>更多主题</b></sub></td>
 </tr>
 </table>
 
-> 📚 **8 套主题（含 7 套预览）→ [docs/all-themes.md](docs/all-themes.md)**　｜　克隆后浏览器打开 `docs/gallery/index.html` 可看可交互的完整 HTML。
+> 📚 **8 套主题（全部含预览）→ [docs/all-themes.md](docs/all-themes.md)**　｜　在线预览：https://88lin.github.io/gzh-design-skill/docs/gallery/index.html
 
 ## ✅ 适合 / ❌ 不适合
 
