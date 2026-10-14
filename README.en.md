@@ -55,7 +55,7 @@ A layout Skill for AI agents (Claude Code / Codex / Cursor …). You write Markd
 
 ## 🎨 8 Curated Themes
 
-One long-form article laid out in 7 of the 8 themes (screenshots plus an interactive HTML preview; Klein Blue preview pending):
+One long-form article laid out in all 8 themes (screenshots plus interactive HTML previews):
 
 <table>
 <tr>
@@ -69,11 +69,13 @@ One long-form article laid out in 7 of the 8 themes (screenshots plus an interac
 <td align="center"><img src="assets/lf-olive-journal.png" width="250"><br><sub><b>Olive Journal</b></sub></td>
 </tr>
 <tr>
-<td colspan="3" align="center"><a href="docs/gallery/tech-cobalt.html"><b>Open the full interactive preview</b></a><br><sub><b>Tech Cobalt</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>Open the full interactive preview</b></a><br><sub><b>Tech Cobalt</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>Open the full interactive preview</b></a><br><sub><b>Klein Blue</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>All 8 previews</b></a><br><sub><b>More themes</b></sub></td>
 </tr>
 </table>
 
-> 📚 **All 8 themes (7 previews) → [docs/all-themes.md](docs/all-themes.md)**　|　or open `docs/gallery/index.html` for the interactive full HTML.
+> 📚 **All 8 themes (all previewed) → [docs/all-themes.md](docs/all-themes.md)**　|　online preview: https://88lin.github.io/gzh-design-skill/docs/gallery/index.html
 
 ### Theme cheat-sheet
 
