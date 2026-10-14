@@ -22,8 +22,8 @@
 </tr>
 <tr>
 <td align="center"><img src="../assets/lf-letter.png" width="250"><br><sub><b>奶咖信纸 Letter</b></sub></td>
-<td align="center"><img src="../assets/lf-bento.png" width="250"><br><sub><b>紫藤便当盒 Bento</b></sub></td>
-<td align="center"><img src="../assets/lf-chat.png" width="250"><br><sub><b>鼠尾草对话 Chat</b></sub></td>
+<td align="center"><img src="../assets/lf-bento.png" width="250"><br><sub><b>粉彩便当盒 Bento</b></sub></td>
+<td align="center"><img src="../assets/lf-chat.png" width="250"><br><sub><b>薄荷对话 Chat</b></sub></td>
 </tr>
 <tr>
 <td align="center"><img src="../assets/lf-magazine.png" width="250"><br><sub><b>孔雀蓝杂志 Magazine</b></sub></td>
