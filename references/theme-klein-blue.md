@@ -421,7 +421,7 @@
 
 ```html
 <section style="margin:0 10px 28px;background:#F3F6FF;border:1px solid #D8E1F6;border-left:3px solid #002FA7;border-radius:6px;overflow:hidden;box-sizing:border-box;">
-  <section style="padding:8px 14px;border-bottom:1px solid #D8E1F6;"><span style="font-family:Consolas,Monaco,monospace;font-size:11px;color:#7D86A5;letter-spacing:1px;"><span leaf="">config</span></span></section>
+  <section style="display:flex;align-items:center;padding:8px 14px;border-bottom:1px solid #D8E1F6;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FF5F56;margin-right:6px;font-size:0;line-height:0;overflow:hidden;"><span leaf=""><br></span></span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFBD2E;margin-right:6px;font-size:0;line-height:0;overflow:hidden;"><span leaf=""><br></span></span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#27C93F;margin-right:8px;font-size:0;line-height:0;overflow:hidden;"><span leaf=""><br></span></span><span style="font-family:Consolas,Monaco,monospace;font-size:11px;color:#7D86A5;letter-spacing:1px;"><span leaf="">config</span></span></section>
   <section style="padding:12px 14px;"><p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#111111;"><span leaf="">theme: 'klein-blue'</span></p><p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#002FA7;"><span leaf="">content: '配置内容占位'</span></p></section>
 </section>
 ```

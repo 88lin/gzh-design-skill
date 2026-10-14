@@ -36,7 +36,10 @@
 
 ```html
 <section style="margin:0 0 20px;border-radius:8px;overflow:hidden;background:#F6F8FA;border:1px solid #E5E7EB;border-left:3px solid #DC2626;">
-  <section style="padding:7px 14px;border-bottom:1px solid #E5E7EB;">
+  <section style="display:flex;align-items:center;padding:7px 14px;border-bottom:1px solid #E5E7EB;">
+    <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#FF5F56;margin-right:7px;font-size:0;line-height:0;overflow:hidden;">.</span>
+    <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#FFBD2E;margin-right:7px;font-size:0;line-height:0;overflow:hidden;">.</span>
+    <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#27C93F;margin-right:7px;font-size:0;line-height:0;overflow:hidden;">.</span>
     <span style="font-size:12px;color:#9CA3AF;font-family:Consolas,Monaco,monospace;letter-spacing:1px;"><span leaf="">bash</span></span>
   </section>
   <section style="padding:11px 14px;">
