@@ -6,11 +6,11 @@
 
 **Turn Markdown into polished HTML you can paste straight into the WeChat editor**
 
-8 curated themes + theme generator · code blocks / images / GIFs · auto section numbers & keyword marks · two-gate quality checks
+14 curated themes + theme generator · code blocks / images / GIFs · auto section numbers & keyword marks · two-gate quality checks
 
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blue)](https://claude.ai/code)
-[![Themes](https://img.shields.io/badge/themes-8%20+%20generator-059669)](references/theme-index.md)
+[![Themes](https://img.shields.io/badge/themes-14%20+%20generator-059669)](references/theme-index.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Agents](https://img.shields.io/badge/Claude%20Code%20·%20Codex%20·%20Cursor-supported-8b5cf6.svg)](#-quick-start)
 
@@ -24,7 +24,7 @@ A layout Skill for AI agents (Claude Code / Codex / Cursor …). You write Markd
 
 ## ✨ Features
 
-- **8 curated themes**: Moyu Green (default) · Tech Cobalt · Klein Blue · Red & White · Graphite Minimal · Zen Whitespace · Moyu Ticket · Olive Journal — each a self-contained thick component library (design tokens + dozens of components + visual-hierarchy table + article-type recipe table).
+- **14 curated themes**: Moyu Green (default) · Tech Cobalt · Klein Blue · Red & White · Graphite Minimal · Zen Whitespace · Moyu Ticket · Olive Journal — each a self-contained thick component library (design tokens + dozens of components + visual-hierarchy table + article-type recipe table).
 - **Theme generator**: none fit? Describe a style in one line or drop a reference image, and generate a fresh component library saved for reuse (see `references/theme-generator.md`).
 - **Full content support**: code blocks (dark/light, monospace), images, GIFs (with an animated badge), inline code, quotes, lists, product badges, Markdown hyperlinks (auto-converted to superscript footnotes + an end-of-article "References" list).
 - **Smart layout**: auto section numbering (last chapter ∞ / ///), 1–3 keyword underlines per paragraph, intro card & TOC distilled from the body, de-duplicated signature.
@@ -55,7 +55,7 @@ A layout Skill for AI agents (Claude Code / Codex / Cursor …). You write Markd
 
 ## 🎨 8 Curated Themes
 
-One long-form article laid out in all 8 themes (screenshots plus interactive HTML previews):
+One long-form article laid out in all 14 themes (screenshots plus interactive HTML previews):
 
 <table>
 <tr>
@@ -71,11 +71,11 @@ One long-form article laid out in all 8 themes (screenshots plus interactive HTM
 <tr>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>Open the full interactive preview</b></a><br><sub><b>Tech Cobalt</b></sub></td>
 <td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>Open the full interactive preview</b></a><br><sub><b>Klein Blue</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>All 8 previews</b></a><br><sub><b>More themes</b></sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-design-skill/docs/gallery/index.html"><b>All 14 previews</b></a><br><sub><b>More themes</b></sub></td>
 </tr>
 </table>
 
-> 📚 **All 8 themes (all previewed) → [docs/all-themes.md](docs/all-themes.md)**　|　online preview: https://88lin.github.io/gzh-design-skill/docs/gallery/index.html
+> 📚 **All 14 themes (all previewed) → [docs/all-themes.md](docs/all-themes.md)**　|　online preview: https://88lin.github.io/gzh-design-skill/docs/gallery/index.html
 
 ### Theme cheat-sheet
 
