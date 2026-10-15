@@ -33,6 +33,9 @@ jobs:
         run: |
           python - <<'PY'
           import glob, os, subprocess, sys
+          sys.path.insert(0, "scripts")
+          from cli_utils import configure_stdio
+          configure_stdio()  # Windows 重定向下 stdout 是 charmap，中文 print 会 UnicodeEncodeError
           files = [p for p in sorted(glob.glob("docs/gallery/*.html"))
                    if os.path.basename(p) != "index.html"]
           failed = [p for p in files
@@ -49,6 +52,8 @@ jobs:
           python - <<'PY'
           import glob, os, subprocess, sys, tempfile
           sys.path.insert(0, "scripts")
+          from cli_utils import configure_stdio
+          configure_stdio()  # 同上：Windows 重定向下 stdout 不是 UTF-8
           from minify_gzh_html import minify_html
           files = [p for p in sorted(glob.glob("docs/gallery/*.html"))
                    if os.path.basename(p) != "index.html"]
