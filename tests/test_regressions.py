@@ -104,6 +104,15 @@ class ValidationTests(unittest.TestCase):
                   '<p><span leaf="">正文</span></p></section>')
         self.assertEqual(validate(source)[:2], ([], []), source)
 
+    def test_svg_only_document_is_not_missing_leaf(self):
+        # 整篇只有 SVG（示意图帖）：SVG 内文字不该被计入"需要 leaf 的正文文本"，
+        # 否则会误报"全文没有任何 <span leaf> 包裹"。
+        source = ('<section style="background:#fff"><svg viewBox="0 0 200 60">'
+                  '<rect x="2" y="10" width="60" height="40"/>'
+                  '<text x="32" y="34">节点一</text>'
+                  '<text x="120" y="34">节点二</text></svg></section>')
+        self.assertEqual(validate(source)[:2], ([], []), source)
+
     def test_chinese_only_in_attributes_is_not_missing_leaf(self):
         # 纯图片组件：中文只出现在 alt 里、没有任何正文文字，不该判"全文没有 span leaf"
         source = ('<section style="background:#fff;padding:6px;text-align:center">'

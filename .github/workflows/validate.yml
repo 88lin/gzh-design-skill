@@ -27,7 +27,9 @@ jobs:
       - run: python scripts/component_lint.py .
       # 产物关：SKILL.md / CONTRIBUTING 要求"两关全绿"，但此前 CI 只跑源头关，
       # gallery 产物的回归只能靠人肉。WARN 不失败（exit 0），ERROR 才失败。
+      # 必须显式 shell: bash —— Windows runner 默认是 pwsh，不认 heredoc。
       - name: Validate gallery products
+        shell: bash
         run: |
           python - <<'PY'
           import glob, os, subprocess, sys
@@ -42,6 +44,7 @@ jobs:
           PY
       # 压缩产物同样要过关：上传草稿走的是压缩后的 HTML
       - name: Validate minified gallery products
+        shell: bash
         run: |
           python - <<'PY'
           import glob, os, subprocess, sys, tempfile
