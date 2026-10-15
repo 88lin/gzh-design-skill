@@ -52,8 +52,7 @@ class LeafChecker(HTMLParser):
         self.leaf_depth = 0       # 处于 span[leaf] 内的嵌套计数
         self.code_depth = 0       # 处于代码区（等宽/pre）内的嵌套计数
         self.span_leaf_count = 0  # 全文 span leaf 总数
-        self.text_nodes = 0       # 有实质内容的文本节点数（中文或英数）
-        self.cjk_text_nodes = 0   # 其中含中文的文本节点数
+        self.cjk_text_nodes = 0   # 参与正文的、含中文的文本节点数
         self.unwrapped = []       # (文本片段, 父标签) —— 未被 leaf 包裹的中文文本
         self.half_punct = []      # 正文里疑似半角标点的片段
 
@@ -96,15 +95,15 @@ class LeafChecker(HTMLParser):
         # 导致纯英文段落漏包 <span leaf> 时完全不告警。
         if not text or not (CJK.search(text) or ALNUM.search(text)):
             return
-        self.text_nodes += 1
-        if CJK.search(text):
-            self.cjk_text_nodes += 1
         if any(t in SKIP_TAGS for t, _, _ in self.stack):
             return  # <head>/<title>/<style>/<script> 内文字不进公众号正文
         if any(t == "svg" for t, _, _ in self.stack):
             # SVG 是原子渲染：内部文字（<text>/<tspan>）不走公众号富文本重排，
             # 既不要求 <span leaf>，也不参与半角标点检查。
+            # 注意：统计也必须放在这两个跳过之后，否则"整篇只有一个 SVG"会被
+            # 误判成"全文没有任何 <span leaf> 包裹"。
             return
+        self.cjk_text_nodes += 1
         if self.leaf_depth == 0:
             parent = self.stack[-1][0] if self.stack else "(root)"
             snippet = text[:24] + ("…" if len(text) > 24 else "")

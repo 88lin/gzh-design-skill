@@ -28,8 +28,6 @@ else:
     from cli_utils import configure_stdio
     from markup_checks import declarations, inspect_markup
 
-CJK = re.compile(r"[一-鿿㐀-䶿]")
-
 # 四周虚线框：border: ... dashed（不含方向，如 border-left dashed 不算）
 FOURSIDE_DASHED = re.compile(r"border\s*:\s*[^;{}]*dashed", re.I)
 CENTERED = re.compile(r"text-align\s*:\s*center", re.I)
@@ -83,7 +81,7 @@ def lint_file(path):
             for prop, val in declarations(style):
                 if prop != 'width':
                     continue
-                m = re.match(r'\s*(\d+)\s*px', val)
+                m = re.match(r'\s*(\d+)\s*px', val, re.I)
                 if m and int(m.group(1)) >= 150 and not has_maxw:
                     add("WARN", f"固定宽度 width:{m.group(1)}px（≥150px）未配 "
                                 "max-width——手机端会被压缩或溢出，改用 "
