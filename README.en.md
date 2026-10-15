@@ -241,3 +241,18 @@ Most workflow and theme reference documents are in Chinese.
 - [ ] More curated themes ([suggest a style](https://github.com/88lin/gzh-skill-kit/issues/new?template=theme_request.md))
 - [ ] Export an article and its images together as a package
 
+## 💬 Community and feedback
+
+To discuss WeChat layout, AI tools, or theme collaboration, add WeChat **`Piscesstar02`** with the note "gzh-skill". Suggestions are also welcome in [Issues](https://github.com/88lin/gzh-skill-kit/issues).
+
+---
+
+<div align="center">
+
+**👤 Created and maintained by 88lin (茉灵智库)**
+
+[⭐ Star it for your next article](https://github.com/88lin/gzh-skill-kit) · [🎨 Suggest a theme](https://github.com/88lin/gzh-skill-kit/issues/new?template=theme_request.md) · [🤝 Contribute](CONTRIBUTING.md)
+
+**AGPL-3.0 © 2026 88lin (茉灵智库)** · [Read the license](LICENSE)
+
+</div>
