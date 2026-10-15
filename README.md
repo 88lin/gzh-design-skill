@@ -1,385 +1,437 @@
 <div align="center">
 
-# gzh-skill-kit · 公众号排版技能
+# gzh-skill-kit
 
-**把 Markdown 一键排成可直接粘贴进微信公众号编辑器的精致 HTML**
+### 从写好的文章，到可以粘贴的公众号排版
 
-14 套精选主题 + 主题生成器 · 代码块/图片/GIF · 自动章节编号与关键词标记 · 双关卡质量校验
+让 AI Agent 按主题组件库完成排版，把精力留给内容。
+
+**14 套主题 · Markdown / Word / PDF · 富文本复制 · 可选草稿箱上传**
 
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](LICENSE)
-[![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blue)](https://claude.ai/code)
-[![Themes](https://img.shields.io/badge/themes-14%20+%20generator-059669)](references/theme-index.md)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Agents](https://img.shields.io/badge/Claude%20Code%20·%20Codex%20·%20Cursor-supported-8b5cf6.svg)](#-快速开始)
+[![Validate](https://github.com/88lin/gzh-skill-kit/actions/workflows/validate.yml/badge.svg)](https://github.com/88lin/gzh-skill-kit/actions/workflows/validate.yml)
+[![Themes](https://img.shields.io/badge/themes-14-059669)](references/theme-index.md)
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-8b5cf6)](CONTRIBUTING.md)
 
-[English](README.en.md) ｜ 中文
+[在线画廊](https://88lin.github.io/gzh-skill-kit/docs/gallery/index.html) · [快速开始](#quick-start) · [使用教程](#tutorials) · [草稿箱上传](#wechat-api) · [常见问题](#faq)
+
+**中文** / [English](README.en.md)
 
 </div>
 
 ---
 
-一个给 AI Agent（Claude Code / Codex / Cursor 等）用的公众号排版 Skill。你写完 Markdown，它按你选的主题，生成**样式全内联、粘贴到公众号编辑器不掉格式**的 HTML——自动编章节号、标关键词下划线、配引言卡与目录、处理代码块和图片、合并作者签名，并用脚本确定性地兜住公众号平台的各种限制。
+**gzh-skill-kit 是给 AI Agent 使用的公众号排版 Skill。** 你提供文章，Agent 读取主题组件、组织章节与重点，再调用脚本检查 HTML，交付正文和带复制按钮的预览页。支持能读取技能文件、操作本地文件并执行命令的客户端，例如 Claude Code、Codex、Cursor；具体安装位置以客户端为准。
 
-> [!TIP]
-> **⭐ 顺手点个 Star 再往下看**——公众号平台隔三差五改过滤规则，每次适配都会第一时间推到这里。Star 一下，哪天粘贴突然掉格式了，你能一秒翻回这个仓库拿到修好的版本。
-
-> [!NOTE]
-> **在线效果预览**：[88lin.github.io/gzh-skill-kit/docs/gallery/index.html](https://88lin.github.io/gzh-skill-kit/docs/gallery/index.html) —— 14 套主题渲染成真实长文，手机/电脑都能直接滚动查看。
-
-## ✨ 核心特性
-
-- **14 套精选主题**：科技钴蓝（默认）· 奶咖信纸 · 粉彩便当盒 · 薄荷对话 · 孔雀蓝杂志 · 珊瑚手账 · 珊瑚日报 · 摸鱼绿 · 红白 · 克莱因蓝 · 石墨极简 · 留白禅意 · 摸鱼票据 · 橄榄手记 —— 每套都是自成体系的厚组件库（设计变量 + 数十个精细组件 + 视觉层级表 + 文章类型配方表）。
-- **主题生成器**：不满足现成主题？用一句话描述或一张参考图，生成一套全新组件库并保存本地复用（见 `references/theme-generator.md`）。
-- **内容全兼容**：代码块（深/浅色，等宽不折行）、图片、GIF（带动图角标）、行内代码、引用、列表、产品徽章、Markdown 超链接（自动转上标脚注 + 文末「参考资料」列表）。
-- **智能排版**：章节自动编号（末章 ∞ / ///）、每段主动标 1–3 个关键词下划线、从正文提炼引言卡与目录、作者签名去重合并。
-- **中文全角标点**：正文自动规范全角，代码块内原样保留。
-- **不掉格式**：所有样式内联、文字 `<span leaf="">` 包裹，规避 `<style>/<div>/class/grid/position` 等公众号会过滤的写法。
-- **双关卡质量校验**：`component_lint.py`（组件库源头）+ `validate_gzh_html.py`（最终产物），构成可复现的「改→验→修」闭环。
-- **一键复制**：生成带「复制」按钮的预览页，点一下把富文本复制到剪贴板，直接粘进公众号，免手动全选。
-
-## 👀 效果预览
-
-14 套主题各排同一篇长文（点缩略图看完整长图，或进在线预览交互查看；含配图、引言卡、编号章节、金句、名词旁注等完整组件）：
+适合教程、测评、读书笔记、观点长文和资讯周报。项目侧重已有内容的排版；Word、PDF 和纯文本会先整理成 Markdown。**主题装配由 Agent 完成，仓库里的 Python 脚本负责抽取、校验、预览和上传，没有独立的 Markdown → 主题 HTML 渲染命令。**
 
 <table>
 <tr>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/tech-cobalt.html"><img src="assets/lf-tech-cobalt.thumb.png" width="250"></a><br><sub><b>科技钴蓝（默认）</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/letter.html"><img src="assets/lf-letter.thumb.png" width="250"></a><br><sub><b>奶咖信纸</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/bento.html"><img src="assets/lf-bento.thumb.png" width="250"></a><br><sub><b>粉彩便当盒</b></sub></td>
-</tr>
-<tr>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/chat.html"><img src="assets/lf-chat.thumb.png" width="250"></a><br><sub><b>薄荷对话</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/magazine.html"><img src="assets/lf-magazine.thumb.png" width="250"></a><br><sub><b>孔雀蓝杂志</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/journal.html"><img src="assets/lf-journal.thumb.png" width="250"></a><br><sub><b>珊瑚手账</b></sub></td>
-</tr>
-<tr>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/daily.html"><img src="assets/lf-daily.thumb.png" width="250"></a><br><sub><b>珊瑚日报</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/moyu-green.html"><img src="assets/lf-moyu-green.thumb.png" width="250"></a><br><sub><b>摸鱼绿</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/red-white.html"><img src="assets/lf-red-white.thumb.png" width="250"></a><br><sub><b>红白色系</b></sub></td>
-</tr>
-<tr>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/klein-blue.html"><img src="assets/lf-klein-blue.thumb.png" width="250"></a><br><sub><b>克莱因蓝</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/graphite-minimal.html"><img src="assets/lf-graphite-minimal.thumb.png" width="250"></a><br><sub><b>石墨极简风</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/zen-whitespace.html"><img src="assets/lf-zen-whitespace.thumb.png" width="250"></a><br><sub><b>留白禅意风</b></sub></td>
-</tr>
-<tr>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/moyu-ticket.html"><img src="assets/lf-moyu-ticket.thumb.png" width="250"></a><br><sub><b>摸鱼票据风</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/olive-journal.html"><img src="assets/lf-olive-journal.thumb.png" width="250"></a><br><sub><b>橄榄手记</b></sub></td>
-<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/index.html"><b>全部 14 套<br>在线交互预览 ↗</b></a></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/tech-cobalt.html"><img src="assets/lf-tech-cobalt.thumb.png" width="250" alt="科技钴蓝主题长文预览"></a><br><b>科技钴蓝</b><br><sub>AI 工具 · 开发教程</sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/letter.html"><img src="assets/lf-letter.thumb.png" width="250" alt="奶咖信纸主题长文预览"></a><br><b>奶咖信纸</b><br><sub>叙事长文 · 年度总结</sub></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/bento.html"><img src="assets/lf-bento.thumb.png" width="250" alt="粉彩便当盒主题长文预览"></a><br><b>粉彩便当盒</b><br><sub>工具测评 · 干货清单</sub></td>
 </tr>
 </table>
 
-## ✅ 适合 / ❌ 不适合
+<p align="center"><sub>点击缩略图查看完整文章；更多风格见下方主题库。</sub></p>
 
-**✅ 适合**：观点/深度分析 · 教程/操作指南 · 测评/工具盘点 · 知识整理/方法论 · 访谈/人物特稿 · 数据复盘/报告 · 生活/情感随笔 · 案例实战 —— 把 Markdown / Word / PDF / 纯文本长文，一键排成可直接粘进公众号编辑器的 HTML；也能按描述或参考图生成自定义主题。
+<a id="quick-start"></a>
 
-**❌ 不适合**：普通网页/落地页（用前端 skill）· PPT（用 PPT skill）· 纯图片海报/社交卡片（用社交卡片类 skill）· 非公众号平台的排版 · **代写文章**（本 skill 只排版、不写作——先有 Markdown 再用它）。
+## 快速开始
 
-## 🗂 常见使用场景
+### 1. 准备环境并安装
 
-| 你的内容 | 推荐怎么排 |
-|---|---|
-| 观点 / 深度长文 | 红白 或 石墨极简；关键词下划线 + 金句引用 + 居中金句 |
-| 产品测评 / 工具盘点 | 摸鱼绿、科技钴蓝或摸鱼票据；step/tool-label + 卡片，按配方表走 |
-| 教程 / 操作指南 | 通用教程用摸鱼绿，AI/开发/技术工作流用科技钴蓝；step-label + 代码块 + 编号列表 |
-| 数据复盘 / 年度报告 | 摸鱼绿 或 橄榄手记；数据卡 + 表格 |
-| 禅意 / 极简随笔 | 留白禅意；大留白 + 居中衬线引用 |
-| 内刊 / 深度评测 / 案例复盘 | 橄榄手记；编者按 + 分节 + 暗色摘要框 |
-| 艺术评论 / 品牌叙事 / 人物特稿 | 克莱因蓝；浅蓝底卡流 + 错位白卡标题 + 蓝色锚点 |
-| Word / PDF 稿转公众号 | 先自动格式归一化 → 再按题材选主题 |
-| 想要现成之外的风格 | 主题生成器：一句话或参考图现造一套 |
+| 需要什么 | 用途 |
+| --- | --- |
+| 可加载 Skill 的 AI Agent | 阅读组件库、分析文章、生成 HTML |
+| Python 3（建议 3.13，与 CI 一致） | 运行校验、预览和 Word 抽取脚本 |
+| Node.js LTS / npm | 使用下面的 `npx` 安装方式时需要 |
+| 浏览器 | 打开预览页、复制富文本 |
 
-## 🎨 14 套精选主题
-
-覆盖绝大多数公众号题材，每套都打磨到「拿来即用」：
-
-| 主题 | 适合 |
-|---|---|
-| **科技钴蓝**（默认） | AI 工具、开发教程、产品说明、工作流指南（冷静清晰、黄蓝对比） |
-| **奶咖信纸** | 叙事长文、观点、方法论、年度总结（信纸底 + 三色条 + 荧光笔，无卡片堆砌） |
-| **粉彩便当盒** | 工具测评、清单、干货合集（马卡龙色块卡 + 等宽眉标） |
-| **薄荷对话** | AI 访谈实录、问答教程、案例复盘（左右气泡问答推进） |
-| **孔雀蓝杂志** | 人物故事、行业观察、深度特稿（左对齐特稿 + 超大斜体装饰词） |
-| **珊瑚手账** | 读书笔记、随笔、好物清单（纸感底 + 胶带批注 + 书卡摘录） |
-| **珊瑚日报** | 资讯日报、周报盘点、快讯合集（日期胶囊 + 六色粉彩卡片流） |
-| **摸鱼绿** | 教程、测评、清单、工具盘点（卡片丰富、信息密度高） |
-| **红白色系** | 深度分析、观点、力量感话题（经典编辑风） |
-| **克莱因蓝** | 艺术评论、品牌叙事、人物特稿、深度观点（浅蓝底圆角卡流、蓝点步骤卡） |
-| **石墨极简风** | 设计、科技评论、专业观点、高端品牌 |
-| **留白禅意风** | 禅意、极简生活、深度随笔（呼吸感最强） |
-| **摸鱼票据风** | 工具对比、创意评测（票据视觉隐喻） |
-| **橄榄手记** | 内刊手记、深度评测、案例复盘（编辑部内刊质感） |
-
-> 主色、下划线色值等**完整速查表见文末 [附录](#-完整主题速查表)**；不够用就让 AI [生成新主题](#-faq)。
-
-## 🚀 快速开始
-
-### 方式一：一行安装（推荐）
+在终端运行，按安装器提示选择客户端和安装范围：
 
 ```bash
 npx skills add https://github.com/88lin/gzh-skill-kit
 ```
 
-### 方式二：让 AI 自己装
+仓库名是 `gzh-skill-kit`，技能在 [SKILL.md](SKILL.md) 中的名称是 **`gzh-design`**。安装完成后，确认客户端能找到该技能；必要时重新加载客户端或开启新会话。
 
-对**任意 Agent**（Claude Code / Codex / Cursor 等）说一句：
+<details>
+<summary>其他安装方式：交给 Agent，或手动安装</summary>
 
-> 请帮我查找并自动安装 https://github.com/88lin/gzh-skill-kit 这个 skill
+把这段话发给 Agent：
 
-它会自行 clone 到对应的 skills 目录并接入。
-
-### 方式三：手动 clone
-
-```bash
-git clone https://github.com/88lin/gzh-skill-kit.git ~/.claude/skills/gzh-design
+```text
+请帮我安装 https://github.com/88lin/gzh-skill-kit 这个 Skill，
+按当前客户端的技能目录规范接入，并确认能读取 SKILL.md 和运行校验脚本。
 ```
 
-装好后，直接对 Agent 说：
-
-> 用摸鱼绿把这篇文章排成公众号 HTML：`article.md`
-
-> [!TIP]
-> **懒人一键**：以上安装步骤全能省——直接对 Agent 说——帮我安装这个排版 skill：https://github.com/88lin/gzh-skill-kit 它会自己 clone、接入并验证可用。
-
-## 📖 使用流程
-
-1. **选主题** — 按题材自动推荐最契合的主题并请你一步确认（默认科技钴蓝）；也可直接指定，或让 AI 生成新主题。
-2. **读组件库** — 读所选主题库 + 通用增量库（代码块/图片/小标签）。
-3. **解析 Markdown** — 识别标题、章节、加粗、高亮、引用、图片、代码块、列表、超链接。
-4. **装配 HTML** — 用组件库里的真实组件拼装，落实编号、下划线、全角、签名。
-5. **校验** — 跑 `validate_gzh_html.py`，ERROR 清零才交付。
-6. **输出** — 两条路线任选其一：
-
-   **路线一 · 手动粘贴**（适合电脑端直接发布）
-   生成预览页 → 浏览器打开 → 点右上角「复制」→ 公众号编辑器粘贴
-
-   **路线二 · API 上传**（适合自动化 / 无头发布，见下节）
-   调用 `scripts/wechat_draft.py` 的 `upload_and_cleanup()`，草稿直接推送到公众号草稿箱，全程无需手动操作。
-
-## 🔧 API 上传草稿（路线二）
-
-> [!NOTE]
-> 路线二适合**自动化 / 无头发布**：草稿直接推到公众号草稿箱，手机上打开公众号后台就能发。只需要手动粘贴的话用路线一就够了。
-
-依赖 `pip install requests Pillow`。
-
-### 配置
+以 Claude Code 的项目级安装为例，在你的项目目录执行（需要 Git）：
 
 ```bash
-# 1. 创建配置文件
-cat > ~/.wechat_config.json << 'EOF'
+git clone https://github.com/88lin/gzh-skill-kit.git .claude/skills/gzh-design
+```
+
+其他客户端请使用各自支持的技能目录。已有安装时先检查本地修改，避免直接覆盖自定义主题。
+
+</details>
+
+### 2. 排你的第一篇文章
+
+在 Agent 对话框里发送下面这段话，将路径改成自己的文章路径：
+
+```text
+用 gzh-design 的科技钴蓝主题，把 article.md 排成公众号 HTML。
+保留正文内容，作者署名用「你的名字」，简介用「你的一句话介绍」。
+请完成合规校验，并生成带「复制到公众号」按钮的预览页。
+```
+
+还没有稿子？直接使用仓库自带的 [示例文章](assets/sample-article.md)：
+
+```text
+请读取 gzh-design 技能目录中的 assets/sample-article.md，
+用科技钴蓝主题排版，输出到当前工作目录，完成校验并生成预览页。
+```
+
+### 3. 打开预览，复制到公众号
+
+以 `article.md` 为例，正常交付包含两份文件：
+
+| 文件 | 用来做什么 |
+| --- | --- |
+| `article_排版_科技钴蓝(tech-cobalt).html` | 干净正文片段，用于校验和 API 上传 |
+| `article_排版_科技钴蓝(tech-cobalt)_预览.html` | 浏览器预览，带「复制到公众号」按钮 |
+
+1. 用浏览器打开 **`_预览.html`**，检查章节、署名、图片和代码块。
+2. 点击右上角「复制到公众号」。
+3. 到公众号编辑器的正文区域粘贴（Windows：`Ctrl+V`；macOS：`⌘V`）。
+4. 用公众号的预览功能在手机上检查，确认后自行发布。
+
+> [!TIP]
+> 复制的是浏览器渲染后的富文本。不要把 HTML 源码粘进正文，也不要把整个预览页拿去上传或校验。
+
+<a id="tutorials"></a>
+
+## 使用教程
+
+### 选一种适合自己的工作方式
+
+| 你希望怎么做 | 对 Agent 说 | 工作方式 |
+| --- | --- | --- |
+| 自己选好风格 | 「用红白色系排版 article.md」 | 直接使用指定主题 |
+| 让 Agent 推荐 | 「帮我排版这篇公众号文章」 | 按题材推荐主题，再确认 |
+| 一次完成 | 「自动排版 article.md，不用问我主题」 | 自动判断结构和主题，交付时说明选择 |
+| 先审核重点 | 「先标注 article.md，先不要生成 HTML」 | 先交付 `_annotated.md`，确认后再渲染 |
+| 对比风格 | 「用科技钴蓝和奶咖信纸各排一版」 | 分别生成正文与预览，便于比较 |
+
+未指定主题且题材没有明显倾向时，默认推荐 **科技钴蓝**。主题可以用中文名，也可以用下方的英文标识指定。
+
+### 教程一：准备一篇更好排版的 Markdown
+
+用 `#` 写标题、`##` 分章节，明确标出引用、重点、图片和代码；Agent 更容易保留你的结构意图。
+
+````markdown
+# 把重复工作交给自动化
+
+> 从一个小任务开始，先让流程跑通。
+
+## 选择第一个任务
+
+优先选择 **高频、规则清楚** 的操作。先记录 ++输入与输出++。
+
+- 写下触发条件
+- 保留一次人工检查
+
+## 验证结果
+
+```python
+print("Hello, workflow!")
+```
+
+参考：[项目文档](https://example.com/docs)
+````
+
+需要配图时，添加 `![图片说明](images/demo.jpg)` 并确保文件存在。代码支持深浅底色与语法高亮，长行按组件规则换行；普通超链接会转成正文脚注编号和文末「参考资料」。`++文字++`、`==文字==` 等是本技能的强调约定，完整映射见 [排版工作流](SKILL.md)。
+
+### 教程二：Word、PDF 和纯文本
+
+```text
+把「文章.docx」整理成 Markdown，先让我确认章节结构和图片，
+确认后用奶咖信纸排版。保留原文实质内容，不代写段落。
+```
+
+| 输入 | 处理方式与边界 |
+| --- | --- |
+| `.docx` | 脚本抽取标题、粗体、列表、外链、表格和内嵌图片；合并单元格按普通格处理 |
+| `.doc` | 先在 Word / WPS 另存为 `.docx` |
+| `.pdf` | 依赖 Agent 的 PDF 读取能力，先清理页眉页脚与断行；图表保留待补占位，双栏和扫描件需额外核对 |
+| `.txt` / 粘贴文本 | 推断标题与章节；补拟的标题会在结构确认时说明 |
+
+也可以手动抽取 Word。下面及后续 `scripts/...` 命令均在**技能安装目录或仓库根目录**执行；文章放在别处时，用实际路径替换参数。系统只有 `python3` 时，把 `python` 改为 `python3`。
+
+```bash
+python scripts/extract_docx.py "/path/to/文章.docx" -o "/path/to/文章.md"
+```
+
+图片写到 Markdown 所在目录下的 `images/文章/`，不同输出文件名使用各自的图片目录。抽取后将 Markdown 交给 Agent 排版。详见 [格式归一化](references/format-normalize.md)。
+
+### 教程三：先标注，再渲染
+
+适合对措辞、重点和章节顺序有明确要求的文章：
+
+1. 对 Agent 说：「先标注 article.md，主题用 tech-cobalt，先不要生成 HTML。」
+2. 打开 `article_annotated.md`，检查章节编号、`++下划线++`、`==高亮==`、目录与署名。
+3. 修改满意后说：「按 article_annotated.md 渲染，沿用标注中的决策，完成校验和预览。」
+4. 想换主题时，修改 frontmatter 中的 `gzh_theme`，再让 Agent 渲染。
+
+标注格式与字段见 [两阶段标注规范](references/annotated-format.md)。这里的「标注／渲染」是 Agent 工作流，不是 Python CLI 子命令。
+
+### 教程四：做一套自己的主题
+
+```text
+为我的读书公众号做一套新主题：奶油白底、墨绿标题、少量暖金点缀，
+正文留白充足，引用像书页批注。先给我看组件预览，
+确认后保存到本地主题库并登记，让后续文章可以复用。
+```
+
+也可以提供参考图。主题生成流程见 [主题生成器](references/theme-generator.md)，手动新增主题见 [贡献指南](CONTRIBUTING.md)。
+
+<a id="themes"></a>
+
+## 找到适合内容的主题
+
+下表可直接用于选择；色值、组件路径和下划线规则统一维护在 [主题索引](references/theme-index.md)。
+
+| 主题 | 标识 | 推荐内容 |
+| --- | --- | --- |
+| **科技钴蓝** · 默认 | `tech-cobalt` | AI 工具、开发教程、技术工作流 |
+| 奶咖信纸 | `letter` | 叙事长文、方法论、年度总结 |
+| 粉彩便当盒 | `bento` | 工具测评、清单、干货合集 |
+| 薄荷对话 | `chat` | 访谈实录、问答教程、案例复盘 |
+| 孔雀蓝杂志 | `magazine` | 人物故事、行业观察、深度特稿 |
+| 珊瑚手账 | `journal` | 读书笔记、随笔、好物清单 |
+| 珊瑚日报 | `daily` | 日报、周报、资讯合集 |
+| 摸鱼绿 | `moyu-green` | 教程、测评、工具盘点 |
+| 红白色系 | `red-white` | 深度分析、观点文章 |
+| 克莱因蓝艺术展册 | `klein-blue` | 艺术评论、品牌叙事、人物特稿 |
+| 石墨极简风 | `graphite-minimal` | 设计、科技评论、专业观点 |
+| 留白禅意风 | `zen-whitespace` | 极简生活、冥想、深度随笔 |
+| 摸鱼票据风 | `moyu-ticket` | 工具对比、创意评测 |
+| 橄榄手记 | `olive-journal` | 内刊、深度评测、案例复盘 |
+
+<details>
+<summary>展开其他 11 套主题预览（点击图片查看完整文章）</summary>
+
+<table>
+<tr>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/chat.html"><img src="assets/lf-chat.thumb.png" width="250" alt="薄荷对话主题预览"></a><br><b>薄荷对话</b></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/magazine.html"><img src="assets/lf-magazine.thumb.png" width="250" alt="孔雀蓝杂志主题预览"></a><br><b>孔雀蓝杂志</b></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/journal.html"><img src="assets/lf-journal.thumb.png" width="250" alt="珊瑚手账主题预览"></a><br><b>珊瑚手账</b></td>
+</tr>
+<tr>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/daily.html"><img src="assets/lf-daily.thumb.png" width="250" alt="珊瑚日报主题预览"></a><br><b>珊瑚日报</b></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/moyu-green.html"><img src="assets/lf-moyu-green.thumb.png" width="250" alt="摸鱼绿主题预览"></a><br><b>摸鱼绿</b></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/red-white.html"><img src="assets/lf-red-white.thumb.png" width="250" alt="红白色系主题预览"></a><br><b>红白色系</b></td>
+</tr>
+<tr>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/klein-blue.html"><img src="assets/lf-klein-blue.thumb.png" width="250" alt="克莱因蓝主题预览"></a><br><b>克莱因蓝</b></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/graphite-minimal.html"><img src="assets/lf-graphite-minimal.thumb.png" width="250" alt="石墨极简风主题预览"></a><br><b>石墨极简风</b></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/zen-whitespace.html"><img src="assets/lf-zen-whitespace.thumb.png" width="250" alt="留白禅意风主题预览"></a><br><b>留白禅意风</b></td>
+</tr>
+<tr>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/moyu-ticket.html"><img src="assets/lf-moyu-ticket.thumb.png" width="250" alt="摸鱼票据风主题预览"></a><br><b>摸鱼票据风</b></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/olive-journal.html"><img src="assets/lf-olive-journal.thumb.png" width="250" alt="橄榄手记主题预览"></a><br><b>橄榄手记</b></td>
+<td width="33%" align="center"><a href="https://88lin.github.io/gzh-skill-kit/docs/gallery/index.html"><b>打开在线画廊 ↗</b></a></td>
+</tr>
+</table>
+
+</details>
+
+<a id="wechat-api"></a>
+
+## 可选：上传到公众号草稿箱
+
+手动复制无需配置微信凭据。需要自动化时，`wechat_draft.py` 可以上传正文图片、封面和文章，创建草稿并回读验证。**它不会发布文章**，请到公众号后台检查草稿后再发布。
+
+准备有对应 API 权限的公众号、AppID / AppSecret 和封面图；账号权限及 IP 白名单以公众号后台为准。示例中的 `article.html` 均指**校验通过的干净正文**，请换成实际文件路径。
+
+### 1. 安装依赖，保存配置
+
+```bash
+python -m pip install requests Pillow
+```
+
+在用户主目录创建 `.wechat_config.json`，用 **UTF-8 无 BOM** 保存，并填入真实值：
+
+```json
 {
   "WECHAT_APP_ID": "wx_your_appid",
   "WECHAT_APP_SECRET": "your_app_secret"
 }
-EOF
-
-# 2. 可选：自定义路径（默认 ~/.wechat_access_token, ~/.wechat_config.json, ./image_001.jpg）
-export WECHAT_CONFIG_FILE="/path/to/config.json"
-export WECHAT_COVER_PATH="/path/to/cover.jpg"
 ```
 
-封面图要求：支持 jpg/png，建议 900×383 像素（2.35:1），文件 ≤64KB（脚本会自动压缩）。
+默认位置：Windows 为 `%USERPROFILE%\.wechat_config.json`；macOS / Linux 为 `~/.wechat_config.json`。凭据和 token 缓存应放在仓库外，不要提交到 Git。
 
-token 缓存绑定配置中的 AppID。切换账号或读到未记录 AppID 的旧缓存时会自动刷新；多账号交替使用时，可用 `WECHAT_TOKEN_FILE` 为各账号指定独立缓存文件。
+<details>
+<summary>自定义配置路径与多账号设置（PowerShell / Bash）</summary>
 
-### Python 调用（推荐）
+环境变量指定的是**文件路径**，不是 AppID / AppSecret 的值。请先创建相应文件和父目录，再在同一终端运行上传命令。
+
+Windows PowerShell：
+
+```powershell
+$env:WECHAT_CONFIG_FILE = "C:\wechat\account-a.json"
+$env:WECHAT_TOKEN_FILE = "C:\wechat\account-a.token.json"
+```
+
+macOS / Linux：
+
+```bash
+export WECHAT_CONFIG_FILE="$HOME/.config/wechat/account-a.json"
+export WECHAT_TOKEN_FILE="$HOME/.config/wechat/account-a.token.json"
+```
+
+默认 token 缓存为 `~/.wechat_access_token`，绑定配置中的 AppID；过期、切换账号或遇到缺少 AppID 的旧缓存时会刷新。多账号交替使用时，建议各设独立的 `WECHAT_TOKEN_FILE`。环境变量需在启动脚本或导入模块前设置。
+
+CLI 还可通过 `WECHAT_COVER_PATH` 设置默认封面路径，默认值为当前目录的 `image_001.jpg`；显式传入封面参数时，以参数为准。
+
+</details>
+
+### 2. 上传正文
+
+```bash
+python scripts/validate_gzh_html.py "/path/to/article.html"
+python scripts/wechat_draft.py "/path/to/cover.jpg" "文章标题" "文章摘要" --html-file "/path/to/article.html"
+```
+
+先确认校验 **0 ERROR、半角标点 0 WARN**，再执行上传。封面支持 JPG / PNG，建议事先裁成 900 × 383；脚本会生成压缩缩略图，但不会替你构图。
+
+- 本地正文图片按 HTML 文件所在目录解析，先检查，再上传并替换 URL；同一文件的重复引用只上传一次。
+- HTTP(S) 图片 URL 保持原样，需要自行确认微信端可访问；本地图片更适合走 API 上传流程。
+- HTML 在上传前自动压缩，减少源码缩进被微信转成多余空白的问题。
+- 成功时返回草稿 `media_id` 和正文 `nbsp` 计数；回读会核对标题，包括中文和 emoji。
+
+<details>
+<summary>Python 集成，以及验证失败后的重试</summary>
+
+在仓库根目录运行，或将技能目录下的 `scripts` 的绝对路径加入 `sys.path`：
+
+```python
+from pathlib import Path
+import sys
+
+sys.path.insert(0, "scripts")
+from wechat_draft import DraftVerificationError, upload_and_cleanup
+
+article = Path("article.html").resolve()
+try:
+    media_id, nbsp_count = upload_and_cleanup(
+        cover_path="cover.jpg",
+        title="文章标题",
+        digest="文章摘要",
+        html_content=article.read_text(encoding="utf-8"),
+        base_dir=article.parent,
+    )
+    print(media_id, nbsp_count)
+except DraftVerificationError as exc:
+    print("草稿已创建，请只重试验证：", exc.media_id)
+    raise
+```
+
+`DraftVerificationError` 表示草稿已创建，但回读验证失败（CLI 退出码 `2`）。记录异常携带的 `media_id`，只重试现有草稿的验证：
 
 ```python
 import sys
-from pathlib import Path
-sys.path.insert(0, 'scripts')
-article = Path('article.html').resolve()
-from wechat_draft import upload_and_cleanup
+sys.path.insert(0, "scripts")
+from wechat_draft import get_token, verify_draft
 
-media_id, nbsp = upload_and_cleanup(
-    cover_path='image_001.jpg',
-    title='文章标题',
-    digest='摘要（不超过54字）',
-    html_content=article.read_text(encoding='utf-8'),
-    base_dir=article.parent
-)
-print(f'草稿 media_id: {media_id}')
+token = get_token()
+media_id = "替换为已创建草稿的 media_id"
+nbsp_count = verify_draft(token, media_id, "文章标题")
+print(nbsp_count)
 ```
 
-> `upload_and_cleanup()` 会先检查本地图片，按 `base_dir` 上传正文图片并替换 URL，再压缩 HTML、上传封面、创建草稿并回读验证。重复引用的本地图片只上传一次。缺图会在任何 API 请求前报错；HTTP(S) 图片 URL 保持原样，调用方需确保可访问。
-
-### 命令行调用
-
-```bash
-python3 scripts/wechat_draft.py image_001.jpg "标题" "摘要" --html-file article.html
-# 也支持 UTF-8 stdin；相对图片默认按当前目录解析，可用 --base-dir 覆盖
-# python3 scripts/wechat_draft.py image_001.jpg "标题" "摘要" < article.html
-# 或交互式（缺参时逐项提示输入）
-python3 scripts/wechat_draft.py
-```
-
-### 验证
-
-Python 与 CLI 都会回读草稿，逐字比较标题（含中文和 emoji），并返回正文的 nbsp 计数。验证失败会抛出 `DraftVerificationError`（CLI 退出码 2），异常携带已经创建的 `media_id`；用 `verify_draft(token, media_id, title)` 重试回读，**不要重复创建草稿**。
-若 `nbsp > 0`，先确认是否为异常连续空白，再调用 `cleanup_draft_nbsp()`；它保留单个有意设置的 nbsp、原文链接、作者与留言设置，并在更新后回读，确认连串空白已消失、保留的单个 nbsp 数量一致。未生效时抛出 `DraftVerificationError`：
+不要再次调用上传函数创建同一篇草稿。`nbsp_count > 0` 本身不表示排版错误：单个不换行空格可能是有意留白。确认有异常连串空白后，再运行：
 
 ```python
-from wechat_draft import cleanup_draft_nbsp, get_token
-token = get_token()
+from wechat_draft import cleanup_draft_nbsp
 cleanup_draft_nbsp(token, media_id)
 ```
 
-## 🧩 公众号平台限制（已内置兜底）
+清理会保留单个空白及作者、原文链接、留言设置，并在更新后回读验证。函数名 `upload_and_cleanup()` 包含上传前压缩；上传后的异常空白清理仍需按上述步骤单独调用。
 
-生成的 HTML 严格遵守：禁 `<style>/<script>/<div>`、`class/id`、`position:fixed/absolute/sticky`、`float`、`@media/@keyframes`、`display:grid`、CSS 变量、外部字体；样式全部内联；所有文字用 `<span leaf="">` 包裹。这些由校验脚本确定性检查，而非靠模型自觉。
+</details>
 
-脚本 CLI 使用 UTF-8 输入输出，支持 Windows 默认 GBK 环境。Python 调用方读取文章时也必须显式指定 `encoding="utf-8"`。HTML/代码中的字面量 `\n` 会原样保留。
+<a id="faq"></a>
 
-## 🔁 可验证循环
+## 常见问题与排查
 
-改组件库或工作流后，用双关卡闭环防回归：
+| 遇到的问题 | 建议处理 |
+| --- | --- |
+| Agent 没有使用这个 Skill | 确认安装到当前客户端支持的目录，明确说「使用 gzh-design」，必要时提供 `SKILL.md` 的实际路径 |
+| 提示找不到 `scripts/...` | 命令应在技能目录执行，或改用脚本和输入文件的绝对路径；有空格的路径加引号 |
+| 预览页被校验出 `script` / `style` 错误 | 校验干净正文 `.html`，不是带按钮的 `_预览.html` |
+| 复制按钮失败 | 按页面提示，在预览正文区域手动选择并复制；不要选择工具栏或复制源代码 |
+| 本地能看到图片，微信里看不到 | 本地路径不能直接给微信读；在编辑器中补传图片，或用 API 上传本地正文图片 |
+| 粘贴后的颜色、间距与本地不同 | 先修复校验结果，再检查微信编辑器过滤和手机预览；静态校验不能保证所有微信客户端的最终表现 |
+| PDF 排版顺序不对或缺图 | 先修正抽取后的 Markdown 和图片占位，再排版；复杂 PDF 不保证自动还原 |
+| API 提示配置读取或 token 错误 | 检查 JSON 编码与键名、AppID / AppSecret、接口权限及 IP 白名单，按接口返回信息定位 |
+| API 退出码为 `2` | 草稿已创建但验证失败；保存 `media_id`，仅重试验证，避免重复草稿 |
+
+**能更新或修改主题吗？** 可以。安装器安装的可重新运行安装命令；Git clone 安装的可在安装目录执行 `git pull --ff-only`。更新前保留自定义修改，新增主题遵循 [登记流程](references/theme-index.md)。
+
+**不同模型效果一样吗？** 组件库与脚本约束了样式和平台规则，但文章理解与组件选择仍由模型完成，效果取决于模型及客户端能力。建议先用示例文章验证自己的环境。
+
+<a id="development"></a>
+
+## 脚本与维护
+
+常用脚本各司其职；下面以 `article.html` 代表已生成的正文文件：
 
 ```bash
-python3 scripts/component_lint.py .            # 源头关：扫组件库反模式
-python3 scripts/validate_gzh_html.py out.html  # 产物关：扫最终 HTML 合规
+# 检查主题组件库
+python scripts/component_lint.py .
+
+# 检查正文，再生成复制预览
+python scripts/validate_gzh_html.py article.html
+python scripts/wrap_preview.py article.html
+
+# 单独压缩时显式指定新文件，保留原始正文
+python scripts/minify_gzh_html.py article.html article.min.html
+
+# 运行回归测试（需安装 requests、Pillow）
+python -m unittest discover -s tests -v
 ```
 
-> [!IMPORTANT]
-> 两关全绿才交付：**源头关**查 `white-space:pre`（大空白）、正文四周虚线框、平台禁用项；**产物关**查禁用标签、`<span leaf>` 包裹、半角标点。逻辑是源头干净 → 产物必然干净，详见 `references/eval-cases.md`。
+组件库要求 **0 ERROR**；文章交付要求 **0 ERROR、半角标点 0 WARN**。校验覆盖禁用标签／样式、文字包裹、区块底色和中文标点等已知规则，仍需检查实际预览。
 
-> [!WARNING]
-> 公众号编辑器会静默过滤 `<style>/<script>/<div>`、`class/id`、`position`、`float`、`display:grid`、CSS 变量等写法——**不要**把普通网页 HTML 直接粘贴进去，务必走本 skill 生成。
+CI 使用 Python 3.13，在 Ubuntu 和 Windows 上运行回归、组件检查、画廊校验与 PNG 完整性检查。微信 API 测试使用模拟响应；镜像同步用例要求非 Windows 且安装了 `rsync`，CI 的 Ubuntu 执行该用例，Windows 跳过。
 
-## 💡 为什么这么设计
-
-- **约束优于自由** — 预设主题色板 + 固定组件先保住输出下限，不让模型每次现场发挥、风格飘忽。
-- **样式粘贴不掉** — 全内联样式 + 每个文字节点 `<span leaf="">` 包裹，专门规避公众号会过滤的写法，粘进去不塌。
-- **质量靠脚本不靠自觉** — 双关卡（源头 `component_lint` + 产物 `validate_gzh_html`）确定性检查平台红线和标点，不靠模型「记得住」。
-- **换模型不走样** — 排版逻辑全沉淀在组件库和脚本里，不依赖某家模型，Claude / GPT / Gemini / 国产模型都能跑出一致效果。
-- **Agent 友好** — 输入输出全是纯文本 Markdown / HTML，任何 Agent 都能读、写、改、验，天然适配 Claude Code / Codex / Cursor。
-
-## 📁 目录结构
-
-```
-gzh-design/
-├── SKILL.md                    # 排版工作流主文档（Agent 入口）
+```text
+gzh-skill-kit/
+├── SKILL.md                       # Agent 工作流入口，技能名 gzh-design
 ├── references/
-│   ├── theme-index.md          # 14 套主题索引（主色/适用/下划线，单一来源）
-│   ├── theme-*.md              # 14 套主题组件库（theme-moyu-green.md 等）
-│   ├── theme-generator.md      # 主题生成器（按描述/参考图生成新主题）
-│   ├── common-components.md    # 跨主题通用增量组件（代码块/图片/小标签）
-│   ├── format-normalize.md     # 格式归一化（docx/pdf/纯文本 → Markdown）
-│   └── eval-cases.md           # 触发用例 + 可验证循环
-├── scripts/
-│   ├── validate_gzh_html.py    # 产物合规校验
-│   └── component_lint.py       # 组件库源头检查
+│   ├── theme-index.md             # 主题注册表
+│   ├── theme-*.md                 # 主题组件库与生成器
+│   ├── common-components.md       # 代码、图片、脚注等通用组件
+│   ├── format-normalize.md        # Word / PDF / 文本归一化
+│   └── annotated-format.md        # 两阶段标注规范
+├── scripts/                       # 抽取、校验、压缩、预览、草稿上传
+├── tests/                         # 回归测试
 ├── assets/
-│   ├── sample-article.md       # 演示输入
-│   └── theme-previews/         # 主题生成器产出的区块库预览
-└── docs/gallery/               # 主题浏览器预览
+│   ├── sample-article.md          # 试排文章
+│   └── preview-template.html      # 复制预览外壳
+└── docs/gallery/                  # 14 套主题长文示例
 ```
 
-## 🎯 设计原则
-
-- **约束而非自由** — 用预设主题色板和固定组件保证输出下限，不让模型现场发挥。
-- **确定性下沉脚本** — 平台限制这类死规则交给校验脚本，模型只做内容判断。
-- **小标签，不用虚线框** — 强调用左竖条/药丸标签，笨重的四周虚线框只留给「待补素材」居中占位。
-- **每处经验都可复现** — 踩过的坑写进 gotchas 和校验脚本，用可验证循环防回归。
-- **配方优于自由** — 先按文章类型查主题库的「配方表」定组件组合，再装配，同类文章排版气质稳定。
-- **克制用色** — 主色只在锚点出现（全文 ≤5 处），大面积白底 + 灰阶，彩色只做点缀。
-- **灰阶承重** — 约 90% 的文字交给一套中性灰阶，色彩不承担正文阅读，避免花哨。
-
-## 🧠 方法论：不止 14 套，自己造主题
-
-### 主题生成：一句话 / 一张参考图，现造一套新主题
-
-内置 14 套不够用时不必等更新——让 AI 现造一套。背后是 [`references/theme-generator.md`](references/theme-generator.md) 定义的第二条工作流：
-
-1. **收集偏好**（一次问全，不逐条追问）：主题描述必填（或给参考图），名称 / 主色 / 背景 / 正文色 / 强调色 / 装饰色 / 字体 / 圆角 / 阴影 / 适用场景可留空自动补全。
-2. **生成区块库**：AI 产出 45~75 个区块的完整 HTML 组件库，存到 `assets/theme-previews/{id}.html`，浏览器整页一次浏览确认风格（不逐块问）。
-3. **转标准主题库 + 登记**：确认后转成 `references/theme-{id}.md`（补 `<span leaf>`、补齐五章节：变量表 / 组件 / 骨架 / 配方表 / 映射表），登记进 theme-index，跑 `component_lint.py` 到 0 ERROR。
-4. **即刻同权**：之后排版和内置主题完全一样，直接说「用 XX 主题排这篇」。
-
-**怎么触发**：
-
-> 按「黑白杂志、克莱因蓝点睛、衬线字体」的气质，给公众号排版生成一套新主题
->
-> 按这张参考图（附图）做一套公众号排版组件库
-
-仓库里 `assets/theme-previews/theme-mono-blue-editorial.html` 就是这样生成的一套「墨蓝刊读风」样例。
-
-### 颜色搭配：一套可复制的配色结构，AI 自动生成协调色板
-
-每套主题的视觉都建立在一张**设计变量色板**上——配色不是拍脑袋，而是固定的角色分工：
-
-| 角色 | 作用 | 取色思路 |
-|---|---|---|
-| **主色** | 章节编号、锚点强调、封面点睛 | 一个有辨识度的品牌色（`#059669` emerald / `#DC2626` 正红 …）|
-| **浅底 / 浅边框** | 卡片背景、引用块、标签底 | 主色同色系的极浅色（主色 + 大量白）|
-| **点睛高亮色** | 每段 1~2 处黄底 / 渐变高亮 | 与主色冷暖对比的第二色（绿配黄）|
-| **中性灰阶** | 正文 / 标题 / 辅助 / 分割线 | `#111827 → #9CA3AF` 一套灰阶，承担 90% 的文字 |
-| **下划线标记色** | 正文关键词逐段标记 | 主色的浅色版（`#A7F3D0` / `#FECACA`），温和不抢戏 |
-
-**克制三原则**：① 主色只在锚点出现（全文 ≤5 处）；② 大面积白底 + 灰阶，彩色只点缀；③ 一段内高亮 ≤2 种。
-
-**让 AI 自动配**：只给一个主色或一句气质描述，主题生成器就据此推导整套协调色板——浅底、边框、高亮、灰阶、下划线色自动生成并保证可读对比度：
-
-> 以 `#7C9EB2` 雾蓝为主色，生成一套清新旅行随笔风的公众号主题
-
-## 🗺 Roadmap
-
-- [x] 主题生成器：按描述/参考图生成自定义主题
-- [x] GitHub Pages 在线画廊（[14 套在线预览](https://88lin.github.io/gzh-skill-kit/docs/gallery/index.html)）
-- [ ] 更多精选内置主题（欢迎 [提建议](https://github.com/88lin/gzh-skill-kit/issues/new?template=theme_request.md)）
-- [ ] 一键把整篇 Markdown + 配图打包导出
-
-## ❓ FAQ
-
-**Q：粘贴到公众号后样式会掉吗？**
-A：不会。所有样式内联、文字 `<span leaf="">` 包裹，这正是校验脚本强制的重点。
-
-**Q：能自己加主题吗？**
-A：两种方式。① **让 AI 生成**：说「按这个风格 / 这张图生成一套公众号主题」，它会走 `references/theme-generator.md` 的流程生成组件库、登记并复用。② **手写贡献**：照 `CONTRIBUTING.md` 的「新增一套主题风格」，跑通可验证循环即可提 PR。
-
-**Q：只能在 Claude Code 用吗？**
-A：不限。任何能读取 Skill 目录的 Agent（Codex / Cursor 等）都能用，工作流在 `SKILL.md`。
-
-**Q：对模型有要求吗？国产模型行不行？**
-A：不挑模型，**国内外模型都能跑出一致效果**。排版逻辑全部沉淀在组件库和校验脚本里，不依赖某家模型的特殊能力——Claude、GPT、Gemini，以及 DeepSeek、Kimi、通义千问、智谱 GLM 等国产模型都可以。模型只负责按规则填充内容，硬约束由校验脚本确定性兜底，所以换模型不会导致排版走样。
-
-**Q：能一次出多套主题对比吗？**
-A：能。说「用这几套主题各排一遍这篇」即可批量生成多套供你挑。
-
-**Q：怎么更新到最新版？**
-A：重新跑 `npx skills add https://github.com/88lin/gzh-skill-kit`，或到安装目录 `git pull`。
-
-**Q：Agent 写出来不合规怎么办？**
-A：跑 `scripts/validate_gzh_html.py`，报 ERROR 就回到装配步骤修；两关全绿才交付，仍有问题欢迎开 Issue。
-
-## 📋 完整主题速查表
-
-| 主色 | 主题 | 适用 |
-|---|---|---|
-| ![](https://placehold.co/12/1D4ED8/1D4ED8.png) `#1D4ED8` | 科技钴蓝（默认） | AI 工具、开发教程、产品说明、工作流指南 |
-| ![](https://placehold.co/12/2B7FD8/2B7FD8.png) `#2B7FD8` | 奶咖信纸 | 叙事长文、观点、方法论、年度总结 |
-| ![](https://placehold.co/12/71519B/71519B.png) `#71519B` | 粉彩便当盒 | 工具测评、清单、干货合集 |
-| ![](https://placehold.co/12/059669/059669.png) `#059669` | 薄荷对话 | AI 访谈实录、问答教程、案例复盘 |
-| ![](https://placehold.co/12/15697C/15697C.png) `#15697C` | 孔雀蓝杂志 | 人物故事、行业观察、深度特稿 |
-| ![](https://placehold.co/12/C33D46/C33D46.png) `#C33D46` | 珊瑚手账 | 读书笔记、随笔、好物清单 |
-| ![](https://placehold.co/12/C33D46/C33D46.png) `#C33D46` | 珊瑚日报 | 资讯日报、周报盘点、快讯合集 |
-| ![](https://placehold.co/12/059669/059669.png) `#059669` | 摸鱼绿 | 教程、测评、清单、工具盘点 |
-| ![](https://placehold.co/12/DC2626/DC2626.png) `#DC2626` | 红白色系 | 深度分析、观点、力量感话题 |
-| ![](https://placehold.co/12/002FA7/002FA7.png) `#002FA7` | 克莱因蓝 | 艺术评论、品牌叙事、人物特稿、展册式深度内容 |
-| ![](https://placehold.co/12/52525B/52525B.png) `#52525B` | 石墨极简风 | 设计、科技评论、专业观点、高端品牌 |
-| ![](https://placehold.co/12/4A5D52/4A5D52.png) `#4A5D52` | 留白禅意风 | 禅意、极简生活、深度随笔 |
-| ![](https://placehold.co/12/059669/059669.png) `#059669` | 摸鱼票据风 | 工具对比、创意评测（票据视觉隐喻） |
-| ![](https://placehold.co/12/1e1f23/1e1f23.png) `#1e1f23` | 橄榄手记 | 内刊手记、深度评测、案例复盘 |
-
-> 每套主题的英文标识、组件库文件、下划线 CSS 见 [`references/theme-index.md`](references/theme-index.md)。
-> 需要别的风格？让 AI 用 [主题生成器](#-faq) 现生成一套。
-
-## 🤝 贡献
-
-欢迎新主题、修复与文档改进，请先读 [CONTRIBUTING.md](CONTRIBUTING.md)。
+想贡献主题、修复问题或补充教程，请阅读 [贡献指南](CONTRIBUTING.md) 和 [评估用例](references/eval-cases.md)。反馈排版问题时，可提供脱敏的输入片段、主题名、校验输出和问题截图，便于复现。
 
 ---
 
-**看到这儿了，说明这个 skill 大概率对你有用 —— 那就[点个 ⭐ Star](https://github.com/88lin/gzh-skill-kit) 吧**
+<div align="center">
 
-一秒的事，却能让更多写公众号的人搜到它，也能在你下次排版时第一时间找到这里。
+[报告问题](https://github.com/88lin/gzh-skill-kit/issues/new?template=bug_report.md) · [建议主题](https://github.com/88lin/gzh-skill-kit/issues/new?template=theme_request.md) · [参与贡献](CONTRIBUTING.md)
+
+开源协议：[AGPL-3.0](LICENSE)。如果它帮你省下了排版时间，欢迎 Star 收藏。
+
+</div>
