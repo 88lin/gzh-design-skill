@@ -19,8 +19,10 @@ from html.parser import HTMLParser
 
 if __package__:
     from .cli_utils import configure_stdio, print_status
+    from .markup_checks import declarations
 else:
     from cli_utils import configure_stdio, print_status
+    from markup_checks import declarations
 
 
 BLOCK_TAGS = {
@@ -33,12 +35,36 @@ VOID_TAGS = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input',
              'link', 'meta', 'param', 'source', 'track', 'wbr'}
 
 
+def _breaks_flow(tag, style):
+    """Only strip edge spaces at block boundaries, honoring inline display CSS."""
+    display, important = '', False
+    for prop, value in declarations(style):
+        if prop != 'display':
+            continue
+        priority = bool(re.search(r'!\s*important\s*$', value, re.I))
+        if priority or not important:
+            display = re.sub(r'!\s*important\s*$', '', value, flags=re.I).strip().lower()
+            important = priority
+    if tag == 'br':
+        return True
+    if not display:
+        return tag in BLOCK_TAGS
+    # Unknown/inherited display is treated conservatively: keeping a separator
+    # is safer than joining words. Multi-keyword CSS uses its outer display type.
+    keywords = display.split()
+    if 'inline' in keywords:
+        return False
+    return bool(set(keywords) & {'block', 'list-item', 'flow-root', 'flex', 'grid', 'table'})
+
+
 class _Minifier(HTMLParser):
     """Keep token boundaries: indentation is not the same as inline whitespace."""
 
-    def __init__(self):
+    def __init__(self, source):
         super().__init__(convert_charrefs=False)
-        self.tokens = []  # (kind, tag, source, preserve_whitespace)
+        self.source = source
+        self.offsets = [0] + [match.end() for match in re.finditer('\n', source)]
+        self.tokens = []  # (kind, breaks_flow, source, preserve_whitespace)
         self.stack = []
 
     def handle_starttag(self, tag, attrs):
@@ -49,9 +75,10 @@ class _Minifier(HTMLParser):
         raw = self.get_starttag_text()
         # Whitespace in a multiline start tag separates attributes / SVG numbers.
         raw = re.sub(r'[\r\n]+[ \t]*', ' ', raw)
-        self.tokens.append(('start', tag, raw, preserve))
+        boundary = _breaks_flow(tag, style)
+        self.tokens.append(('start', boundary, raw, preserve))
         if tag not in VOID_TAGS:
-            self.stack.append((tag, preserve))
+            self.stack.append((tag, preserve, boundary))
 
     def handle_startendtag(self, tag, attrs):
         self.handle_starttag(tag, attrs)
@@ -59,35 +86,47 @@ class _Minifier(HTMLParser):
             self.stack.pop()
 
     def handle_endtag(self, tag):
-        self.tokens.append(('end', tag, f'</{tag}>', False))
+        boundary = tag in BLOCK_TAGS
         for i in range(len(self.stack) - 1, -1, -1):
             if self.stack[i][0] == tag:
+                boundary = self.stack[i][2]
                 del self.stack[i:]
                 break
+        self.tokens.append(('end', boundary, f'</{tag}>', False))
 
     def handle_data(self, data):
-        self.tokens.append(('text', '', data, bool(self.stack and self.stack[-1][1])))
+        self.tokens.append(('text', False, data, bool(self.stack and self.stack[-1][1])))
+
+    def _reference(self, prefix):
+        # HTMLParser also calls these handlers for AT&T and semicolonless
+        # references. Slice the original spelling instead of inventing a ';'.
+        row, column = self.getpos()
+        start = self.offsets[row - 1] + column
+        end = start + len(prefix)
+        if self.source[end:end + 1] == ';':
+            end += 1
+        self.tokens.append(('entity', False, self.source[start:end], False))
 
     def handle_entityref(self, name):
-        self.tokens.append(('entity', '', f'&{name};', False))
+        self._reference(f'&{name}')
 
     def handle_charref(self, name):
-        self.tokens.append(('entity', '', f'&#{name};', False))
+        self._reference(f'&#{name}')
 
     def handle_decl(self, decl):
-        self.tokens.append(('decl', '', f'<!{decl}>', False))
+        self.tokens.append(('decl', False, f'<!{decl}>', False))
 
     def result(self):
         output = []
-        for i, (kind, tag, raw, preserve) in enumerate(self.tokens):
+        for i, (kind, boundary, raw, preserve) in enumerate(self.tokens):
             if kind == 'text' and not preserve:
                 # HTML collapses ASCII whitespace, not NBSP or full-width spaces.
                 raw = re.sub(r'[ \t\r\n\f]+', ' ', raw)
                 prev = self.tokens[i - 1] if i else None
                 nxt = self.tokens[i + 1] if i + 1 < len(self.tokens) else None
-                if prev is None or prev[1] in BLOCK_TAGS:
+                if prev is None or prev[1]:
                     raw = raw.lstrip(' ')
-                if nxt is None or nxt[1] in BLOCK_TAGS:
+                if nxt is None or nxt[1]:
                     raw = raw.rstrip(' ')
             output.append(raw)
         return ''.join(output).strip()
@@ -99,7 +138,7 @@ def minify_html(html):
     pre / white-space:pre 内容保留原始空白；公众号代码块应使用每行一个 p，
     而不是靠压缩器改写有意义的代码缩进。
     """
-    parser = _Minifier()
+    parser = _Minifier(html)
     parser.feed(html)
     parser.close()
     return parser.result()
