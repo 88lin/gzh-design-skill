@@ -290,6 +290,34 @@ class CLITests(unittest.TestCase):
                                 env=dict(os.environ, PYTHONIOENCODING='gbk'))
         self.assertEqual(result.returncode, 0, result.stderr.decode('utf-8', 'replace'))
 
+    def test_cli_reports_upload_failure_without_traceback(self):
+        # 缺图 / 图片无法解析 / token 失败等：应得到一行干净提示 + 退出码 1，
+        # 而不是把 traceback 甩给用户。
+        for exc in [FileNotFoundError('找不到正文图片：x.png'),
+                    ValueError('正文图片不支持此来源'),
+                    RuntimeError('Token 刷新失败')]:
+            with self.subTest(exc=type(exc).__name__):
+                with patch.object(sys, 'argv', ['wechat_draft.py', 'cover', 'title', 'summary']), \
+                        patch.object(sys, 'stdin', io.StringIO('<p>x</p>')), \
+                        patch.object(draft, 'upload_and_cleanup', side_effect=exc):
+                    self.assertEqual(draft.main(), 1)
+
+    def test_cli_verification_failure_returns_two(self):
+        # 草稿已创建但回读失败：退出码 2，提示不要重复创建
+        with patch.object(sys, 'argv', ['wechat_draft.py', 'cover', 'title', 'summary']), \
+                patch.object(sys, 'stdin', io.StringIO('<p>x</p>')), \
+                patch.object(draft, 'upload_and_cleanup',
+                             side_effect=draft.DraftVerificationError('existing', '回读失败')):
+            self.assertEqual(draft.main(), 2)
+
+    def test_cli_does_not_swallow_programming_errors(self):
+        # 真实的编程错误（不是上传失败）必须继续抛出，不能被 main() 吞掉
+        with patch.object(sys, 'argv', ['wechat_draft.py', 'cover', 'title', 'summary']), \
+                patch.object(sys, 'stdin', io.StringIO('<p>x</p>')), \
+                patch.object(draft, 'upload_and_cleanup', side_effect=AttributeError('boom')):
+            with self.assertRaises(AttributeError):
+                draft.main()
+
     def test_library_status_keeps_host_encoding_and_does_not_raise(self):
         buffer = io.BytesIO()
         stream = io.TextIOWrapper(buffer, encoding='gbk')
