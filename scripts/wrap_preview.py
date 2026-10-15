@@ -34,7 +34,11 @@ def main():
         print(f"✗ 找不到文件: {src}")
         sys.exit(1)
 
-    content = Path(src).read_text(encoding="utf-8").strip()
+    try:
+        content = Path(src).read_text(encoding="utf-8").strip()
+    except (OSError, UnicodeError) as exc:
+        print(f"✗ 读不到正文文件 {src}: {exc}")
+        sys.exit(1)
     tpl_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                             "..", "assets", "preview-template.html")
     try:
