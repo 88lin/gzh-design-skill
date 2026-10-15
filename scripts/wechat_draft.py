@@ -88,19 +88,24 @@ def _load_config():
     return cfg
 
 
+def _cached_token(appid):
+    """返回当前 AppID 仍有效的缓存 token；损坏或格式不对的缓存一律视为未命中。"""
+    try:
+        with open(TOKEN_FILE, encoding='utf-8') as f:
+            data = json.load(f)
+        expires = datetime.datetime.fromisoformat(data['expires'])
+        if (data.get('appid') == appid and isinstance(data['access_token'], str)
+                and datetime.datetime.now() < expires - datetime.timedelta(minutes=5)):
+            return data['access_token']
+    except (OSError, ValueError, TypeError, KeyError, AttributeError):
+        pass
+    return None
+
+
 def get_token():
-    """只复用当前 AppID 的有效缓存；旧格式或其他账号的缓存必须刷新。"""
+    """只复用当前 AppID 的有效缓存；旧格式、损坏或其他账号的缓存必须刷新。"""
     appid = _load_config()['WECHAT_APP_ID']
-    if not os.path.exists(TOKEN_FILE):
-        return refresh_token()
-    with open(TOKEN_FILE, encoding='utf-8') as f:
-        data = json.load(f)
-    if data.get('appid') != appid:
-        return refresh_token()
-    expires = datetime.datetime.fromisoformat(data.get('expires', '2000-01-01'))
-    if datetime.datetime.now() >= expires - datetime.timedelta(minutes=5):
-        return refresh_token()
-    return data['access_token']
+    return _cached_token(appid) or refresh_token()
 
 
 def refresh_token():

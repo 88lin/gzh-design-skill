@@ -179,7 +179,7 @@ export WECHAT_CONFIG_FILE="$HOME/.config/wechat/account-a.json"
 export WECHAT_TOKEN_FILE="$HOME/.config/wechat/account-a.token.json"
 ```
 
-默认 token 缓存为 `~/.wechat_access_token`，绑定配置中的 AppID；过期、切换账号或遇到缺少 AppID 的旧缓存时会刷新。多账号交替使用时，建议各设独立的 `WECHAT_TOKEN_FILE`。环境变量需在启动脚本或导入模块前设置。
+默认 token 缓存为 `~/.wechat_access_token`，绑定配置中的 AppID；过期、切换账号、缓存损坏或遇到缺少 AppID 的旧缓存时会刷新。多账号交替使用时，建议各设独立的 `WECHAT_TOKEN_FILE`。环境变量需在启动脚本或导入模块前设置。
 
 CLI 还可通过 `WECHAT_COVER_PATH` 设置默认封面路径，默认值为当前目录的 `image_001.jpg`；显式传入封面参数时，以参数为准。
 
