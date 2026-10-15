@@ -25,3 +25,40 @@ jobs:
         run: command -v rsync
       - run: python -m unittest discover -s tests -v
       - run: python scripts/component_lint.py .
+      # 产物关：SKILL.md / CONTRIBUTING 要求"两关全绿"，但此前 CI 只跑源头关，
+      # gallery 产物的回归只能靠人肉。WARN 不失败（exit 0），ERROR 才失败。
+      - name: Validate gallery products
+        run: |
+          python - <<'PY'
+          import glob, os, subprocess, sys
+          files = [p for p in sorted(glob.glob("docs/gallery/*.html"))
+                   if os.path.basename(p) != "index.html"]
+          failed = [p for p in files
+                    if subprocess.run([sys.executable, "scripts/validate_gzh_html.py", p]).returncode != 0]
+          if failed:
+              print("产物关失败:", failed)
+              sys.exit(1)
+          print(f"产物关通过：{len(files)} 份 gallery 产物 0 ERROR")
+          PY
+      # 压缩产物同样要过关：上传草稿走的是压缩后的 HTML
+      - name: Validate minified gallery products
+        run: |
+          python - <<'PY'
+          import glob, os, subprocess, sys, tempfile
+          sys.path.insert(0, "scripts")
+          from minify_gzh_html import minify_html
+          files = [p for p in sorted(glob.glob("docs/gallery/*.html"))
+                   if os.path.basename(p) != "index.html"]
+          failed = []
+          with tempfile.TemporaryDirectory() as tmp:
+              for src in files:
+                  out = os.path.join(tmp, os.path.basename(src))
+                  with open(out, "w", encoding="utf-8") as f:
+                      f.write(minify_html(open(src, encoding="utf-8").read()))
+                  if subprocess.run([sys.executable, "scripts/validate_gzh_html.py", out]).returncode != 0:
+                      failed.append(src)
+          if failed:
+              print("压缩产物关失败:", failed)
+              sys.exit(1)
+          print(f"压缩产物关通过：{len(files)} 份 0 ERROR")
+          PY

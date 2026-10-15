@@ -427,8 +427,14 @@ def main():
     try:
         upload_and_cleanup(cover, title, digest, content, base_dir=base_dir)
     except DraftVerificationError as exc:
+        # 草稿已经创建成功，只是回读验证没过——退出码 2，提示不要重复创建
         print_status(str(exc), file=sys.stderr)
         return 2
+    except Exception as exc:
+        # 其余失败（缺图、图片无法解析、token/封面上传失败等）给一行干净提示，
+        # 不要向用户甩 traceback。
+        print_status(f"✗ 上传失败：{exc}", file=sys.stderr)
+        return 1
     return 0
 
 

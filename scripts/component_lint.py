@@ -22,11 +22,11 @@ from pathlib import Path
 if __package__:
     from .validate_gzh_html import LeafChecker
     from .cli_utils import configure_stdio
-    from .markup_checks import inspect_markup
+    from .markup_checks import declarations, inspect_markup
 else:
     from validate_gzh_html import LeafChecker
     from cli_utils import configure_stdio
-    from markup_checks import inspect_markup
+    from markup_checks import declarations, inspect_markup
 
 CJK = re.compile(r"[一-鿿㐀-䶿]")
 
@@ -68,8 +68,7 @@ def lint_file(path):
                                for s, p in checker.unwrapped[:3])
             add("ERROR", f"有文本节点未被 <span leaf=\"\"> 包裹——"
                          f"粘贴后样式会丢失。例：{sample}")
-        if checker.span_leaf_count == 0 and CJK.search(
-                re.sub(r"<!--.*?-->", "", html, flags=re.S)):
+        if checker.span_leaf_count == 0 and checker.cjk_text_nodes > 0:
             add("ERROR", "整个组件块没有任何 <span leaf=\"\"> 包裹——"
                          "所有文字节点都必须包一层")
         # 四周虚线框：正文强调勿用；居中块视为"占位/素材"组件，豁免
@@ -79,9 +78,10 @@ def lint_file(path):
         # 移动端守护：内容容器固定像素宽(≥150px)且未配 max-width —— 手机端易被压缩/溢出
         for style in markup.styles:
             has_maxw = re.search(r'max-width\s*:', style, re.I)
-            for decl in style.split(';'):
-                prop, _, val = decl.partition(':')
-                if prop.strip().lower() != 'width':
+            # 用 markup_checks.declarations() 正确切分：style.split(';') 会把
+            # background:url(data:image/svg+xml;base64,...) 里的分号也切开。
+            for prop, val in declarations(style):
+                if prop != 'width':
                     continue
                 m = re.match(r'\s*(\d+)\s*px', val)
                 if m and int(m.group(1)) >= 150 and not has_maxw:
