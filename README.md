@@ -272,6 +272,8 @@ python -m pip install requests Pillow
 
 默认位置：Windows 为 `%USERPROFILE%\.wechat_config.json`；macOS / Linux 为 `~/.wechat_config.json`。凭据和 token 缓存应放在仓库外，不要提交到 Git。
 
+配置必须是 JSON 对象，两个字段都必须是非空字符串。脚本会在读取 token 缓存或发起请求前检查；缺项时提示具体字段名，以退出码 `1` 结束，不输出凭据值。
+
 <details>
 <summary>自定义配置路径与多账号设置（PowerShell / Bash）</summary>
 

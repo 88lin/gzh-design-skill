@@ -312,11 +312,13 @@ class CLITests(unittest.TestCase):
 
     def test_cli_does_not_swallow_programming_errors(self):
         # 真实的编程错误（不是上传失败）必须继续抛出，不能被 main() 吞掉
-        with patch.object(sys, 'argv', ['wechat_draft.py', 'cover', 'title', 'summary']), \
-                patch.object(sys, 'stdin', io.StringIO('<p>x</p>')), \
-                patch.object(draft, 'upload_and_cleanup', side_effect=AttributeError('boom')):
-            with self.assertRaises(AttributeError):
-                draft.main()
+        for exc in (AttributeError('boom'), KeyError('internal-field')):
+            with self.subTest(exc=type(exc).__name__), \
+                    patch.object(sys, 'argv', ['wechat_draft.py', 'cover', 'title', 'summary']), \
+                    patch.object(sys, 'stdin', io.StringIO('<p>x</p>')), \
+                    patch.object(draft, 'upload_and_cleanup', side_effect=exc):
+                with self.assertRaises(type(exc)):
+                    draft.main()
 
     def test_library_status_keeps_host_encoding_and_does_not_raise(self):
         buffer = io.BytesIO()

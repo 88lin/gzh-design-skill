@@ -75,10 +75,22 @@ def _parse_json(r):
     return json.loads(r.content.decode('utf-8'))
 
 
+def _load_config():
+    """在数据入口校验凭据，让配置错误走 CLI 的 ValueError 提示。"""
+    with open(CONFIG_FILE, encoding='utf-8') as f:
+        cfg = json.load(f)
+    if not isinstance(cfg, dict):
+        raise ValueError('公众号配置必须是 JSON 对象')
+    for key in ('WECHAT_APP_ID', 'WECHAT_APP_SECRET'):
+        value = cfg.get(key)
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(f'公众号配置项 {key} 必须是非空字符串')
+    return cfg
+
+
 def get_token():
     """只复用当前 AppID 的有效缓存；旧格式或其他账号的缓存必须刷新。"""
-    with open(CONFIG_FILE, encoding='utf-8') as f:
-        appid = json.load(f)['WECHAT_APP_ID']
+    appid = _load_config()['WECHAT_APP_ID']
     if not os.path.exists(TOKEN_FILE):
         return refresh_token()
     with open(TOKEN_FILE, encoding='utf-8') as f:
@@ -93,9 +105,8 @@ def get_token():
 
 def refresh_token():
     """调用 stable_token 接口刷新 access_token，并缓存到本地文件。"""
+    cfg = _load_config()
     import requests
-    with open(CONFIG_FILE, encoding='utf-8') as f:
-        cfg = json.load(f)
     appid = cfg['WECHAT_APP_ID']
     secret = cfg['WECHAT_APP_SECRET']
 

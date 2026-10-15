@@ -277,6 +277,8 @@ Create `.wechat_config.json` in your home directory, save it as **UTF-8 without 
 
 Default location: `%USERPROFILE%\.wechat_config.json` on Windows, or `~/.wechat_config.json` on macOS / Linux. Keep credentials and token caches outside the repository and out of Git.
 
+The configuration must be a JSON object with both fields set to nonempty strings. The script checks this before reading the token cache or making requests. Missing fields produce a message naming the field and exit code `1`, without printing credential values.
+
 <details>
 <summary>Custom paths and multiple accounts (PowerShell / Bash)</summary>
 

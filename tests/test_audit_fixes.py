@@ -1,6 +1,7 @@
 """Offline regression cases for the post-PR-14 audit."""
 import datetime
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
@@ -33,6 +34,57 @@ def response(value):
 
 
 class TokenTests(unittest.TestCase):
+    @unittest.skipUnless(requests, 'requires requests')
+    def test_invalid_config_is_rejected_before_cache_or_api(self):
+        invalid = [
+            ([], 'JSON 对象'),
+            (None, 'JSON 对象'),
+            ('config', 'JSON 对象'),
+        ]
+        for key in ('WECHAT_APP_ID', 'WECHAT_APP_SECRET'):
+            config = {'WECHAT_APP_ID': 'example', 'WECHAT_APP_SECRET': 'do-not-print-secret'}
+            invalid.append(({k: v for k, v in config.items() if k != key}, key))
+            for value in ('', '   ', None, 42, [], {}):
+                invalid.append((dict(config, **{key: value}), key))
+
+        with tempfile.TemporaryDirectory() as directory:
+            config_path, cache = Path(directory) / 'config.json', Path(directory) / 'token.json'
+            cache.write_text(json.dumps({
+                'appid': 'example', 'access_token': 'cached',
+                'expires': (datetime.datetime.now() + datetime.timedelta(hours=1)).isoformat(),
+            }), encoding='utf-8')
+            for data, message in invalid:
+                config_path.write_text(json.dumps(data), encoding='utf-8')
+                for method in (draft.get_token, draft.refresh_token):
+                    with self.subTest(data=data, method=method.__name__), \
+                            patch.object(draft, 'CONFIG_FILE', str(config_path)), \
+                            patch.object(draft, 'TOKEN_FILE', str(cache)), \
+                            patch('requests.post') as post:
+                        with self.assertRaisesRegex(ValueError, message) as raised:
+                            method()
+                        self.assertNotIn('do-not-print-secret', str(raised.exception))
+                        post.assert_not_called()
+
+    def test_cli_missing_config_keys_has_no_traceback(self):
+        with tempfile.TemporaryDirectory() as directory:
+            config_path = Path(directory) / 'config.json'
+            for missing in ('WECHAT_APP_ID', 'WECHAT_APP_SECRET'):
+                data = {'WECHAT_APP_ID': 'example', 'WECHAT_APP_SECRET': 'do-not-print-secret'}
+                del data[missing]
+                config_path.write_text(json.dumps(data), encoding='utf-8')
+                with self.subTest(missing=missing):
+                    result = subprocess.run([
+                        sys.executable, str(ROOT / 'scripts/wechat_draft.py'),
+                        'cover.jpg', 'title', 'digest', '<p>body</p>',
+                    ], capture_output=True, text=True, encoding='utf-8', env=dict(
+                        os.environ, WECHAT_CONFIG_FILE=str(config_path),
+                        WECHAT_TOKEN_FILE=str(Path(directory) / 'absent-token.json'),
+                    ))
+                    self.assertEqual(result.returncode, 1)
+                    self.assertIn(missing, result.stderr)
+                    self.assertNotIn('Traceback', result.stderr)
+                    self.assertNotIn('do-not-print-secret', result.stderr)
+
     def test_cache_must_belong_to_configured_account(self):
         with tempfile.TemporaryDirectory() as directory:
             config, cache = Path(directory) / 'config.json', Path(directory) / 'token.json'
