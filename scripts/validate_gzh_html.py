@@ -18,6 +18,7 @@ grid/@media/CSS 变量/外部字体）、**可点击的 `<a href>`**、**内联 
 """
 
 import argparse
+import os
 import re
 import sys
 from html.parser import HTMLParser
@@ -49,6 +50,12 @@ FORBIDDEN = [
     (re.compile(r"</?(figure|figcaption)\b", re.I), "WARN",
      "<figure>/<figcaption> 不在公众号可用标签清单内，可能被改写，建议换 <section>/<p>"),
 ]
+
+# docs/gallery 下的预览页只在浏览器里看，不粘贴进公众号，允许用 SVG 图标
+# （与 component_lint.py 的豁免规则保持一致；两个关卡对同一文件结论必须相同）
+PREVIEW_MARK = os.sep + "docs" + os.sep + "gallery" + os.sep
+PREVIEW_SVG_MSG = ("预览页含内联 SVG——浏览器预览正常；"
+                   "若要把这段代码粘进公众号正文，请先改用文本字形或 <img>")
 
 CJK = re.compile(r"[一-鿿㐀-䶿]")
 ALNUM = re.compile(r"[A-Za-z0-9]")
@@ -134,9 +141,17 @@ def validate(html, name="<input>"):
                       "（检查文件路径是否正确、生成步骤是否真的产出了内容）")
         return errors, warnings, 0
 
+    # 预览页（docs/gallery）豁免 SVG 检查，降级为 WARN —— 与 component_lint.py 对齐。
+    # 否则会出现"源头关放行了、产物关却报 ERROR"的自相矛盾。
+    is_preview = PREVIEW_MARK in os.path.abspath(name) if name != "<input>" else False
+
     for rx, level, msg in FORBIDDEN:
         hits = len(rx.findall(html))
-        if hits:
+        if not hits:
+            continue
+        if is_preview and level == "ERROR" and "SVG" in msg:
+            warnings.append(f"{PREVIEW_SVG_MSG}（命中 {hits} 处）")
+        else:
             (errors if level == "ERROR" else warnings).append(
                 f"{msg}（命中 {hits} 处）")
 
