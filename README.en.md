@@ -149,6 +149,8 @@ python scripts/wechat_draft.py cover.jpg "Title" "Summary" --html-file article.h
 
 CLI input/output is UTF-8, including on Windows. Local inline images resolve relative to the HTML file (or `--base-dir`), are checked before API requests, and are uploaded before draft creation. Literal backslash escapes in code remain unchanged. Both CLI and Python calls read the draft back and compare its title; verification failure preserves the draft ID in `DraftVerificationError` (CLI exit 2). Retry verification with that ID instead of creating another draft. Whitespace cleanup preserves the original author, source URL and comment settings.
 
+Token caches are bound to the configured AppID. Switching accounts or reading a legacy cache without an AppID refreshes the token; use a separate `WECHAT_TOKEN_FILE` per account to retain multiple caches. After whitespace cleanup, readback must confirm that repeated NBSPs are gone and the number of intentional single NBSPs is unchanged; otherwise it raises `DraftVerificationError`.
+
 ## 🧩 Platform limits (enforced)
 
 Output obeys: no `<style>/<script>/<div>`, no `class/id`, no `position:fixed/absolute/sticky`, `float`, `@media/@keyframes`, `display:grid`, CSS variables, external fonts; all styles inlined; every text node wrapped in `<span leaf="">`. Checked deterministically by scripts, not by model discipline.

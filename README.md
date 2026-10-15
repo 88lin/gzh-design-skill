@@ -181,6 +181,8 @@ export WECHAT_COVER_PATH="/path/to/cover.jpg"
 
 封面图要求：支持 jpg/png，建议 900×383 像素（2.35:1），文件 ≤64KB（脚本会自动压缩）。
 
+token 缓存绑定配置中的 AppID。切换账号或读到未记录 AppID 的旧缓存时会自动刷新；多账号交替使用时，可用 `WECHAT_TOKEN_FILE` 为各账号指定独立缓存文件。
+
 ### Python 调用（推荐）
 
 ```python
@@ -215,7 +217,7 @@ python3 scripts/wechat_draft.py
 ### 验证
 
 Python 与 CLI 都会回读草稿，逐字比较标题（含中文和 emoji），并返回正文的 nbsp 计数。验证失败会抛出 `DraftVerificationError`（CLI 退出码 2），异常携带已经创建的 `media_id`；用 `verify_draft(token, media_id, title)` 重试回读，**不要重复创建草稿**。
-若 `nbsp > 0`，先确认是否为异常连续空白，再调用 `cleanup_draft_nbsp()`；它保留单个有意设置的 nbsp、原文链接、作者与留言设置，并在更新后再次回读：
+若 `nbsp > 0`，先确认是否为异常连续空白，再调用 `cleanup_draft_nbsp()`；它保留单个有意设置的 nbsp、原文链接、作者与留言设置，并在更新后回读，确认连串空白已消失、保留的单个 nbsp 数量一致。未生效时抛出 `DraftVerificationError`：
 
 ```python
 from wechat_draft import cleanup_draft_nbsp, get_token
