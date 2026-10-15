@@ -23,10 +23,12 @@ jobs:
           # 排除 git 元数据与 CI 自身
           rsync -a --exclude='.git' --exclude='.github' ./ dst/gzh-skill-kit/
           cd dst
-          if git diff --quiet; then
+          # 必须先 git add 再比较：git diff 看不到未跟踪文件，
+          # 只用 git diff --quiet 会让"新增文件"永远同步不过去。
+          git add -A
+          if git diff --cached --quiet; then
             echo "No changes to sync."
           else
-            git add -A
             git commit -m "sync: gzh-skill-kit 自动镜像 $(git -C .. rev-parse --short HEAD)"
             git push origin main
           fi
