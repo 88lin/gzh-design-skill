@@ -8,27 +8,32 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    concurrency:
+      group: gzh-mirror
+      cancel-in-progress: false
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
 
       - name: Push copy to 88lin.github.io/gzh-skill-kit/
+        env:
+          MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
         run: |
+          set -euo pipefail
+          source_dir="$GITHUB_WORKSPACE"
+          target_repo="$RUNNER_TEMP/gzh-mirror"
+          source_sha="$(git -C "$source_dir" rev-parse --short HEAD)"
           git config --global user.name "88lin"
           git config --global user.email "431761794@qq.com"
-          git clone --depth 1 "https://x-access-token:${{ secrets.MIRROR_TOKEN }}@github.com/88lin/88lin.github.io.git" dst
-          # 清掉旧副本再整体覆盖（保持源仓库单一来源）
-          rm -rf dst/gzh-skill-kit
-          mkdir -p dst/gzh-skill-kit
-          # 排除 git 元数据与 CI 自身
-          rsync -a --exclude='.git' --exclude='.github' ./ dst/gzh-skill-kit/
-          cd dst
+          git clone --depth 1 "https://x-access-token:${MIRROR_TOKEN}@github.com/88lin/88lin.github.io.git" "$target_repo"
+          bash "$source_dir/.github/scripts/sync-mirror.sh" "$source_dir" "$target_repo"
+          cd "$target_repo"
           # 必须先 git add 再比较：git diff 看不到未跟踪文件，
           # 只用 git diff --quiet 会让"新增文件"永远同步不过去。
           git add -A
           if git diff --cached --quiet; then
             echo "No changes to sync."
           else
-            git commit -m "sync: gzh-skill-kit 自动镜像 $(git -C .. rev-parse --short HEAD)"
+            git commit -m "sync: gzh-skill-kit 自动镜像 $source_sha"
             git push origin main
           fi
