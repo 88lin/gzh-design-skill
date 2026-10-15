@@ -16,7 +16,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from extract_docx import extract, para_text, W, R, A
+from extract_docx import _md_image_path, extract, para_text, W, R, A
 from minify_gzh_html import minify_html
 from validate_gzh_html import validate
 import wechat_draft as draft
@@ -101,6 +101,22 @@ class TokenTests(unittest.TestCase):
                     self.assertEqual(draft.get_token(), 'cached' if owner == 'account-B' else 'fresh')
                     self.assertEqual(refresh.called, owner != 'account-B')
 
+    def test_unreadable_cache_is_a_miss(self):
+        future = (datetime.datetime.now() + datetime.timedelta(hours=1)).isoformat()
+        with tempfile.TemporaryDirectory() as directory:
+            config, cache = Path(directory) / 'config.json', Path(directory) / 'token.json'
+            config.write_text(json.dumps({'WECHAT_APP_ID': 'A', 'WECHAT_APP_SECRET': 'fake'}))
+            for content in ['{broken', '[]', '"token"', json.dumps({'appid': 'A', 'access_token': 'x'}),
+                            json.dumps({'appid': 'A', 'access_token': 'x', 'expires': 'soon'}),
+                            json.dumps({'appid': 'A', 'access_token': 42, 'expires': future}),
+                            json.dumps({'appid': 'A', 'access_token': 'x', 'expires': '2999-01-01T00:00:00+08:00'})]:
+                cache.write_text(content)
+                with self.subTest(content=content), patch.object(draft, 'CONFIG_FILE', str(config)), \
+                        patch.object(draft, 'TOKEN_FILE', str(cache)), \
+                        patch.object(draft, 'refresh_token', return_value='fresh') as refresh:
+                    self.assertEqual(draft.get_token(), 'fresh')
+                    refresh.assert_called_once()
+
     @unittest.skipUnless(requests, 'requires requests')
     def test_switching_account_refreshes_and_persists_cache_identity(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -137,6 +153,24 @@ class MinifierAuditTests(unittest.TestCase):
         source = '<section>\n <span style="display:block">Hello</span>\n <span style="display:block">world</span>\n</section>'
         self.assertEqual(minify_html(source), source.replace('\n ', '').replace('\n', ''))
 
+    def test_inline_block_and_hidden_boxes_drop_inner_indentation(self):
+        for source, expected in [
+            ('<section>\n  <section style="display:inline-block">\n    <span leaf=""><img src="a.png"></span>\n'
+             '  </section>\n</section>',
+             '<section><section style="display:inline-block"><span leaf=""><img src="a.png"></span></section></section>'),
+            ('<p style="display:none">\n  <mp-style-type data-value="3"></mp-style-type>\n</p>',
+             '<p style="display:none"><mp-style-type data-value="3"></mp-style-type></p>'),
+        ]:
+            with self.subTest(source=source):
+                self.assertEqual(minify_html(source), expected)
+
+    def test_dropped_comments_do_not_split_whitespace_runs(self):
+        source = ('<section style="white-space:nowrap">\n  <!-- 1 -->\n  <section style="display:inline-block">A</section>\n'
+                  '  <!-- 2 -->\n  <section style="display:inline-block">B</section>\n</section>')
+        self.assertEqual(minify_html(source), '<section style="white-space:nowrap"><section style="display:inline-block">'
+                         'A</section> <section style="display:inline-block">B</section></section>')
+        self.assertEqual(minify_html('<p>foo <!-- x --> bar</p>'), '<p>foo bar</p>')
+
 
 def make_docx(path, body, media=None):
     document = f'<w:document xmlns:w="{W[1:-1]}" xmlns:r="{R[1:-1]}" xmlns:a="{A[1:-1]}"><w:body>{body}</w:body></w:document>'
@@ -164,6 +198,9 @@ class WordAuditTests(unittest.TestCase):
             self.assertNotEqual(paths[0], paths[1])
             self.assertEqual(paths[0].read_bytes(), b'first image')
             self.assertEqual(paths[1].read_bytes(), b'second image')
+
+    def test_image_paths_encode_only_url_delimiters(self):
+        self.assertEqual(_md_image_path('images/文章 #1%?/01-a.png'), '<images/文章%20%231%25%3F/01-a.png>')
 
     def test_content_controls_keep_order_and_table_content(self):
         body = ('<w:p><w:r><w:t>before</w:t></w:r></w:p>'
@@ -208,6 +245,13 @@ class ValidatorAuditTests(unittest.TestCase):
             source = '<section><p style="background:#fff">' + text + '</p></section>'
             with self.subTest(text=text):
                 self.assertTrue(any('半角' in warning for warning in validate(source)[1]))
+
+    def test_punctuation_samples_point_at_each_mark(self):
+        source = ('<section><p style="background:#fff"><span leaf="">' + '前文铺垫' * 10 + '</span>'
+                  '<strong><span leaf="">重点</span></strong><span leaf="">,后文。再说"引号"</span></p></section>')
+        warning = next(w for w in validate(source)[1] if '半角' in w)
+        self.assertTrue(warning.startswith('3 处'), warning)
+        self.assertIn('重点,后文', warning)
 
     def test_punctuation_keeps_numeric_contractions_and_code_exemptions(self):
         for text in ['<span leaf="">时间:</span><strong><span leaf="">30</span></strong>',

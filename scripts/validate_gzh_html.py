@@ -61,9 +61,14 @@ class LeafChecker(HTMLParser):
     def _flush_punctuation(self):
         text = ''.join(self._punct_parts).strip()
         self._punct_parts.clear()
-        if text and (CJK.search(text) or ALNUM.search(text)) and (
-                HALF_PUNCT.search(text) or self._has_straight_quote(text)):
-            self.half_punct.append(text[:24] + ('…' if len(text) > 24 else ''))
+        if not text or not (CJK.search(text) or ALNUM.search(text)):
+            return
+        hits = [m.start() + 1 for m in HALF_PUNCT.finditer(text)] + self._straight_quotes(text)
+        for at in sorted(hits):
+            # Center the sample on the mark: a long paragraph's prefix may not contain it.
+            start = max(0, at - 12)
+            self.half_punct.append(('…' if start else '') + text[start:start + 24]
+                                   + ('…' if start + 24 < len(text) else ''))
 
     def close(self):
         super().close()
@@ -133,9 +138,10 @@ class LeafChecker(HTMLParser):
             self.unwrapped.append((snippet, parent))
 
     @staticmethod
-    def _has_straight_quote(text):
-        """查英文直引号；先剔掉 don't / it's 这类撇号，避免误报。"""
-        return bool(ASCII_QUOTE.search(APOSTROPHE_WORD.sub("", text)))
+    def _straight_quotes(text):
+        """英文直引号的位置；don't / it's 这类撇号先等长遮住，避免误报且下标不变。"""
+        masked = APOSTROPHE_WORD.sub(lambda m: " " * len(m.group()), text)
+        return [m.start() for m in ASCII_QUOTE.finditer(masked)]
 
 
 def validate(html, name="<input>"):

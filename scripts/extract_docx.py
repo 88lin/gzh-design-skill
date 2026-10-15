@@ -92,9 +92,10 @@ def _md_image_path(rel):
     """图片路径转 Markdown 安全形式。
 
     解包出来的文件名可能含空格/中文/括号，直接写进 ![](…) 会被截断，
-    所以用尖括号包裹（CommonMark 允许），并编码 #/% 等 URL 特殊字符。
+    所以用尖括号包裹（CommonMark 允许），只编码空格和 %/#/? 等会改变
+    URL 含义的字符，中文保持原样可读。
     """
-    return "<" + quote(rel, safe='/') + ">"
+    return "<" + re.sub(r"[\s%#?<>\\]", lambda m: quote(m.group()), rel) + ">"
 
 
 def para_text(p, links_of=None, image_of=None):

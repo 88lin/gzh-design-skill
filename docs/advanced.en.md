@@ -182,7 +182,7 @@ export WECHAT_CONFIG_FILE="$HOME/.config/wechat/account-a.json"
 export WECHAT_TOKEN_FILE="$HOME/.config/wechat/account-a.token.json"
 ```
 
-The default token cache is `~/.wechat_access_token` and is bound to the configured AppID. Expiration, an account change, or a legacy cache without an AppID triggers a refresh. Use a separate `WECHAT_TOKEN_FILE` per account when switching between accounts. Set environment variables before launching the script or importing the module.
+The default token cache is `~/.wechat_access_token` and is bound to the configured AppID. Expiration, an account change, a corrupted cache, or a legacy cache without an AppID triggers a refresh. Use a separate `WECHAT_TOKEN_FILE` per account when switching between accounts. Set environment variables before launching the script or importing the module.
 
 The CLI also accepts `WECHAT_COVER_PATH` as its default cover path, otherwise using `image_001.jpg` in the current directory. An explicit cover argument takes precedence.
 

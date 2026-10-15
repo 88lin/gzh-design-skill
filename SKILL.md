@@ -127,7 +127,7 @@ media_id, nbsp = upload_and_cleanup(
 
 **方式 B（手动）**：先 `<SKILL_ROOT>/scripts/minify_gzh_html.py <正文.html>` 压缩，再用压缩产物调 `create_draft`。
 
-**凭据配置**：`~/.wechat_config.json` 存 `{"WECHAT_APP_ID": "...", "WECHAT_APP_SECRET": "..."}`；可用环境变量 `WECHAT_CONFIG_FILE` / `WECHAT_TOKEN_FILE` / `WECHAT_COVER_PATH` 覆盖默认路径。access_token 缓存在本地文件并绑定 AppID，过期、切换账号或读取不含 AppID 的旧缓存时自动刷新。
+**凭据配置**：`~/.wechat_config.json` 存 `{"WECHAT_APP_ID": "...", "WECHAT_APP_SECRET": "..."}`；可用环境变量 `WECHAT_CONFIG_FILE` / `WECHAT_TOKEN_FILE` / `WECHAT_COVER_PATH` 覆盖默认路径。access_token 缓存在本地文件并绑定 AppID，过期、切换账号、缓存损坏或读取不含 AppID 的旧缓存时自动刷新。
 
 **正文图片**：本地/相对图片按 `base_dir` 定位，先检查存在性，再经 `media/uploadimg` 上传并替换 URL；HTTP(S) URL 原样保留，需确保可访问。CLI 优先用 `--html-file 正文.html`，自动以该文件目录解析图片；正文中的字面量 `\n` 不解码。
 
