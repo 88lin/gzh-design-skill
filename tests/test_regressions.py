@@ -239,7 +239,8 @@ class DraftTests(unittest.TestCase):
                     patch.object(draft, 'upload_and_cleanup') as upload:
                 self.assertEqual(draft.main(), 0)
             self.assertEqual(upload.call_args.args[3], '<p>中文😀</p>')
-            self.assertEqual(upload.call_args.kwargs['base_dir'], p.parent)
+            # Windows runners may expose TEMP via an 8.3 alias such as RUNNER~1.
+            self.assertTrue(upload.call_args.kwargs['base_dir'].samefile(p.parent))
 
 
 class CLITests(unittest.TestCase):
